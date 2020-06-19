@@ -1,6 +1,7 @@
 import numpy as np
 import random
 import dimod
+from dwave.system import DWaveSampler, EmbeddingComposite
 
 ##
 # Davis Arthur
@@ -57,7 +58,7 @@ def genModel(X, k, p1 = 10.0, p2 = 10.0):
     for l in range(k):
         for j in range(N):
             for i in range(N):
-                if W[i][l] in linear:
+                if i == j and W[i][l] in linear:
                     linear[W[i][l]] = linear[W[i][l]] + D[i][j]
                 elif (W[i][l], W[j][l]) in quadratic:
                     quadratic[(W[i][l], W[j][l])] = quadratic[(W[i][l], W[j][l])] + D[i][j]
@@ -70,7 +71,7 @@ def genModel(X, k, p1 = 10.0, p2 = 10.0):
     for l in range(k):
         for j in range(N):
             for i in range(N):
-                if W[i][l] in linear:
+                if i == j and W[i][l] in linear:
                     linear[W[i][l]] = linear[W[i][l]] + F[i][j]
                 elif (W[i][l], W[j][l]) in quadratic:
                     quadratic[(W[i][l], W[j][l])] = quadratic[(W[i][l], W[j][l])] + F[i][j]
@@ -83,7 +84,7 @@ def genModel(X, k, p1 = 10.0, p2 = 10.0):
     for l in range(N):
         for j in range(k):
             for i in range(k):
-                if W[l][i] in linear:
+                if i == j and W[l][i] in linear:
                     linear[W[l][i]] = linear[W[l][i]] + G[i][j]
                 elif (W[l][i], W[l][j]) in quadratic:
                     quadratic[(W[l][i], W[l][j])] = quadratic[(W[l][i], W[l][j])] + G[i][j]
@@ -102,11 +103,17 @@ def genData(N, d):
 
 # Test case for k = 2 clustering
 def test():
-    X = np.array([[1, 2], [1, 3], [5, 1], [6, 2], [3, 2], [4, 2]])
+    X = np.array([[1, 2], [1, 3], [5, 1], [6, 2], [1, 1], [5, 2]])
     model = genModel(X, 2)
-    print(model)
-    sampleset = dimod.ExactSolver().sample_qubo(model)
-    print(sampleset.first.sample)
+    sampler_auto = EmbeddingComposite(DWaveSampler(solver={'qpu': True}))
+    sampleset = sampler_auto.sample(model, num_reads=1000)
+    print("Quantum Anealing Solution: " + str(sampleset.first.sample))
+
+def exact():
+    X = np.array([[1, 2], [1, 3], [5, 1], [6, 2], [1, 1], [5, 2]])
+    model = genModel(X, 2)
+    sampleset = dimod.ExactSolver().sample(model)
+    print("Exact Solution: " + str(sampleset.first.sample))
 
 # 2d dimensional example
 def example2d():
@@ -134,4 +141,5 @@ def example2d():
     plt.show()
 
 if __name__ == "__main__":
+    exact()
     test()
