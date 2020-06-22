@@ -1,6 +1,7 @@
 import numpy as np
 import random
 import dimod
+import dwavebinarycsp as csp
 from dwave.system import DWaveSampler, EmbeddingComposite
 
 ##
@@ -32,16 +33,88 @@ def genD(X):
             D[i][j] = np.linalg.norm(X[i] - X[j])
     return D
  
+# Generate valid row configurations of W
+# W - binary array (N x k)
+def validRow(W):
+    k = np.shape(W)[1]
+    configs = []
+    for i in range(k):
+        config = []
+        for j in range(k):
+            if i == j:
+                config.append(1)
+            else:
+                config.append(0)
+        config = tuple(config)
+        configs.append(config)
+    return configs
+            
+# Generate qubo model using constraints (alternative method for genModel)
+# X - training data
+# k - number of clusters
+def genModelWithConstraints(X, k):
+    N = np.shape(X)[0]      # number of points
+    D = genD(X) / 10.0            # distance matrix
+    F = genF(N, k) / 5.0   # column penalty matrix
+
+    # create array of binary variable labels
+    W = []
+    for i in range(N):
+        row = []
+        for j in range(k):
+            row.append("w" + str(i) + str(j))
+        W.append(row)
+
+    # create a constraint model for row constraints
+    constraintModel = csp.ConstraintSatisfactionProblem("BINARY") 
+    configs = validRow(W)
+    for row in W:
+        constraintModel.add_constraint(configs, row)
+    model = csp.stitch(constraintModel)
+
+    # create a model for distance and column constraints
+    linear = model.linear
+    quadratic = model.quadratic
+
+    # account for D term
+    for l in range(k):
+        for j in range(N):
+            for i in range(N):
+                if i == j and W[i][l] in linear:
+                    linear[W[i][l]] = linear[W[i][l]] + D[i][j]
+                elif (W[i][l], W[j][l]) in quadratic:
+                    quadratic[(W[i][l], W[j][l])] = quadratic[(W[i][l], W[j][l])] + D[i][j]
+                elif i == j:
+                    linear[W[i][l]] = D[i][j]
+                else:
+                    quadratic[(W[i][l], W[j][l])] = D[i][j]
+
+    # account for F term
+    for l in range(k):
+        for j in range(N):
+            for i in range(N):
+                if i == j and W[i][l] in linear:
+                    linear[W[i][l]] = linear[W[i][l]] + F[i][j]
+                elif (W[i][l], W[j][l]) in quadratic:
+                    quadratic[(W[i][l], W[j][l])] = quadratic[(W[i][l], W[j][l])] + F[i][j]
+                elif i == j:
+                    linear[W[i][l]] = F[i][j]
+                else:
+                    quadratic[(W[i][l], W[j][l])] = F[i][j]
+
+    return dimod.BinaryQuadraticModel(linear, quadratic, 0.0, dimod.Vartype.BINARY)
+
 # Generate qubo model
 # X - training data
 # k - number of clusters
 # p1 - penalty multiplier for column constraints
 # p2 - penalty multiplier for row constraints
-def genModel(X, k, p1 = 10.0, p2 = 10.0):
-    N = np.shape(X)[0]      # number of points
-    D = genD(X)             # distance matrix
-    F = p1 * genF(N, k)     # column penalty matrix
-    G = p2 * genG(N, k)     # row penalty matrix
+def genModel(X, k, p1 = 0.2, p2 = 2.0):
+    N = np.shape(X)[0]     # number of points
+    D = genD(X)            # distance matrix
+    D /= np.amax(D)        # normalized distance matrix
+    F = p1 * genF(N, k)    # column penalty matrix
+    G = p2 * genG(N, k)    # row penalty matrix
 
     # create array of binary variable labels
     W = []
@@ -169,6 +242,17 @@ def exact():
     printAssignements(assignments)
     printCentroids(getCentroids(assignments))
     
+def test2():
+    N = 6
+    k = 2
+    W = []
+    for i in range(N):
+        row = []
+        for j in range(k):
+            row.append("w" + str(i) + str(j))
+        W.append(row)
+    print(validRow(W))
+
 if __name__ == "__main__":
     exact()
     print()

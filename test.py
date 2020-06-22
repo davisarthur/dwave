@@ -33,6 +33,3 @@ def genClustered(N, k, r, o):
     for i in range(N // k * k, N):
         X[i] = [r * np.cos(delta * (i % k)), r * np.sin(delta * (i % k)]
     return X
-
-if __name__ == "__main__":
-    test()
