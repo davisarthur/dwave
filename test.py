@@ -1,6 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+<<<<<<< HEAD
 import random
+=======
+>>>>>>> 48cacd0e2c75054ff713b7efd22effc20c4ae25e
 
 ##
 # Davis Arthur
@@ -28,11 +31,18 @@ def genClustered(N, k, r, o):
         # append cluster center
         X[i * N // k] = [r * np.cos(delta * i), r * np.sin(delta * i)]
         for j in range(N // k - 1):
+<<<<<<< HEAD
             X[i * N // k + j + 1] = [r * np.cos(delta * i) + o * np.random.normal(), \
                 r * np.sin(delta * i) + o * np.random.normal()]
     for i in range(N // k * k + 1, N):
         randCluster = random.randint(0, k - 1)
         X[i] = [r * np.cos(delta * i), r * np.sin(delta * i)]
+=======
+            if i * N // k + j + 1 == N:
+                break
+            X[i * N // k + j + 1] = [r * np.cos(delta * i) + o * np.random.normal(), \
+                r * np.sin(delta * i) + o * np.random.normal()]
+>>>>>>> 48cacd0e2c75054ff713b7efd22effc20c4ae25e
     return X
 
 def test():
