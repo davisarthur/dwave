@@ -62,7 +62,7 @@ def genModelWithConstraints(X, k):
     for i in range(N):
         row = []
         for j in range(k):
-            row.append("w" + str(i) + str(j))
+            row.append("w" + str(i) + "_" + str(j))
         W.append(row)
 
     # create a constraint model for row constraints
@@ -121,7 +121,7 @@ def genModel(X, k, p1 = 0.2, p2 = 2.0):
     for i in range(N):
         row = []
         for j in range(k):
-            row.append("w" + str(i) + str(j))
+            row.append("w" + str(i) + "_" + str(j))
         W.append(row)
 
     linear = {}
@@ -177,7 +177,7 @@ def getAssignments(w, X):
     assignments = [[] for _ in range(k)]
     for i in range(N):
         for j in range(k):
-            if w["w" + str(i) + str(j)] == 1:
+            if w["w" + str(i) + "_" + str(j)] == 1:
                 assignments[j].append(X[i])
     return assignments
 
