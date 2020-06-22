@@ -94,52 +94,82 @@ def genModel(X, k, p1 = 10.0, p2 = 10.0):
                     quadratic[(W[l][i], W[l][j])] = G[i][j]
 
     return dimod.BinaryQuadraticModel(linear, quadratic, 0.0, dimod.Vartype.BINARY)
+    
+# Read final assignments of each point
+# w - final binary vector (length = N * k)
+# X - training data array (N x d)
+def getAssignments(w, X):
+    N = np.shape(X)[0]
+    k = len(w) // N
+    assignments = [[] for _ in range(k)]
+    for i in range(N):
+        for j in range(k):
+            if w["w" + str(i) + str(j)] == 1:
+                assignments[j].append(X[i])
+    return assignments
 
-# Generate random training data matrix
-# N - number of points
-# d - dimension of each point
-def genData(N, d):
-    return np.random.random((N, d))
+# Print the assignments in the form "Cluster 1: (x1, x2, ..., xd)"
+def printAssignements(assignments):
+    i = 1
+    for row in assignments:
+        output = "Cluster " + str(i) + ": ("
+        first = True
+        for entry in row:
+            if not first:
+                output += ", "
+            output += str(entry)
+            first = False
+        output += ")"
+        print(output)
+        i += 1
 
-# Test case for k = 2 clustering
+# Get centroids
+def getCentroids(assignments):
+    centroids = []
+    d = len(assignments[0][0])
+    for row in assignments:
+        centroid = np.zeros(d)
+        for entry in row:
+            centroid += entry
+        centroid /= len(row)
+        centroids.append(centroid)
+    return centroids
+
+# Print centroids
+def printCentroids(centroids):
+    i = 1
+    output = ""
+    first = True
+    for centroid in centroids:
+        if not first:
+            output += ", "
+        output += "Centroid " + str(i) + ": " + str(centroid)
+        first = False
+        i += 1
+    print(output)
+
+# Test case for k = 2 clustering using quantum annealing
 def test():
     X = np.array([[1, 2], [1, 3], [5, 1], [6, 2], [1, 1], [5, 2]])
     model = genModel(X, 2)
     sampler_auto = EmbeddingComposite(DWaveSampler(solver={'qpu': True}))
     sampleset = sampler_auto.sample(model, num_reads=1000)
     print("Quantum Anealing Solution: " + str(sampleset.first.sample))
+    assignments = getAssignments(sampleset.first.sample, X)
+    printAssignements(assignments)
+    printCentroids(getCentroids(assignments))
 
+# Exact solution to above test case for k = 2 clustering
 def exact():
     X = np.array([[1, 2], [1, 3], [5, 1], [6, 2], [1, 1], [5, 2]])
     model = genModel(X, 2)
     sampleset = dimod.ExactSolver().sample(model)
     print("Exact Solution: " + str(sampleset.first.sample))
-
-# 2d dimensional example
-def example2d():
-    # prompt user
-    N = int(input("Number of points: "))
-    k = int(input("Number of clusters: "))
-
-    # calculate solution
-    d = 2
-    X = genData(N, d)
-    model = genModel(X, k)
-    qubo, offset = model.to_qubo()
-    solution = solve_qubo(qubo)
-
-    # plot the solution
-    meanColors = ["c", "y", "m", "g"]
-    for i in range(N):
-        for j in range(k):
-            if solution["w[" + str(i) + "][" + str(j) + "]"] != 0:
-                plt.scatter(X[i][0], X[i][1], c = meanColors[j])
-
-    plt.title("Equal Size $k$-means clustering ($k = " + str(k) + "$)")
-    plt.xlabel("$x_1$")
-    plt.ylabel("$x_2$")
-    plt.show()
-
+    assignments = getAssignments(sampleset.first.sample, X)
+    printAssignements(assignments)
+    printCentroids(getCentroids(assignments))
+    
 if __name__ == "__main__":
     exact()
+    print()
     test()
