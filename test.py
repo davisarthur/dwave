@@ -2,6 +2,7 @@ import numpy as np
 import dimod
 import equalsize
 from dwave.system import DWaveSampler, EmbeddingComposite
+from scipy.cluster.vq import vq, kmeans, whiten
 
 ##
 # Davis Arthur
@@ -37,24 +38,32 @@ def genClustered(N, k, r, o):
         X[i] = [r * np.cos(delta * (i % k)), r * np.sin(delta * (i % k))]
     return X
 
-def test3(N, k, r = 10.0, o = 0.1):
+def test3(N, k, r = 1.0, o = 0.01):
     X = genClustered(N, k, r, o)
     model = equalsize.genModel(X, k)
-        
-    # get simulated solution
+
+    # get classical solution
+    print("Classical solution: ")
+    classical(X, k)
+
+    # get simulated annealing solution
     sampleset_sim = dimod.SimulatedAnnealingSampler().sample(model)
-    print("Simulated Annealing Solution:" + str(sampleset_sim.first.sample))
+    print("\nSimulated Annealing Solution:" + str(sampleset_sim.first.sample))
     assignments_sim = equalsize.getAssignments(sampleset_sim.first.sample, X)
-    equalsize.printAssignements(assignments_sim)
+    #equalsize.printAssignements(assignments_sim)
     equalsize.printCentroids(equalsize.getCentroids(assignments_sim))
 
     # get quantum annealing solution
-    sampler_auto = EmbeddingComposite(DWaveSampler(solver={'qpu': True}))
-    sampleset_quantum = sampler_auto.sample(model, num_reads=1000)
-    print("\nQuantum Anealing Solution:" + str(sampleset_quantum.first.sample))
-    assignments_quantum = equalsize.getAssignments(sampleset_quantum.first.sample, X)
-    equalsize.printAssignements(assignments_quantum)
-    equalsize.printCentroids(equalsize.getCentroids(assignments_quantum))
- 
+    # sampler_auto = EmbeddingComposite(DWaveSampler(solver={'qpu': True}))
+    # sampleset_quantum = sampler_auto.sample(model, num_reads=1000)
+    # print("\nQuantum Anealing Solution:" + str(sampleset_quantum.first.sample))
+    # assignments_quantum = equalsize.getAssignments(sampleset_quantum.first.sample, X)
+    # equalsize.printAssignements(assignments_quantum)
+    # equalsize.printCentroids(equalsize.getCentroids(assignments_quantum))
+
+def classical(X, k):
+    centroids = kmeans(whiten(X), k)[0]
+    equalsize.printCentroids(centroids)
+
 if __name__ == "__main__":
-    test3(15, 3)
+    test3(32, 2)
