@@ -57,4 +57,4 @@ def test3(N, k, r = 10.0, o = 0.1):
     equalsize.printCentroids(equalsize.getCentroids(assignments_quantum))
  
 if __name__ == "__main__":
-    test3(32, 2)
+    test3(15, 3)

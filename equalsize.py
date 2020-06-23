@@ -54,8 +54,9 @@ def validRow(W):
 # k - number of clusters
 def genModelWithConstraints(X, k):
     N = np.shape(X)[0]      # number of points
-    D = genD(X) / 10.0            # distance matrix
-    F = genF(N, k) / 5.0   # column penalty matrix
+    D = genD(X)             # distance matrix
+    D /= np.amax(D)
+    F = genF(N, k) / 5.0    # column penalty matrix
 
     # create array of binary variable labels
     W = []
@@ -109,7 +110,7 @@ def genModelWithConstraints(X, k):
 # k - number of clusters
 # p1 - penalty multiplier for column constraints
 # p2 - penalty multiplier for row constraints
-def genModel(X, k, p1 = 0.2, p2 = 2.0):
+def genModel(X, k, p1 = 10.0, p2 = 10.0):
     N = np.shape(X)[0]     # number of points
     D = genD(X)            # distance matrix
     D /= np.amax(D)        # normalized distance matrix
