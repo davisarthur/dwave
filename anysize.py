@@ -1,4 +1,5 @@
 import numpy as np 
+import dimod
 
 ##
 # Davis Arthur
@@ -86,6 +87,7 @@ def btwnMeans(M, mi, mj, P, linear, quadratic):
 def toPoint(M, X, mi, xj, P, linear, quadratic):
     pp = np.matmul(np.transpose(P), P)  # precision product
     l = len(M[0])
+    d = np.shape(X)[1]
 
     # account for mi^T P^T P mi term
     for i in range(l):
@@ -100,7 +102,7 @@ def toPoint(M, X, mi, xj, P, linear, quadratic):
                 quadratic[(M[mi][i], M[mi][j])] = pp[i][j]
 
     # account for 2 mi^T P^T P xj term
-    for i in range(l):
+    for i in range(d):
         for j in range(l):
             if M[mi][j] in linear:
                 linear[M[mi][j]] -= 2 * P[i][j] * X[xj][i]
@@ -158,7 +160,7 @@ def test():
     M = genMeanLabels(k, d, l)
     mi = 0
     mj = 1
-    linear, quadratic = btwnMeans(M, mi, mj, P)
+    linear, quadratic = btwnMeans(M, mi, mj, P, linear, quadratic)
     print("Linear: " + str(linear))
     print("\nQuadratic: " + str(quadratic))
 
