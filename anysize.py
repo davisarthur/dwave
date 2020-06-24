@@ -28,51 +28,53 @@ def genMeanLabels(k, d, l):
     return M
 
 # Account for the distance between two means term
+# N - number of points
 # M - binary mean variable labels, list of dimenion k x (l * d)
 # mi - index of the first mean
 # mj - index of the second mean
 # P - precision matrix (d x (l * d))
 # linear - dictionary of linear factors in QUBO problem
 # quadratic - dictionary of quadratic factors in QUBO problem
-def btwnMeans(M, mi, mj, P, linear, quadratic):
+def btwnMeans(N, M, mi, mj, P, linear, quadratic):
     pp = np.matmul(np.transpose(P), P)  # precision product
     l = len(M[0])
+    print("k: " + str(k))
 
     # account for mi^T P^T P mi term
     for i in range(l):
         for j in range(l):
             if i == j and M[mi][i] in linear:
-                linear[M[mi][i]] -= pp[i][j]
+                linear[M[mi][i]] -= N / k * pp[i][j]
             elif (M[mi][i], M[mi][j]) in quadratic:
-                quadratic[(M[mi][i], M[mi][j])] -= pp[i][j]
+                quadratic[(M[mi][i], M[mi][j])] -= N / k * pp[i][j]
             elif i == j:
-                linear[M[mi][i]] = -pp[i][j]
+                linear[M[mi][i]] = N / k * -pp[i][j]
             else:
-                quadratic[(M[mi][i], M[mi][j])] = -pp[i][j]
+                quadratic[(M[mi][i], M[mi][j])] = N / k * -pp[i][j]
 
     # account for 2 mi^T P^T P mj term
     for i in range(l):
         for j in range(l):
             if i == j and mi == mj and M[mi][i] in linear:
-                linear[M[mi][i]] += 2 * pp[i][j]
+                linear[M[mi][i]] += N / k * 2 * pp[i][j]
             elif (M[mi][i], M[mj][j]) in quadratic:
-                quadratic[(M[mi][i], M[mj][j])] += 2 * pp[i][j]
+                quadratic[(M[mi][i], M[mj][j])] += N / k * 2 * pp[i][j]
             elif i == j and mi == mj:
-                linear[M[mi][i]] = 2 * pp[i][j]
+                linear[M[mi][i]] = N / k * 2 * pp[i][j]
             else:
-                quadratic[(M[mi][i], M[mj][j])] = 2 * pp[i][j]
+                quadratic[(M[mi][i], M[mj][j])] = N / k * 2 * pp[i][j]
 
     # account for mj^T P^T P mj term
     for i in range(l):
         for j in range(l):
             if i == j and M[mj][i] in linear:
-                linear[M[mj][i]] -= pp[i][j]
+                linear[M[mj][i]] -= N / k * 2 * pp[i][j]
             elif (M[mj][i], M[mj][j]) in quadratic:
-                quadratic[(M[mj][i], M[mj][j])] -= pp[i][j]
+                quadratic[(M[mj][i], M[mj][j])] -= N / k * 2 * pp[i][j]
             elif i == j:
-                linear[M[mj][i]] = -pp[i][j]
+                linear[M[mj][i]] = N / k * 2 * -pp[i][j]
             else:
-                quadratic[(M[mj][i], M[mj][j])] = -pp[i][j]
+                quadratic[(M[mj][i], M[mj][j])] = N / k * 2 * -pp[i][j]
     
     return linear, quadratic
 
@@ -129,7 +131,7 @@ def genModel(X, k, p):
     for i in range(k):
         for j in range(k):
             if i != j:
-                linear, quadratic = btwnMeans(M, i, j, P, linear, quadratic)
+                linear, quadratic = btwnMeans(N, M, i, j, P, linear, quadratic)
 
     # minimize the distance between a mean and all surrounding points
     for i in range(k):

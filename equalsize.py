@@ -110,7 +110,7 @@ def genModelWithConstraints(X, k):
 # k - number of clusters
 # p1 - penalty multiplier for column constraints
 # p2 - penalty multiplier for row constraints
-def genModel(X, k, p1 = 10.0, p2 = 10.0):
+def genModel(X, k, p1 = 1.0, p2 = 10.0):
     N = np.shape(X)[0]     # number of points
     D = genD(X)            # distance matrix
     D /= np.amax(D)        # normalized distance matrix
@@ -183,10 +183,11 @@ def getAssignments(w, X):
     return assignments
 
 # Print the assignments in the form "Cluster 1: (x1, x2, ..., xd)"
-def printAssignements(assignments):
+def printAssignments(assignments):
     i = 1
+    output = ""
     for row in assignments:
-        output = "Cluster " + str(i) + ": ("
+        output += "\nCluster " + str(i) + ": ("
         first = True
         for entry in row:
             if not first:
@@ -194,8 +195,8 @@ def printAssignements(assignments):
             output += str(entry)
             first = False
         output += ")"
-        print(output)
         i += 1
+    return output
 
 # Get centroids
 def getCentroids(assignments):
@@ -220,7 +221,7 @@ def printCentroids(centroids):
         output += "Centroid " + str(i) + ": " + str(centroid)
         first = False
         i += 1
-    print(output)
+    return output
 
 # Test case for k = 2 clustering using quantum annealing
 def test():
