@@ -56,7 +56,7 @@ def printData(X):
 
 
 
-def test3(N, k, r = 10.0, o = 0.1):
+def test3(N, k, r = 1.0, o = 0.1):
 
     # data file
     f = open("test3.txt", "a")
@@ -136,4 +136,4 @@ def classical(X, k):
     return equalsize.printCentroids(centroids)
 
 if __name__ == "__main__":
-    test3(10, 2)
+    test3(20, 2)

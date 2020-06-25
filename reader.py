@@ -119,8 +119,8 @@ def plotCentroids(M, cIn):
     if d != 2:
         print("Error: Data is not of dimension 2")
         return
-    for i in range(N):
-        plt.scatter(X[i][0], X[i][1], c = cIn)
+    for i in range(k):
+        plt.scatter(M[i][0], M[i][1], c = cIn)
 
 # Only valid for 2 dimensional data
 # A - assignments
@@ -136,7 +136,7 @@ def plotAssignments(A):
             plt.scatter(A[i][j][0], A[i][j][1], c = colorsIn[i])
 
 def compare_centroids():
-    info = read3()
+    info = read3("text3.txt")
     plotData(info["X"], "c")
     plotCentroids(info["centroids_classical"], "g")
     plotCentroids(info["centroids_quantum"], "m")
@@ -144,5 +144,5 @@ def compare_centroids():
     plt.show()
 
 if __name__ == "__main__":
-    print(read3("test3.txt"))
+    compare_centroids()
     
