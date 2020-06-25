@@ -102,7 +102,7 @@ def read3(filename):
 # Only valid for 2 dimensional data
 # X input data matrix
 # cIn - color of data points
-def plotData(X, cIn):
+def plotData(X, cIn, patches):
     patches.append(mpatches.Patch(color = "cIn", label = "data points"))
     N = np.shape(X)[0]
     d = np.shape(X)[1]
@@ -111,12 +111,12 @@ def plotData(X, cIn):
         return
     for i in range(N):
         plt.scatter(X[i][0], X[i][1], c = cIn)
-    return N
+    return N, patches
 
 # Only valid for 2 dimensional centroids
 # M - centroids
 # cIn - color of centroids
-def plotCentroids(M, cIn, labelIn = "default label"):
+def plotCentroids(M, cIn, patches, labelIn = "default label"):
     k = np.shape(M)[0]
     d = np.shape(M)[1]
     patches.append(mpatches.Patch(color = "cIn", label = labelIn))
@@ -125,7 +125,7 @@ def plotCentroids(M, cIn, labelIn = "default label"):
         return
     for i in range(k):
         plt.scatter(M[i][0], M[i][1], c = cIn)
-    return k
+    return k, patches
 
 # Only valid for 2 dimensional data
 # A - assignments
@@ -143,10 +143,10 @@ def plotAssignments(A):
 def compare_centroids():
     info = read3("test3.txt")
     patches = []
-    N = plotData(info["X"], "c")
-    k = plotCentroids(info["centroids_classical"], "g", "classical centroids")
-    plotCentroids(info["centroids_quantum"], "m", "quantum centroids")
-    plotCentroids(info["centroids_sim"], "y", "simulated centroids")
+    N, patches = plotData(info["X"], "c", patches)
+    k, patches = plotCentroids(info["centroids_classical"], "g", patches, "classical centroids")
+    patches = plotCentroids(info["centroids_quantum"], "m", patches, "quantum centroids")[1]
+    patches = plotCentroids(info["centroids_sim"], "y", patches, "simulated centroids")[1]
     plt.title("Centroid Performance (" + str(N) + "points, " + str(k) + "clusters)")
     plt.legend(handles = patches)
     plt.show()
