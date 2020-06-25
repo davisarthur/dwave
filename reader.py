@@ -103,7 +103,7 @@ def read3(filename):
 # X input data matrix
 # cIn - color of data points
 def plotData(X, cIn, patches):
-    patches.append(mpatches.Patch(color = "cIn", label = "data points"))
+    patches.append(mpatches.Patch(color = cIn, label = "data points"))
     N = np.shape(X)[0]
     d = np.shape(X)[1]
     if d != 2:
@@ -119,7 +119,7 @@ def plotData(X, cIn, patches):
 def plotCentroids(M, cIn, patches, labelIn = "default label"):
     k = np.shape(M)[0]
     d = np.shape(M)[1]
-    patches.append(mpatches.Patch(color = "cIn", label = labelIn))
+    patches.append(mpatches.Patch(color = cIn, label = labelIn))
     if d != 2:
         print("Error: Data is not of dimension 2")
         return
@@ -143,10 +143,10 @@ def plotAssignments(A):
 def compare_centroids():
     info = read3("test3.txt")
     patches = []
-    N, patches = plotData(info["X"], "cyan", patches)
-    k, patches = plotCentroids(info["centroids_classical"], "green", patches, "classical centroids")
-    patches = plotCentroids(info["centroids_quantum"], "magenta", patches, "quantum centroids")[1]
-    patches = plotCentroids(info["centroids_sim"], "yellow", patches, "simulated centroids")[1]
+    N, patches = plotData(info["X"], "c", patches)
+    k, patches = plotCentroids(info["centroids_classical"], "g", patches, "classical centroids")
+    patches = plotCentroids(info["centroids_quantum"], "m", patches, "quantum centroids")[1]
+    patches = plotCentroids(info["centroids_sim"], "y", patches, "simulated centroids")[1]
     plt.title("Centroid Performance (" + str(N) + "points, " + str(k) + "clusters)")
     plt.legend(handles = patches)
     plt.show()
