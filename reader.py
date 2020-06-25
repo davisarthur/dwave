@@ -102,7 +102,7 @@ def read3(filename):
 # Only valid for 2 dimensional data
 # X input data matrix
 # cIn - color of data points
-def plotData(X, cIn, patches):
+def plotData(X, cIn, patches, size = 10):
     patches.append(mpatches.Patch(color = cIn, label = "data points"))
     N = np.shape(X)[0]
     d = np.shape(X)[1]
@@ -110,13 +110,13 @@ def plotData(X, cIn, patches):
         print("Error: Data is not of dimension 2")
         return
     for i in range(N):
-        plt.scatter(X[i][0], X[i][1], c = cIn)
-    return N, patches
+        plt.scatter(X[i][0], X[i][1], c = cIn, s = size)
+    return patches
 
 # Only valid for 2 dimensional centroids
 # M - centroids
 # cIn - color of centroids
-def plotCentroids(M, cIn, patches, labelIn = "default label"):
+def plotCentroids(M, cIn, patches, labelIn = "default label", size = 10):
     k = np.shape(M)[0]
     d = np.shape(M)[1]
     patches.append(mpatches.Patch(color = cIn, label = labelIn))
@@ -124,33 +124,102 @@ def plotCentroids(M, cIn, patches, labelIn = "default label"):
         print("Error: Data is not of dimension 2")
         return
     for i in range(k):
-        plt.scatter(M[i][0], M[i][1], c = cIn)
-    return k, patches
+        plt.scatter(M[i][0], M[i][1], c = cIn, s = size)
+    return patches
 
 # Only valid for 2 dimensional data
 # A - assignments
 # colors - colors of each assignment
-def plotAssignments(A):
-    for i in range(len(A)):
+def plot_assignment(A, colors, patches, labels = None, size = 10):
+    k = len(A)
+    if labels == None:
+        labels = []
+        for i in range(k):
+            labels.append("Cluster " + str(i))
+    for i in range(k):
+        patches.append(mpatches.Patch(color = colors[i], label = labels[i]))
         N = np.shape(A[i])[0]
         d = np.shape(A[i])[1]
         if d != 2:
             print("Error: Data is not of dimension 2")
             return
-        for j in N:
-            plt.scatter(A[i][j][0], A[i][j][1], c = colorsIn[i])
+        for j in range(N):
+            plt.scatter(A[i][j][0], A[i][j][1], c = colors[i], s = size)
+    return patches
 
 def compare_centroids():
     info = read3("test3.txt")
+    k = np.shape(info["centroids_classical"])[0]
+    N = np.shape(info["X"])[0]
     patches = []
-    N, patches = plotData(info["X"], "c", patches)
-    k, patches = plotCentroids(info["centroids_classical"], "g", patches, "classical centroids")
-    patches = plotCentroids(info["centroids_quantum"], "m", patches, "quantum centroids")[1]
-    patches = plotCentroids(info["centroids_sim"], "y", patches, "simulated centroids")[1]
-    plt.title("Centroid Performance (" + str(N) + "points, " + str(k) + "clusters)")
+    patches = plotData(info["X"], "c", patches)
+    patches = plotCentroids(info["centroids_classical"], "g", patches, \
+        "classical centroids", size = 40)
+    patches = plotCentroids(info["centroids_quantum"], "m", patches, \
+        "quantum centroids")
+    patches = plotCentroids(info["centroids_sim"], "y", patches, \
+        "simulated centroids")
+    plt.title("Centroid Analysis (" + str(N) + " points, " + str(k) \
+        + " clusters)")
     plt.legend(handles = patches)
+    plt.xlim(-1.5, 1.5)
+    plt.ylim(-1.5, 1.5)
+    plt.show()
+
+def compare_time():
+    info = read3("test3.txt")
+    k = np.shape(info["centroids_classical"])[0]
+    N = np.shape(info["X"])[0]
+    n = 3
+    preprocessing = (0.0, info["time_preprocessing"], info["time_preprocessing"])
+    annealing = (info["time_classical"], info["time_annealing_sim"], \
+        info["time_annealing_quantum"])
+    postprocessing = (0.0, info["time_postprocessing_sim"], \
+        info["time_postprocessing_quantum"])
+    ind = np.arange(n) # the x locations for the groups
+    width = 0.35
+    p1 = plt.bar(ind, preprocessing, width, color = "c")
+    p2 = plt.bar(ind, postprocessing, width, bottom = np.array(preprocessing), \
+        color = "y")
+    p3 = plt.bar(ind, annealing, width, bottom = np.array(preprocessing) + \
+        np.array(postprocessing), color = "m")
+    plt.ylabel("Time (s)")
+    plt.title("Time Analysis (" + str(N) + " points, " + str(k) \
+        + " clusters)")
+    plt.xticks(ind, ("Lloyd's algorithm", "Simulated Annealing", \
+        "Quantum Annealing"))
+    plt.legend((p1[0], p2[0], p3[0]), ("preprocessing", "postprocessing", \
+        "algorithm/annealing"))
+    plt.yscale("log")
+    plt.ylim(info["time_classical"] / 2.0, info["time_annealing_sim"] * 2.0)
+    plt.show()
+
+def compare_assignments():
+    info = read3("test3.txt")
+    k = np.shape(info["centroids_classical"])[0]
+    N = np.shape(info["X"])[0]
+
+    patches = []
+    patches = plotData(info["X"], "k", patches, size = 40)
+    patches = plot_assignment(info["assignments_sim"], ["r", "g", "c", "y"], \
+        patches)
+    plt.title("Simulated Annealing Assignments (" + str(N) + " points, " + str(k) \
+        + " clusters)")
+    plt.legend(handles = patches)
+    plt.xlim(-1.5, 1.5)
+    plt.ylim(-1.5, 1.5)
+    plt.show()
+
+    patches = []
+    patches = plotData(info["X"], "k", patches, size = 40)
+    patches = plot_assignment(info["assignments_quantum"], ["r", "g", "c", "y"], \
+        patches)
+    plt.title("Quantum Annealing Assignments (" + str(N) + " points, " + str(k) \
+        + " clusters)")
+    plt.legend(handles = patches)
+    plt.xlim(-1.5, 1.5)
+    plt.ylim(-1.5, 1.5)
     plt.show()
 
 if __name__ == "__main__":
-    compare_centroids()
-    
+    compare_assignments()
