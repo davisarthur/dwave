@@ -59,7 +59,7 @@ def printData(X):
 def test3(N, k, r = 10.0, o = 0.1):
 
     # data file
-    f = open("test3.txt", "w")
+    f = open("test3.txt", "a")
     f.write(str(datetime.now()))    # denote date and time that test begins
 
     X = genClustered(N, k, r, o)

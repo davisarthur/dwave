@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 ##
 # Davis Arthur
@@ -9,11 +10,17 @@ import numpy as np
 
 # Reader for test3 in test.py
 def read3(filename):
+
     # dictionary for extracted information
     info = {}
 
     f = open(filename, "r")
-    f.readline()    # ignore date/time
+    
+    # prompt user to get the start time of data to be extracted
+    begin = input("Start time: ")
+    line = ""
+    while not begin in line:
+        line = f.readline()
 
     # read in data matrix X
     arrX = f.readline().split("(")[1].split(")")[0].split(", ")
@@ -90,6 +97,51 @@ def read3(filename):
     # close the file and return dictionary
     f.close()
     return info
+
+# Only valid for 2 dimensional data
+# X input data matrix
+# cIn - color of data points
+def plotData(X, cIn):
+    N = np.shape(X)[0]
+    d = np.shape(X)[1]
+    if d != 2:
+        print("Error: Data is not of dimension 2")
+        return
+    for i in range(N):
+        plt.scatter(X[i][0], X[i][1], c = cIn)
+
+# Only valid for 2 dimensional centroids
+# M - centroids
+# cIn - color of centroids
+def plotCentroids(M, cIn):
+    k = np.shape(M)[0]
+    d = np.shape(M)[1]
+    if d != 2:
+        print("Error: Data is not of dimension 2")
+        return
+    for i in range(N):
+        plt.scatter(X[i][0], X[i][1], c = cIn)
+
+# Only valid for 2 dimensional data
+# A - assignments
+# colors - colors of each assignment
+def plotAssignments(A):
+    for i in range(len(A)):
+        N = np.shape(A[i])[0]
+        d = np.shape(A[i])[1]
+        if d != 2:
+            print("Error: Data is not of dimension 2")
+            return
+        for j in N:
+            plt.scatter(A[i][j][0], A[i][j][1], c = colorsIn[i])
+
+def compare_centroids():
+    info = read3()
+    plotData(info["X"], "c")
+    plotCentroids(info["centroids_classical"], "g")
+    plotCentroids(info["centroids_quantum"], "m")
+    plotCentroids(info["centroids_sim"], "y")
+    plt.show()
 
 if __name__ == "__main__":
     print(read3("test3.txt"))
