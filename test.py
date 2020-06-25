@@ -5,7 +5,7 @@ import equalsize
 import anysize
 from datetime import datetime
 from dwave.system import DWaveSampler, EmbeddingComposite
-from scipy.cluster.vq import vq, kmeans, whiten
+from scipy.cluster.vq import vq, kmeans2
 
 ##
 # Davis Arthur
@@ -60,7 +60,7 @@ def test3(N, k, r = 1.0, o = 0.1):
 
     # data file
     f = open("test3.txt", "a")
-    f.write(str(datetime.now()))    # denote date and time that test begins
+    f.write("\n" + str(datetime.now()))    # denote date and time that test begins
 
     X = genClustered(N, k, r, o)
     f.write("\nData: " + printData(X)) 
@@ -106,7 +106,8 @@ def test3(N, k, r = 1.0, o = 0.1):
     end = time.time()
     f.write("\nQuantum postprocessing time elapsed: " + str(end - start))
     f.write("\nQuantum annealing solution: " + equalsize.printCentroids(centroids_quantum))
-    f.write("\nQuantum annealing assignments: " + equalsize.printAssignments(assignments_quantum))
+    f.write("\nQuantum annealing assignments: " \
+        + equalsize.printAssignments(assignments_quantum) + "\n")
     f.close()
 
 def test4(N, k, r = 10.0, o = 0.1):
@@ -132,7 +133,7 @@ def test4(N, k, r = 10.0, o = 0.1):
     # print("\n" + str(centroids_quantum))
 
 def classical(X, k):
-    centroids = kmeans(whiten(X), k)[0]
+    centroids = kmeans2(X, k)[0]
     return equalsize.printCentroids(centroids)
 
 if __name__ == "__main__":
