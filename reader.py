@@ -143,10 +143,10 @@ def plotAssignments(A):
 def compare_centroids():
     info = read3("test3.txt")
     patches = []
-    N, patches = plotData(info["X"], "c", patches)
-    k, patches = plotCentroids(info["centroids_classical"], "g", patches, "classical centroids")
-    patches = plotCentroids(info["centroids_quantum"], "m", patches, "quantum centroids")[1]
-    patches = plotCentroids(info["centroids_sim"], "y", patches, "simulated centroids")[1]
+    N, patches = plotData(info["X"], "cyan", patches)
+    k, patches = plotCentroids(info["centroids_classical"], "green", patches, "classical centroids")
+    patches = plotCentroids(info["centroids_quantum"], "magenta", patches, "quantum centroids")[1]
+    patches = plotCentroids(info["centroids_sim"], "yellow", patches, "simulated centroids")[1]
     plt.title("Centroid Performance (" + str(N) + "points, " + str(k) + "clusters)")
     plt.legend(handles = patches)
     plt.show()
