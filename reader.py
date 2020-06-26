@@ -222,4 +222,6 @@ def compare_assignments():
     plt.show()
 
 if __name__ == "__main__":
+    compare_centroids()
+    compare_time()
     compare_assignments()
