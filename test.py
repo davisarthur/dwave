@@ -135,4 +135,4 @@ def classical(X, k):
     return equalsize.printCentroids(centroids)
 
 if __name__ == "__main__":
-    test3(8, 4)
+    test3(32, 2)
