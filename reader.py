@@ -162,8 +162,8 @@ def compare_centroids():
     plt.title("Centroid Analysis (" + str(N) + " points, " + str(k) \
         + " clusters)")
     plt.legend(handles = patches)
-    plt.xlim(-1.5, 1.5)
-    plt.ylim(-1.5, 1.5)
+    # plt.xlim(-1.5, 1.5)
+    # plt.ylim(-1.5, 1.5)
     plt.show()
 
 def compare_time():
@@ -206,8 +206,8 @@ def compare_assignments():
     plt.title("Simulated Annealing Assignments (" + str(N) + " points, " + str(k) \
         + " clusters)")
     plt.legend(handles = patches)
-    plt.xlim(-1.5, 1.5)
-    plt.ylim(-1.5, 1.5)
+    # plt.xlim(-1.5, 1.5)
+    # plt.ylim(-1.5, 1.5)
     plt.show()
 
     patches = []
