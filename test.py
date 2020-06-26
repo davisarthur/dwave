@@ -136,7 +136,8 @@ def test5(N, k):
     f = open("test3.txt", "a")
     f.write("\n" + str(datetime.now()))    # denote date and time that test begins
 
-    X = genRand(N, k)
+    d = 2
+    X = genRand(N, d)
     f.write("\nData: " + printData(X)) 
 
     # get classical solution
@@ -189,4 +190,4 @@ def classical(X, k):
     return equalsize.printCentroids(centroids)
 
 if __name__ == "__main__":
-    test5(15, 3)
+    test3(20, 2)

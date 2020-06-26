@@ -30,7 +30,7 @@ def genD(X):
     D = np.zeros((N, N))
     for i in range(N):
         for j in range(N):
-            D[i][j] = np.linalg.norm(X[i] - X[j])
+            D[i][j] = np.square(np.linalg.norm(X[i] - X[j]))
     return D
  
 # Generate valid row configurations of W
@@ -110,12 +110,13 @@ def genModelWithConstraints(X, k):
 # k - number of clusters
 # p1 - penalty multiplier for column constraints
 # p2 - penalty multiplier for row constraints
-def genModel(X, k, p1 = 1.0, p2 = 10.0):
-    N = np.shape(X)[0]     # number of points
-    D = genD(X)            # distance matrix
-    D /= np.amax(D)        # normalized distance matrix
-    F = p1 * genF(N, k)    # column penalty matrix
-    G = p2 * genG(N, k)    # row penalty matrix
+def genModel(X, k):
+    N = np.shape(X)[0]         # number of points
+    D = genD(X)                # distance matrix
+    D /= np.amax(D)            # normalized distance matrix
+    D /= k * 2.0
+    F = 2.0 * genF(N, k) / k     # column penalty matrix
+    G = 2.0 * genG(N, k) / N         # row penalty matrix
 
     # create array of binary variable labels
     W = []
