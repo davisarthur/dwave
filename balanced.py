@@ -27,6 +27,7 @@ def init_centroids(X, k):
                 break
     return C
 
+# Calculate weights matrix used for Hungarian algorithm in assignment step
 # X - input data
 # C - centroids
 def calc_weights(X, C):
@@ -58,18 +59,31 @@ def update_centroids(X, k, D):
             C[i] /= math.ceil(N / k)
         else:
             C[i] /= math.floor(N / k)
-    return C
+    return C, assignments
 
+# Perform balanced k-means algorithm, returns centroids and assignments
 # X - input data
 # k - number of clusters
 def balanced_kmeans(X, k):
+    N = np.shape(X)[0]
     C = init_centroids(X, k)
+    assignments = np.array([0] * N)
     while True:
-        newC = update_centroids(X, k, calc_weights(X, C))
+        newC, new_assignments = update_centroids(X, k, calc_weights(X, C))
         if np.array_equal(newC, C):
+            for i in range(N):
+                assignments[i] = new_assignments[i] % k
             break
         C = newC
-    return C
+    return C, assignments
+
+def test():
+    X = np.array([[1, 2], [1, 3], [1, 4], [9, 5], [9, 6]])
+    k = 2
+    M, assignments = balanced_kmeans(X, k)
+    print(M)
+    print()
+    print(assignments)
 
 if __name__ == "__main__":
-    test(100, 3)
+    test()

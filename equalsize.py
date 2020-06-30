@@ -49,67 +49,9 @@ def validRow(W):
         configs.append(config)
     return configs
             
-# Generate qubo model using constraints (alternative method for genModel)
-# X - training data
-# k - number of clusters
-def genModelWithConstraints(X, k):
-    N = np.shape(X)[0]      # number of points
-    D = genD(X)             # distance matrix
-    D /= np.amax(D)
-    F = genF(N, k) / 5.0    # column penalty matrix
-
-    # create array of binary variable labels
-    W = []
-    for i in range(N):
-        row = []
-        for j in range(k):
-            row.append("w" + str(i) + "_" + str(j))
-        W.append(row)
-
-    # create a constraint model for row constraints
-    constraintModel = csp.ConstraintSatisfactionProblem("BINARY") 
-    configs = validRow(W)
-    for row in W:
-        constraintModel.add_constraint(configs, row)
-    model = csp.stitch(constraintModel)
-
-    # create a model for distance and column constraints
-    linear = model.linear
-    quadratic = model.quadratic
-
-    # account for D term
-    for l in range(k):
-        for j in range(N):
-            for i in range(N):
-                if i == j and W[i][l] in linear:
-                    linear[W[i][l]] = linear[W[i][l]] + D[i][j]
-                elif (W[i][l], W[j][l]) in quadratic:
-                    quadratic[(W[i][l], W[j][l])] = quadratic[(W[i][l], W[j][l])] + D[i][j]
-                elif i == j:
-                    linear[W[i][l]] = D[i][j]
-                else:
-                    quadratic[(W[i][l], W[j][l])] = D[i][j]
-
-    # account for F term
-    for l in range(k):
-        for j in range(N):
-            for i in range(N):
-                if i == j and W[i][l] in linear:
-                    linear[W[i][l]] = linear[W[i][l]] + F[i][j]
-                elif (W[i][l], W[j][l]) in quadratic:
-                    quadratic[(W[i][l], W[j][l])] = quadratic[(W[i][l], W[j][l])] + F[i][j]
-                elif i == j:
-                    linear[W[i][l]] = F[i][j]
-                else:
-                    quadratic[(W[i][l], W[j][l])] = F[i][j]
-
-    return dimod.BinaryQuadraticModel(linear, quadratic, 0.0, dimod.Vartype.BINARY)
-
 # Generate qubo model
 # X - training data
 # k - number of clusters
-# p1 - penalty multiplier for column constraints
-# p2 - penalty multiplier for row constraints
 def genModel(X, k):
     N = np.shape(X)[0]         # number of points
     D = genD(X)                # distance matrix
@@ -169,94 +111,67 @@ def genModel(X, k):
                     quadratic[(W[l][i], W[l][j])] = G[i][j]
 
     return dimod.BinaryQuadraticModel(linear, quadratic, 0.0, dimod.Vartype.BINARY)
-    
-# Read final assignments of each point
-# w - final binary vector (length = N * k)
-# X - training data array (N x d)
-def getAssignments(w, X):
+
+# Embed QUBO model on D-Wave hardware, returns sampler
+# model - QUBO model to embed
+def embed(model):
+    return EmbeddingComposite(DWaveSampler(solver={'qpu': True}))
+
+# Run QUBO problem on D-Wave hardware, return sample set
+# sampler - D-Wave sampler being used to solve the problem
+# model - QUBO model to embed
+# num_reads - number of reads during annealing
+def run_quantum(sampler, model, num_reads_in = 100):
+    return sampler.sample(model, num_reads = num_reads_in)
+
+# Run QUBO problem using D-Wave's simulated annealing, returns sample set
+# model - QUBO model to embed
+def run_sim(model):
+    return dimod.SimulatedAnnealingSampler().sample(model)
+
+# Postprocessing of solution from annealing
+# Note: if a point is assigned to more than one cluster, it will belong to the lower cluster
+def postprocess(X, w):
     N = np.shape(X)[0]
+    d = np.shape(X)[1]
     k = len(w) // N
-    assignments = [[] for _ in range(k)]
+
+    assignments = np.array([0] * N)
+    M = np.zeros((k, d))
+    cluster_sizes = np.zeros(k)
     for i in range(N):
         for j in range(k):
             if w["w" + str(i) + "_" + str(j)] == 1:
-                assignments[j].append(X[i])
-    return assignments
+                M[j] += X[i]
+                cluster_sizes[j] += 1.0
+                assignments[i] = j
+                break
 
-# Print the assignments in the form "Cluster 1: (x1, x2, ..., xd)"
-def printAssignments(assignments):
-    i = 1
-    output = ""
-    for row in assignments:
-        output += "\nCluster " + str(i) + ": ("
-        first = True
-        for entry in row:
-            if not first:
-                output += ", "
-            output += str(entry)
-            first = False
-        output += ")"
-        i += 1
-    return output
+    for i in range(k):
+        M[i] /= cluster_sizes[i]
 
-# Get centroids
-def getCentroids(assignments):
-    centroids = []
-    d = len(assignments[0][0])
-    for row in assignments:
-        centroid = np.zeros(d)
-        for entry in row:
-            centroid += entry
-        centroid /= len(row)
-        centroids.append(centroid)
-    return centroids
+    return M, assignments
 
-# Print centroids
-def printCentroids(centroids):
-    i = 1
-    output = ""
-    first = True
-    for centroid in centroids:
-        if not first:
-            output += ", "
-        output += "Centroid " + str(i) + ": " + str(centroid)
-        first = False
-        i += 1
-    return output
-
-# Test case for k = 2 clustering using quantum annealing
-def test():
-    X = np.array([[1, 2], [1, 3], [5, 1], [6, 2], [1, 1], [5, 2]])
-    model = genModel(X, 2)
-    sampler_auto = EmbeddingComposite(DWaveSampler(solver={'qpu': True}))
-    sampleset = sampler_auto.sample(model, num_reads=1000)
-    print("Quantum Anealing Solution: " + str(sampleset.first.sample))
-    assignments = getAssignments(sampleset.first.sample, X)
-    printAssignements(assignments)
-    printCentroids(getCentroids(assignments))
-
-# Exact solution to above test case for k = 2 clustering
-def exact():
-    X = np.array([[1, 2], [1, 3], [5, 1], [6, 2], [1, 1], [5, 2]])
-    model = genModel(X, 2)
-    sampleset = dimod.ExactSolver().sample(model)
-    print("Exact Solution: " + str(sampleset.first.sample))
-    assignments = getAssignments(sampleset.first.sample, X)
-    printAssignements(assignments)
-    printCentroids(getCentroids(assignments))
-    
-def test2():
-    N = 6
+def test_quantum():
+    X = np.array([[1, 2], [1, 3], [1, 4], [9, 5], [9, 6]])
     k = 2
-    W = []
-    for i in range(N):
-        row = []
-        for j in range(k):
-            row.append("w" + str(i) + str(j))
-        W.append(row)
-    print(validRow(W))
+    model = genModel(X, k)
+    sampler = embed(model)
+    sample_set = run_quantum(sampler, model)
+    M, assignments = postprocess(X, sample_set.first.sample)
+    print(M)
+    print()
+    print(assignments)
+
+def test_sim():
+    X = np.array([[1, 2], [1, 3], [1, 4], [9, 5], [9, 6]])
+    k = 2
+    model = genModel(X, k)
+    sample_set = run_sim(model)
+    M, assignments = postprocess(X, sample_set.first.sample)
+    print(M)
+    print()
+    print(assignments)
 
 if __name__ == "__main__":
-    exact()
-    print()
-    test()
+    test_sim()

@@ -54,10 +54,10 @@ def printData(X):
     output += ")"
     return output
 
-def test3(N, k, r = 1.0, o = 0.1):
+def test(N, k, r = 1.0, o = 0.1):
 
     # data file
-    f = open("test3.txt", "a")
+    f = open("test.txt", "a")
     f.write("\n" + str(datetime.now()))    # denote date and time that test begins
 
     X = genClustered(N, k, r, o)
@@ -65,7 +65,7 @@ def test3(N, k, r = 1.0, o = 0.1):
 
     # get classical solution
     start = time.time()
-    classical_solution = classical(X, k)
+    centroids_classical, assignments_classical = lloyd(X, k)
     end = time.time()
     f.write("\nLloyd's algorithm time elapsed: " + str(end - start))
     f.write("\nLloyd's algorithm solution: " + str(classical_solution))
@@ -107,28 +107,6 @@ def test3(N, k, r = 1.0, o = 0.1):
     f.write("\nQuantum annealing assignments: " \
         + equalsize.printAssignments(assignments_quantum) + "\n")
     f.close()
-
-def test4(N, k, r = 10.0, o = 0.1):
-    X = genClustered(N, k, r, o)
-    d = np.shape(X)[1]
-    p = np.transpose(np.array([-1.0, -0.5, -0.25, -0.125, 0.125, 0.25, 0.5, 1.0]))
-    model = anysize.genModel(X, k, p)
-
-    # get classical solution
-    print("Classical solution: ")
-
-    # get simulated annealing solution
-    sampleset_sim = dimod.SimulatedAnnealingSampler().sample(model)
-    print("\nSimulated Annealing Solution:" + str(sampleset_sim.first.sample))
-    centroids_sim = anysize.getCentroids(sampleset_sim.first.sample, p, d, k)
-    print("\n" + str(centroids_sim))
-
-    # get quantum annealing solution
-    # sampler_auto = EmbeddingComposite(DWaveSampler(solver={'qpu': True}))
-    # sampleset_quantum = sampler_auto.sample(model, num_reads=1000)
-    # print("\nQuantum Anealing Solution:" + str(sampleset_quantum.first.sample))
-    # centroids_quantum = anysize.getCentroids(sampleset_quantum.first.sample, p, d, k)
-    # print("\n" + str(centroids_quantum))
 
 def test5(N, k):
 
@@ -185,9 +163,12 @@ def test5(N, k):
         + equalsize.printAssignments(assignments_quantum) + "\n")
     f.close()
 
-def classical(X, k):
-    centroids = kmeans2(X, k)[0]
-    return equalsize.printCentroids(centroids)
+
+# Lloyd's algorithm
+# X - data set
+# k - number of clusters
+def lloyd(X, k):
+    return kmeans2(X, k)
 
 if __name__ == "__main__":
     test3(20, 2)
