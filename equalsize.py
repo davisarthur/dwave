@@ -32,22 +32,6 @@ def genD(X):
         for j in range(N):
             D[i][j] = np.square(np.linalg.norm(X[i] - X[j]))
     return D
- 
-# Generate valid row configurations of W
-# W - binary array (N x k)
-def validRow(W):
-    k = np.shape(W)[1]
-    configs = []
-    for i in range(k):
-        config = []
-        for j in range(k):
-            if i == j:
-                config.append(1)
-            else:
-                config.append(0)
-        config = tuple(config)
-        configs.append(config)
-    return configs
             
 # Generate qubo model
 # X - training data
@@ -55,10 +39,10 @@ def validRow(W):
 def genModel(X, k):
     N = np.shape(X)[0]         # number of points
     D = genD(X)                # distance matrix
-    D /= np.amax(D)            # normalized distance matrix
-    D /= k * 2.0
-    F = 2.0 * genF(N, k) / k     # column penalty matrix
-    G = 2.0 * genG(N, k) / N         # row penalty matrix
+    alpha = 2.0 * np.sum(find_small(D, N * (N // k - 1))) 
+    beta = 4.0 * np.sum(find_small(D, N * (N // k - 1)))
+    F = alpha * genF(N, k)   # column penalty matrix
+    G = beta * genG(N, k)   # row penalty matrix
 
     # create array of binary variable labels
     W = []
@@ -112,6 +96,31 @@ def genModel(X, k):
 
     return dimod.BinaryQuadraticModel(linear, quadratic, 0.0, dimod.Vartype.BINARY)
 
+# Get the smallest nonzero entries in a nonnegative 2D numpy array
+# D - 2D numpy array
+# N - number of elements returned as a 1D numpy array
+def find_small(D, N):
+    small = []
+    small_max = None
+    for i in range(np.shape(D)[0]):
+        for j in range(np.shape(D)[1]):
+            if D[i][j] == 0:
+                continue
+            if small_max == None:
+                small.append(D[i][j])
+                small_max = D[i][j]
+                continue
+            if len(small) < N:
+                small.append(D[i][j])
+                if small_max < D[i][j]:
+                    small_max = D[i][j]
+                continue
+            if D[i][j] < small_max:
+                small.remove(small_max)
+                small.append(D[i][j])
+                small_max = max(small)
+    return np.array(small)                
+
 # Embed QUBO model on D-Wave hardware, returns sampler
 # model - QUBO model to embed
 def embed(model):
@@ -121,8 +130,8 @@ def embed(model):
 # sampler - D-Wave sampler being used to solve the problem
 # model - QUBO model to embed
 # num_reads - number of reads during annealing
-def run_quantum(sampler, model, num_reads_in = 100):
-    return sampler.sample(model, num_reads = num_reads_in)
+def run_quantum(sampler, model, num_reads_in = 1000):
+    return sampler.sample(model, num_reads = num_reads_in, auto_scale = True)
 
 # Run QUBO problem using D-Wave's simulated annealing, returns sample set
 # model - QUBO model to embed
@@ -173,5 +182,10 @@ def test_sim():
     print()
     print(assignments)
 
+def test_small():
+    D = np.array([[0, 4, 10, 9], [4, 0, 10, 13], [10, 10, 0, 1], [9, 13, 1, 0]])
+    N = 4
+    print(find_small(D, N))
+
 if __name__ == "__main__":
-    test_sim()
+    test_small()

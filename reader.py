@@ -9,8 +9,8 @@ import matplotlib.patches as mpatches
 # 6-24-2020
 ##
 
-# Reader for test3 in test.py
-def read3(filename):
+# Reader for test in test.py
+def read(filename):
 
     # dictionary for extracted information
     info = {}
@@ -24,25 +24,18 @@ def read3(filename):
         line = f.readline()
 
     # read in data matrix X
-    arrX = f.readline().split("(")[1].split(")")[0].split(", ")
-    N = len(arrX)
-    d = len(arrX[0][1:-1].split())
-    X = np.zeros((N, d))
-    for i in range(N):
-        X[i] = np.array([float(j) for j in arrX[i][1:-1].split()])
-    info["X"] = X
+    f.readline()  # ignore label
+    info["X"] = read_array(f)
 
-    # read in Lloyd's algorithm time
+    # read in Classical algorithm time
     info["time_classical"] = float(f.readline().split(":")[1])
 
-    # read in Lloyds's algorithm centroids
-    centroids_classical_arr = f.readline().split("Centroid ")[1:]
-    k = len(centroids_classical_arr)
-    centroids_classical = np.zeros((k, d))
-    for i in range(k):
-        centroids_classical[i] = np.array([float(j) for j in \
-            centroids_classical_arr[i].split("[")[1].split("]")[0].split()])
-    info["centroids_classical"] = centroids_classical
+    # read in Classical algorithm centroids
+    f.readline()  # ignore label
+    info["centroids_classical"] = read_array(f)
+
+    # read in Classical algorithm assignments
+    info["assignments_classical"] = read_assignments(f)
 
     # read in QUBO preprocessing time
     info["time_preprocessing"] = float(f.readline().split(":")[1])
@@ -52,52 +45,53 @@ def read3(filename):
     info["time_postprocessing_sim"] = float(f.readline().split(":")[1])
 
     # read in simulated annealing centroids
-    centroids_sim_arr = f.readline().split("Centroid ")[1:]
-    centroids_sim = np.zeros((k, d))
-    for i in range(k):
-        centroids_sim[i] = np.array([float(j) for j in \
-            centroids_sim_arr[i].split("[")[1].split("]")[0].split()])
-    info["centroids_sim"] = centroids_sim
+    f.readline()    # ignore label
+    info["centroids_sim"] = read_array(f)
 
     # read in simulated annealing assignments
-    f.readline()
-    assignments_sim = []
-    for _ in range(k):
-        cluster_contents_arr = f.readline().split("(")[1].split(")")[0].split(", ")
-        cluster = np.zeros((len(cluster_contents_arr), d))
-        for j in range(len(cluster_contents_arr)):
-            cluster[j] = np.array([float(l) for l in \
-                cluster_contents_arr[j].split("[")[1].split("]")[0].split()])
-        assignments_sim.append(cluster)
-    info["assignments_sim"] = assignments_sim
+    info["assignments_sim"] = read_assignments(f)
 
     # read in quantum annealing/postprocessing time
+    info["time_embedding"] = float(f.readline().split(":")[1])
     info["time_annealing_quantum"] = float(f.readline().split(":")[1])
     info["time_postprocessing_quantum"] = float(f.readline().split(":")[1])
 
     # read in quantum annealing centroids
-    centroids_quantum_arr = f.readline().split("Centroid ")[1:]
-    centroids_quantum = np.zeros((k, d))
-    for i in range(k):
-        centroids_quantum[i] = np.array([float(j) for j in \
-            centroids_quantum_arr[i].split("[")[1].split("]")[0].split()])
-    info["centroids_quantum"] = centroids_quantum
+    f.readline()    # ignore label
+    info["centroids_quantum"] = read_array(f)
     
     # read in quantum annealing assignments
-    f.readline()
-    assignments_quantum = []
-    for _ in range(k):
-        cluster_contents_arr = f.readline().split("(")[1].split(")")[0].split(", ")
-        cluster = np.zeros((len(cluster_contents_arr), d))
-        for j in range(len(cluster_contents_arr)):
-            cluster[j] = np.array([float(l) for l in \
-                cluster_contents_arr[j].split("[")[1].split("]")[0].split()])
-        assignments_quantum.append(cluster)
-    info["assignments_quantum"] = assignments_quantum
+    info["assignments_quantum"] = read_assignments(f)
     
     # close the file and return dictionary
     f.close()
     return info
+
+# Reads and returns a numpy array from a file.
+# File must be on the first line of the array
+def read_array(f):
+    X_array = []
+    while True:
+        line = f.readline()
+        last = False
+        if "]]" in line:
+            last = True
+        point_array_str = line.split("[")[-1].split("]")[0].split()
+        point_array = []
+        for point in point_array_str:
+            point_array.append(float(point))
+        X_array.append(point_array)
+        if last:
+            break
+    return np.array(X_array)
+
+# Reads an assignment array from a file.
+# File must be on the line with the assignment
+def read_assignments(f):
+    assignment_array = []
+    for a in f.readline().split(":")[1].split("[")[-1].split("]")[0].split():
+        assignment_array.append(a)
+    return np.array(assignment_array)
 
 # Only valid for 2 dimensional data
 # X input data matrix
@@ -222,6 +216,5 @@ def compare_assignments():
     plt.show()
 
 if __name__ == "__main__":
-    compare_centroids()
-    compare_time()
-    compare_assignments()
+    info = read("test.txt")
+    print(info)
