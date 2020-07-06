@@ -38,11 +38,16 @@ def genD(X):
 # k - number of clusters
 def genModel(X, k):
     N = np.shape(X)[0]         # number of points
-    D = genD(X)                # distance matrix
-    alpha = 2.0 * np.sum(find_small(D, N * (N // k - 1))) 
-    beta = 4.0 * np.sum(find_small(D, N * (N // k - 1)))
+    D = genD(X)      # distance matrix
+    D /= np.sum(find_middle(D, k))
+    D *= 3.0 
+    alpha = 1.0
+    beta = 2.0
+    print(D)
     F = alpha * genF(N, k)   # column penalty matrix
     G = beta * genG(N, k)   # row penalty matrix
+    print(F)
+    print(G)
 
     # create array of binary variable labels
     W = []
@@ -96,6 +101,17 @@ def genModel(X, k):
 
     return dimod.BinaryQuadraticModel(linear, quadratic, 0.0, dimod.Vartype.BINARY)
 
+# Get the middle n entries in an N x N array
+# D - N x N numpy array
+# k - number of clusters
+def find_middle(D, k):
+    N = np.shape(D)[0]
+    n = N * (N // k - 1)
+    sorted = np.sort(D.flatten())
+    start = (N ** 2 - n) // 2
+    end = start + n
+    return sorted[start:end]
+
 # Get the smallest nonzero entries in a nonnegative 2D numpy array
 # D - 2D numpy array
 # N - number of elements returned as a 1D numpy array
@@ -145,7 +161,7 @@ def postprocess(X, w):
     d = np.shape(X)[1]
     k = len(w) // N
 
-    assignments = np.array([0] * N)
+    assignments = np.array([-1] * N)
     M = np.zeros((k, d))
     cluster_sizes = np.zeros(k)
     for i in range(N):
@@ -187,5 +203,13 @@ def test_small():
     N = 4
     print(find_small(D, N))
 
+def test_middle():
+    D = np.array([[0, 10, 10, 1, 34, 50], [10, 0, 4, 5, 20, 29], [10, 4, 0, 5, 8, 13], [1, 5, 5, 0, 25, 32], \
+        [34, 20, 8, 25, 0, 1], [50, 29, 13, 32, 1, 0]])
+    N = np.shape(D)[0]
+    k = 2
+    n = N * (N // k - 1)
+    print(find_middle(D, k))
+
 if __name__ == "__main__":
-    test_small()
+    test_quantum()

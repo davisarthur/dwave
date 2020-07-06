@@ -50,27 +50,6 @@ def genData(N, k, d, sigma = 1.0, max = 10.0):
     return datasets.make_blobs(n_samples = cluster_sizes(N, k), n_features = d, \
         centers = centersIn, cluster_std = sigma, center_box = (-max, max))
 
-# Generate 2d data that is naturally partitioned along a circle
-# N - number of points
-# k - number of clusters
-# r - radius of circle
-# o - std deviation between two points within a cluster
-def genClustered(N, k, r, o):
-    d = 2
-    delta = 2 * np.pi / k
-    X = np.zeros((N, d))
-    for i in range(k):
-        # append cluster center
-        X[i * N // k] = [r * np.cos(delta * i), r * np.sin(delta * i)]
-        # add N // k elements to each cluster
-        for j in range(N // k - 1):
-            X[i * N // k + j + 1] = [r * np.cos(delta * i) + o * np.random.normal(), \
-                r * np.sin(delta * i) + o * np.random.normal()]
-    # split the remaining elements as equally as possible
-    for i in range(N // k * k, N):
-        X[i] = [r * np.cos(delta * (i % k)), r * np.sin(delta * (i % k))]
-    return X
-
 # X - data to be printed
 def printData(X):
     output = "("
@@ -84,13 +63,13 @@ def printData(X):
     output += ")"
     return output
 
-def test(N, k, r = 1.0, o = 0.1):
+def test(N, k, d = 2, sigma = 1.0, max = 10.0):
 
     # data file
     f = open("test.txt", "a")
     f.write(str(datetime.now()))    # denote date and time that test begins
 
-    X = genClustered(N, k, r, o)
+    X = genData(N, k, d, sigma = 1.0, max = 10.0)[0]
     f.write("\nData: \n" + str(X)) 
 
     # get classical solution
@@ -148,4 +127,4 @@ def lloyd(X, k):
     return kmeans2(X, k)
 
 if __name__ == "__main__":
-    test(9, 3)
+    test(10, 2)
