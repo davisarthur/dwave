@@ -6,7 +6,6 @@ import anysize
 import balanced
 from datetime import datetime
 from dwave.system import DWaveSampler, EmbeddingComposite
-from scipy.cluster.vq import vq, kmeans2
 from sklearn import datasets
 
 ##
@@ -49,19 +48,6 @@ def genData(N, k, d, sigma = 1.0, max = 10.0):
                 break
     return datasets.make_blobs(n_samples = cluster_sizes(N, k), n_features = d, \
         centers = centersIn, cluster_std = sigma, center_box = (-max, max))
-
-# X - data to be printed
-def printData(X):
-    output = "("
-    first = True
-    for i in range(np.shape(X)[0]):
-        if not first:
-            output += ", " + str(X[i])
-        else:
-            output += str(X[i])
-            first = False
-    output += ")"
-    return output
 
 def test(N, k, d = 2, sigma = 1.0, max = 10.0):
 
@@ -120,11 +106,5 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0):
     f.write("\nQuantum annealing assignments: " + str(assignments_quantum) + "\n\n")
     f.close()
 
-# Lloyd's algorithm
-# X - data set
-# k - number of clusters
-def lloyd(X, k):
-    return kmeans2(X, k)
-
 if __name__ == "__main__":
-    test(10, 2)
+    test(16, 2)

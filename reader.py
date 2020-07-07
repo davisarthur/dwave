@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+from sklearn import metrics
 
 ##
 # Davis Arthur
@@ -215,6 +216,18 @@ def compare_assignments():
     plt.ylim(-1.5, 1.5)
     plt.show()
 
+def silhouette_analysis(X, assignments):
+    return metrics.silhouette_score(X, assignments)
+
+def silhouette_plot():
+    data = [[0.744, 0.874, 0.864], [0.744, 0.874, 0.516], [0.744, 0.417, 0.027]]
+    X = np.arange(3)
+    fig = plt.figure()
+    ax = fig.add_axes([0,0,1,1])
+    ax.bar(X + 0.00, data[0], color = 'b', width = 0.25)
+    ax.bar(X + 0.25, data[1], color = 'g', width = 0.25)
+    ax.bar(X + 0.50, data[2], color = 'r', width = 0.25)
+    plt.show()
+
 if __name__ == "__main__":
-    info = read("test.txt")
-    print(info)
+    silhouette_plot()
