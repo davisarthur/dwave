@@ -1,0 +1,56 @@
+2020-07-07 16:18:31.835283
+(N, k): (20, 4)
+Classical algorithm time elapsed: 0.008176565170288086
+QUBO Preprocessing time elapsed: 0.020249605178833008
+Quantum embedding time elapsed: 0.41071605682373047
+
+2020-07-07 16:19:40.197764
+(N, k): (50, 4)
+Classical algorithm time elapsed: 0.07314801216125488
+QUBO Preprocessing time elapsed: 0.12125730514526367
+Quantum embedding time elapsed: 0.41750550270080566
+
+2020-07-07 16:19:48.700566
+(N, k): (100, 4)
+Classical algorithm time elapsed: 0.29081296920776367
+QUBO Preprocessing time elapsed: 0.5331711769104004
+Quantum embedding time elapsed: 0.37093400955200195
+
+2020-07-07 16:19:59.462350
+(N, k): (200, 4)
+Classical algorithm time elapsed: 1.5727729797363281
+QUBO Preprocessing time elapsed: 2.013253688812256
+Quantum embedding time elapsed: 0.40416717529296875
+
+2020-07-07 16:20:10.369348
+(N, k): (400, 4)
+Classical algorithm time elapsed: 7.731783628463745
+QUBO Preprocessing time elapsed: 7.99306321144104
+Quantum embedding time elapsed: 0.4155924320220947
+
+2020-07-07 16:21:57.928671
+(N, k): (50, 4)
+Classical algorithm time elapsed: 0.0703575611114502
+QUBO Preprocessing time elapsed: 0.12226152420043945
+Quantum embedding time elapsed: 0.43660712242126465
+
+2020-07-07 16:22:52.831140(N, k): (50, 4)
+Classical algorithm time elapsed: 0.07439804077148438
+QUBO Preprocessing time elapsed: 0.12251973152160645
+Quantum embedding time elapsed: 0.42966222763061523
+
+2020-07-07 16:30:55.739112(N, k): (800, 4)
+Classical algorithm time elapsed: 24.749245405197144
+QUBO Preprocessing time elapsed: 32.67331552505493
+Quantum embedding time elapsed: 0.4749794006347656
+
+2020-07-07 16:33:14.762000(N, k): (1600, 4)
+Classical algorithm time elapsed: 74.09769463539124
+QUBO Preprocessing time elapsed: 135.25610089302063
+Quantum embedding time elapsed: 0.6699364185333252
+
+2020-07-07 22:03:21.400146(N, k): (400, 4)
+Classical algorithm time elapsed: 6.320837020874023
+QUBO Preprocessing time elapsed: 2.716723680496216
+Quantum embedding time elapsed: 0.42563819885253906
+

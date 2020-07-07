@@ -106,5 +106,35 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0):
     f.write("\nQuantum annealing assignments: " + str(assignments_quantum) + "\n\n")
     f.close()
 
+def test_time(N, k, d = 2, sigma = 1.0, max = 10.0):
+    # data file
+    f = open("test_time.txt", "a")
+    f.write(str(datetime.now()))    # denote date and time that test begins
+
+    X = genData(N, k, d, sigma = 1.0, max = 10.0)[0]
+    f.write("(N, k): " + "(" + str(N) + ", " + str(k) + ")")
+    # f.write("\nData: \n" + str(X)) 
+
+    # get classical solution
+    start = time.time()
+    centroids_classical, assignments_classical = balanced.balanced_kmeans(X, k)
+    end = time.time()
+    f.write("\nClassical algorithm time elapsed: " + str(end - start))
+    # f.write("\nClassical algorithm centroids:\n" + str(centroids_classical))
+    # f.write("\nClassical algorithm assignments: " + str(assignments_classical))
+
+    # generate QUBO model
+    start = time.time()
+    model = equalsize.genModel2(X, k)
+    end = time.time()
+    f.write("\nQUBO Preprocessing time elapsed: " + str(end - start))
+
+    # embed on the D-Wave
+    start = time.time()
+    sampler_quantum = equalsize.embed(model)
+    end = time.time()
+    f.write("\nQuantum embedding time elapsed: " + str(end - start) + "\n\n")
+    f.close()
+
 if __name__ == "__main__":
-    test(8, 4)
+    test_time(400, 4)

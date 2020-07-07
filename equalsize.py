@@ -32,7 +32,41 @@ def genD(X):
         for j in range(N):
             D[i][j] = np.square(np.linalg.norm(X[i] - X[j]))
     return D
-            
+
+# Generate Q
+# N - number of points
+# k - number of clusters
+def genQ(N, k):
+    Q = np.zeros((N * k, N * k))
+    for i in range(N * k):
+        Q[i][N * (i % k) + i // k] = 1.0
+    return Q    
+
+# Generate qubo model
+# X - training data
+# k - number of clusters
+def genA(X, k, alpha, beta):
+    N = np.shape(X)[0]      # number of points
+    D = genD(X)             # distance matrix
+    D /= np.sum(find_middle(D, k))
+    D *= 2.0
+    F = genF(N, k)          # column penalty matrix
+    G = genG(N, k)          # row penalty matrix
+    Q = genQ(N, k)
+    return np.kron(np.identity(k), D + alpha * F) \
+        + np.matmul(np.matmul(np.transpose(Q), np.kron(np.identity(N), beta * G)), Q)
+
+# Generate QUBO model
+# X - input data
+# k - number of clusters
+def genModel2(X, k, alpha = None, beta = None):
+    N = np.shape(X)[0]
+    if alpha == None:
+        alpha = 1.0 / k
+    if beta == None:
+        beta = 1.0 / N
+    return dimod.as_bqm(genA(X, k, alpha, beta), dimod.BINARY)
+
 # Generate qubo model
 # X - training data
 # k - number of clusters
@@ -126,6 +160,28 @@ def run_quantum(sampler, model, num_reads_in = 100):
 def run_sim(model):
     return dimod.SimulatedAnnealingSampler().sample(model)
 
+def postprocess2(X, w):
+    N = np.shape(X)[0]
+    d = np.shape(X)[1]
+    k = len(w) // N
+
+    assignments = np.array([-1] * N)
+    M = np.zeros((k, d))
+    cluster_sizes = np.zeros(k)
+    for i in range(N):
+        for j in range(k):
+            if w[i + j * N] == 1:
+                M[j] += X[i]
+                cluster_sizes[j] += 1.0
+                assignments[i] = j
+                break
+
+    for i in range(k):
+        M[i] /= cluster_sizes[i]
+
+    return M, assignments
+
+
 # Postprocessing of solution from annealing
 # Note: if a point is assigned to more than one cluster, it will belong to the lower cluster
 def postprocess(X, w):
@@ -153,9 +209,13 @@ def test_quantum():
     X = np.array([[1, 2], [1, 3], [1, 4], [9, 5], [9, 6]])
     k = 2
     model = genModel(X, k)
+    print(model.quadratic)
+    model2 = genModel2(X, k)
+    print(model2.quadratic)
     sampler = embed(model)
     sample_set = run_quantum(sampler, model)
-    M, assignments = postprocess(X, sample_set.first.sample)
+    print(sample_set.first.sample)
+    M, assignments = postprocess2(X, sample_set.first.sample)
     print(M)
     print()
     print(assignments)
@@ -164,16 +224,17 @@ def test_sim():
     X = np.array([[1, 2], [1, 3], [1, 4], [9, 5], [9, 6]])
     k = 2
     model = genModel(X, k)
-    sample_set = run_sim(model)
-    M, assignments = postprocess(X, sample_set.first.sample)
+    model2 = genModel2(X, k)
+    print(model.quadratic)
+    print()
+    print(model2.quadratic)
+    sample_set = run_sim(model2)
+    print(sample_set.first.sample)
+    
+    M, assignments = postprocess2(X, sample_set.first.sample)
     print(M)
     print()
     print(assignments)
-
-def test_small():
-    D = np.array([[0, 4, 10, 9], [4, 0, 10, 13], [10, 10, 0, 1], [9, 13, 1, 0]])
-    N = 4
-    print(find_small(D, N))
 
 def test_middle():
     D = np.array([[0, 10, 10, 1, 34, 50], [10, 0, 4, 5, 20, 29], [10, 4, 0, 5, 8, 13], [1, 5, 5, 0, 25, 32], \
@@ -183,5 +244,8 @@ def test_middle():
     n = N * (N // k - 1)
     print(find_middle(D, k))
 
+def test_Q():
+    print(genQ(4, 2))
+
 if __name__ == "__main__":
-    test_quantum()
+    test_sim()
