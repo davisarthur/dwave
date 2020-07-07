@@ -220,14 +220,24 @@ def silhouette_analysis(X, assignments):
     return metrics.silhouette_score(X, assignments)
 
 def silhouette_plot():
-    data = [[0.744, 0.874, 0.864], [0.744, 0.874, 0.516], [0.744, 0.417, 0.027]]
+    data = [[0.843, 0.807, 0.798, 0.893, 0.901, 0.247], [0.843, 0.807, 0.798, 0.893, 0.901, 0.361], \
+        [0.843, 0.517, -0.318, 0.719, -0.380, 0.098]]
     X = np.arange(3)
     fig = plt.figure()
     ax = fig.add_axes([0,0,1,1])
     ax.bar(X + 0.00, data[0], color = 'b', width = 0.25)
     ax.bar(X + 0.25, data[1], color = 'g', width = 0.25)
     ax.bar(X + 0.50, data[2], color = 'r', width = 0.25)
+    plt.ylabel("Average Silhouette")
+    plt.title("Time Analysis (" + str(N) + " points, " + str(k) \
+        + " clusters)")
+    ind = np.arange(n)
+    plt.xticks(ind, ("(6, 3)", "(10, 2)", "(12, 2)", "(9, 3)", "(14, 2)", "(8, 4)"))
+    ax.set_yticks(np.arange(-11, 11, 0.1))
     plt.show()
 
 if __name__ == "__main__":
-    silhouette_plot()
+    info = read("test.txt")
+    print("classical: " + str(silhouette_analysis(info["X"], info["assignments_classical"])))
+    print("simulated: " + str(silhouette_analysis(info["X"], info["assignments_sim"])))
+    print("quantum: " + str(silhouette_analysis(info["X"], info["assignments_quantum"])))

@@ -39,9 +39,10 @@ def genD(X):
 def genModel(X, k):
     N = np.shape(X)[0]              # number of points
     D = genD(X)                     # distance matrix
-    D /= np.sum(find_middle(D, k)) * 2
-    alpha = 0.5
-    beta = 2.5 / 2
+    D /= np.sum(find_middle(D, k))
+    D *= 2
+    alpha = 1.0 / k
+    beta = 1.0 / N
     F = alpha * genF(N, k)          # column penalty matrix
     G = beta * genG(N, k)           # row penalty matrix
 

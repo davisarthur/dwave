@@ -482,3 +482,802 @@ Quantum annealing centroids:
  [5.69672633 8.56619163]]
 Quantum annealing assignments: [1 1 1 0 0 1 1 0 0 0 0 0 1 1 1 0]
 
+2020-07-07 14:02:00.126885
+Data: 
+[[-8.62692999 -7.96447579]
+ [-6.7106905  -9.72671572]
+ [-8.38390265 -9.05313566]
+ [ 6.99260966  5.11264158]
+ [-5.91349421 -9.57430694]
+ [-5.21086352 -9.76349498]
+ [ 8.25827301  4.50424998]
+ [ 6.54952177  4.5396254 ]
+ [ 7.59682219  5.96323078]
+ [ 9.13400176  7.01723611]
+ [-6.67018502 -8.24834471]
+ [-6.88882201 -7.55434133]
+ [ 7.83347203  5.72053791]
+ [-8.60360518 -7.89885938]
+ [ 8.09295647  6.18133556]
+ [ 6.97297781  5.77764475]]
+Classical algorithm time elapsed: 0.0054361820220947266
+Classical algorithm centroids:
+[[-7.12606163 -8.72295931]
+ [ 7.67882934  5.60206276]]
+Classical algorithm assignments: [0 0 0 1 0 0 1 1 1 1 0 0 1 0 1 1]
+QUBO Preprocessing time elapsed: 0.007639646530151367
+Simulated annealing time elapsed: 7.1799538135528564
+Simulated postprocessing time elapsed: 0.00047588348388671875
+Simulated annealing centroids:
+[[ 6.06556635  3.76619419]
+ [-5.51279865 -6.88709075]]
+Simulated annealing assignments: [1 1 1 1 0 1 0 0 0 0 1 1 0 1 0 0]
+Quantum embedding time elapsed: 0.5884561538696289
+Quantum annealing time elapsed: 0.034942
+Quantum postprocessing time elapsed: 0.00047779083251953125
+Quantum annealing centroids:
+[[ 5.99518727  3.81859464]
+ [-5.44241957 -6.93949119]]
+Quantum annealing assignments: [1 1 1 0 1 0 1 0 0 0 1 1 0 1 0 0]
+
+2020-07-07 14:03:10.174749
+Data: 
+[[ 9.5981861   4.41419644]
+ [ 8.10449697  1.98642002]
+ [-1.40726752 -6.94085224]
+ [-1.80231875 -9.83136999]
+ [-1.33678934 -8.07334649]
+ [-0.79180192 -7.6128508 ]
+ [ 9.65725992  2.15095437]
+ [ 9.61955528  2.71600828]
+ [ 0.13439836 -6.99800837]
+ [-1.90339984 -6.50627317]
+ [ 9.43077416  1.0205228 ]
+ [ 0.60934461 -7.57694362]
+ [ 7.32365598  1.36269721]
+ [-1.48736253 -8.78680573]
+ [ 8.85277756  1.40546668]
+ [ 9.45110416 -0.47466013]]
+Classical algorithm time elapsed: 0.005544900894165039
+Classical algorithm centroids:
+[[ 9.00472626  1.82270071]
+ [-0.99814962 -7.7908063 ]]
+Classical algorithm assignments: [0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0]
+QUBO Preprocessing time elapsed: 0.008459806442260742
+Simulated annealing time elapsed: 7.20392632484436
+Simulated postprocessing time elapsed: 0.0005519390106201172
+Simulated annealing centroids:
+[[ 1.42535731 -5.300785  ]
+ [ 6.58121934 -0.66732059]]
+Simulated annealing assignments: [1 1 0 0 0 0 0 1 0 0 1 1 1 1 0 1]
+Quantum embedding time elapsed: 0.5708215236663818
+Quantum annealing time elapsed: 0.034878
+Quantum postprocessing time elapsed: 0.0004820823669433594
+Quantum annealing centroids:
+[[ 4.1605845  -2.94230153]
+ [ 3.03885776 -4.15584636]]
+Quantum annealing assignments: [ 0  1 -1  1  1  0 -1  1  0  0  0  1 -1  0  0  0]
+
+2020-07-07 14:05:14.495931
+Data: 
+[[-7.72885453 -3.72917799]
+ [-5.68914966 -8.67671321]
+ [-9.08405561 -6.05397657]
+ [-6.95034286 -7.63107819]
+ [-3.3993238  -6.54424014]
+ [-8.68922864 -6.80467447]
+ [-5.98079169 -7.03708886]
+ [-4.8110307  -5.59337875]
+ [-3.28919953 -5.3850185 ]
+ [-6.31773791 -7.64856919]
+ [-6.87552846 -4.61772839]
+ [-3.62106253 -6.25523179]
+ [-6.28339484 -7.0715451 ]
+ [-4.86520873 -5.59718205]
+ [-6.75949925 -7.61476617]
+ [-3.89693452 -5.51631901]]
+Classical algorithm time elapsed: 0.005422830581665039
+Classical algorithm centroids:
+[[-6.15500509 -5.41218197]
+ [-5.62516282 -7.30990408]]
+Classical algorithm assignments: [0 1 0 1 1 0 1 0 0 1 0 1 1 0 1 0]
+QUBO Preprocessing time elapsed: 0.0074689388275146484
+Simulated annealing time elapsed: 7.140776872634888
+Simulated postprocessing time elapsed: 0.0005133152008056641
+Simulated annealing centroids:
+[[-6.67586001 -7.63147118]
+ [-6.13209326 -7.05431698]]
+Simulated annealing assignments: [-1 -1 -1  0 -1 -1  1 -1 -1  0 -1 -1  1 -1  0 -1]
+Quantum embedding time elapsed: 0.5859932899475098
+Quantum annealing time elapsed: 0.034888
+Quantum postprocessing time elapsed: 0.0007619857788085938
+Quantum annealing centroids:
+[[-3.62106253 -6.25523179]
+ [-4.8110307  -5.59337875]]
+Quantum annealing assignments: [-1 -1 -1 -1 -1 -1 -1  1 -1 -1 -1  0 -1 -1 -1 -1]
+
+2020-07-07 14:07:07.679420
+Data: 
+[[-0.14979477  4.05473334]
+ [-4.95258309  6.06168432]
+ [-4.90674793  6.67459886]
+ [-3.82057075  6.57361323]
+ [ 0.69363135  2.29852823]
+ [ 2.03362418  3.0827312 ]
+ [ 2.74713179  2.83642484]
+ [-6.52974201  5.87223354]
+ [-5.27903236  3.52457345]
+ [-4.33834023  3.49532012]
+ [ 1.35869857  2.53365517]
+ [ 0.65878398  2.02800719]
+ [ 0.91968829  1.70075703]
+ [-4.43947629  6.15084784]
+ [ 0.02777601  3.97095482]
+ [-7.11645496  4.89428457]]
+Classical algorithm time elapsed: 0.005186796188354492
+Classical algorithm centroids:
+[[-5.17286845  5.40589449]
+ [ 1.03619243  2.81322398]]
+Classical algorithm assignments: [1 0 0 0 1 1 1 0 0 0 1 1 1 0 1 0]
+QUBO Preprocessing time elapsed: 0.007648468017578125
+Simulated annealing time elapsed: 7.167462110519409
+Simulated postprocessing time elapsed: 0.0005447864532470703
+Simulated annealing centroids:
+[[ 0.75736787  2.00909749]
+ [-4.7662691   6.29571034]]
+Simulated annealing assignments: [-1  1  1 -1  0 -1 -1 -1 -1 -1 -1  0  0  1 -1 -1]
+Quantum embedding time elapsed: 0.5586075782775879
+Quantum annealing time elapsed: 0.034774
+Quantum postprocessing time elapsed: 0.0005233287811279297
+Quantum annealing centroids:
+[[ 0.69363135  2.29852823]
+ [-4.92966551  6.36814159]]
+Quantum annealing assignments: [-1  1  1 -1  0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+
+2020-07-07 14:08:43.465248
+Data: 
+[[-7.73133538  1.28317491]
+ [-0.61165463  7.69470433]
+ [-6.19310993  1.21693335]
+ [-5.20695089  0.33708252]
+ [-0.65282337  6.69626558]
+ [-0.94098432  6.12920571]
+ [-1.52336476  8.2285346 ]
+ [-0.997321    5.29868954]
+ [-5.21391198  0.88800975]
+ [-4.98876077 -0.4448874 ]
+ [ 0.29488019  6.63823033]
+ [-3.12927822  4.66395032]
+ [-5.51786027 -0.69321579]
+ [-1.31602503  6.20905584]
+ [-5.66740671  0.49873097]
+ [-6.97946014  1.77261174]]
+Classical algorithm time elapsed: 0.005446195602416992
+Classical algorithm centroids:
+[[-5.93734951  0.60730501]
+ [-1.10957139  6.44482953]]
+Classical algorithm assignments: [0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 0]
+QUBO Preprocessing time elapsed: 0.007422685623168945
+Simulated annealing time elapsed: 7.2699196338653564
+Simulated postprocessing time elapsed: 0.0004658699035644531
+Simulated annealing centroids:
+[[-5.93734951  0.60730501]
+ [-0.82104185  6.69924085]]
+Simulated annealing assignments: [ 0  1  0  0  1  1  1  1  0  0  1 -1  0  1  0  0]
+Quantum embedding time elapsed: 0.5688655376434326
+Quantum annealing time elapsed: 0.03506
+Quantum postprocessing time elapsed: 0.0005147457122802734
+Quantum annealing centroids:
+[[-4.13631072  2.43883386]
+ [-3.113437    4.75885626]]
+Quantum annealing assignments: [ 1  1 -1 -1  0  0 -1  1  0  0 -1  0  0 -1  0  0]
+
+2020-07-07 14:09:37.994082
+Data: 
+[[ 4.68498961  7.83208316]
+ [-1.15269355  5.6296875 ]
+ [ 3.99098693 -8.87905562]
+ [ 0.46841133  6.60563829]
+ [ 5.91490864  9.28155746]
+ [ 5.18830292  7.57222431]
+ [ 2.74716114 -9.50887777]
+ [ 3.48168978 -9.19512706]
+ [ 1.22668972  7.08746538]]
+Classical algorithm time elapsed: 0.0019540786743164062
+Classical algorithm centroids:
+[[ 5.26273372  8.22862164]
+ [ 0.1808025   6.44093039]
+ [ 3.40661262 -9.19435348]]
+Classical algorithm assignments: [0 1 2 1 0 0 2 2 1]
+QUBO Preprocessing time elapsed: 0.0044689178466796875
+Simulated annealing time elapsed: 4.208710670471191
+Simulated postprocessing time elapsed: 0.00043702125549316406
+Simulated annealing centroids:
+[[ 0.1808025   6.44093039]
+ [ 3.40661262 -9.19435348]
+ [ 5.26273372  8.22862164]]
+Simulated annealing assignments: [2 0 1 0 2 2 1 1 0]
+Quantum embedding time elapsed: 0.3917379379272461
+Quantum annealing time elapsed: 0.034897
+Quantum postprocessing time elapsed: 0.00048470497131347656
+Quantum annealing centroids:
+[[ 2.82835713  7.0889313 ]
+ [ 3.48168978 -9.19512706]
+ [ 1.22668972  7.08746538]]
+Quantum annealing assignments: [-1 -1 -1  0 -1  0 -1  1  2]
+
+2020-07-07 14:10:25.046076
+Data: 
+[[ 6.29059004 -6.51147041]
+ [ 5.22219264 -7.40019898]
+ [ 6.66948308 -8.09640131]
+ [-5.24728783  3.88722353]
+ [-4.74011901 -4.83065872]
+ [-4.27553592 -3.74763098]
+ [-4.71819002 -1.23634091]
+ [-7.26907766  4.665757  ]
+ [-3.91668877  3.37909342]]
+Classical algorithm time elapsed: 0.002041339874267578
+Classical algorithm centroids:
+[[ 6.06075525 -7.33602357]
+ [-4.57794832 -3.27154354]
+ [-5.47768475  3.97735798]]
+Classical algorithm assignments: [0 0 0 2 1 1 1 2 2]
+QUBO Preprocessing time elapsed: 0.0036056041717529297
+Simulated annealing time elapsed: 4.142831802368164
+Simulated postprocessing time elapsed: 0.00046753883361816406
+Simulated annealing centroids:
+[[ 6.06075525 -7.33602357]
+ [-5.47768475  3.97735798]
+ [-4.57794832 -3.27154354]]
+Simulated annealing assignments: [0 0 0 1 2 2 2 1 1]
+Quantum embedding time elapsed: 0.5877642631530762
+Quantum annealing time elapsed: 0.034829
+Quantum postprocessing time elapsed: 0.00044989585876464844
+Quantum annealing centroids:
+[[-4.72915451 -3.03349982]
+ [-4.5819883   3.63315847]
+ [-7.26907766  4.665757  ]]
+Quantum annealing assignments: [-1 -1 -1  1  0 -1  0  2  1]
+
+2020-07-07 14:13:01.922908
+Data: 
+[[  6.94844243  -2.19956134]
+ [ -8.44307453   9.67172238]
+ [-10.59198512   9.47514994]
+ [  4.65528365  -1.42605032]
+ [ -5.98594458  -8.22395581]
+ [  7.06383152  -3.64477829]
+ [ -6.02056211  -7.05247128]
+ [ -6.38105535  -7.7762774 ]
+ [ -8.60152334   6.68361008]]
+Classical algorithm time elapsed: 0.0021321773529052734
+Classical algorithm centroids:
+[[-9.21219433  8.6101608 ]
+ [-6.12918735 -7.68423483]
+ [ 6.2225192  -2.42346332]]
+Classical algorithm assignments: [2 0 0 2 1 2 1 1 0]
+QUBO Preprocessing time elapsed: 0.004709959030151367
+Simulated annealing time elapsed: 4.214138746261597
+Simulated postprocessing time elapsed: 0.0005955696105957031
+Simulated annealing centroids:
+[[ 6.2225192  -2.42346332]
+ [-9.21219433  8.6101608 ]
+ [-6.12918735 -7.68423483]]
+Simulated annealing assignments: [0 1 1 0 2 0 2 2 1]
+Quantum embedding time elapsed: 0.5955660343170166
+Quantum annealing time elapsed: 0.034847
+Quantum postprocessing time elapsed: 0.00046181678771972656
+Quantum annealing centroids:
+[[ 1.14009628  1.2102701 ]
+ [-7.21450956  0.72388329]
+ [-2.58211127 -5.41826633]]
+Quantum annealing assignments: [ 0  1  0  2  1  0  2  2 -1]
+
+2020-07-07 14:14:11.139158
+Data: 
+[[ 6.90424628  4.69035536]
+ [-6.12163728 -4.07278137]
+ [ 7.52483044  5.38374498]
+ [ 7.67454817  5.24427726]
+ [ 4.89664525  5.41786957]
+ [-7.93504557 -4.54008487]
+ [-8.52515041 -4.63607982]
+ [-8.34045474 -5.24359919]
+ [-6.19792728 -4.3129457 ]
+ [ 6.93695981  4.77131638]
+ [-6.00617354 -6.48166785]
+ [ 3.58120759  4.41040066]
+ [ 6.28345934  5.88744882]
+ [ 6.48762842  3.16189118]
+ [-8.25321912 -5.72546902]
+ [-9.69884614 -6.46965239]]
+Classical algorithm time elapsed: 0.0056569576263427734
+Classical algorithm centroids:
+[[ 6.28619066  4.87091303]
+ [-7.63480676 -5.18528503]]
+Classical algorithm assignments: [0 1 0 0 0 1 1 1 1 0 1 0 0 0 1 1]
+QUBO Preprocessing time elapsed: 0.007874250411987305
+Simulated annealing time elapsed: 7.334723472595215
+Simulated postprocessing time elapsed: 0.0004611015319824219
+Simulated annealing centroids:
+[[ 2.95337693  2.55324302]
+ [-4.30199303 -2.86761502]]
+Simulated annealing assignments: [0 1 0 0 0 1 1 0 1 0 1 1 0 1 0 1]
+Quantum embedding time elapsed: 0.6081171035766602
+Quantum annealing time elapsed: 0.034885
+Quantum postprocessing time elapsed: 0.0005691051483154297
+Quantum annealing centroids:
+[[ 1.56076021  1.1019142 ]
+ [-2.90937631 -1.4162862 ]]
+Quantum annealing assignments: [1 0 0 0 0 1 1 1 1 1 0 1 0 0 0 1]
+
+2020-07-07 14:15:03.698008
+Data: 
+[[ -4.37721943  -7.51907625]
+ [  4.38860198  -1.96093777]
+ [  4.10728533  -2.22179999]
+ [  1.8753955   -1.82307002]
+ [  3.73208365  -0.71090087]
+ [  3.99287148  -1.8162006 ]
+ [ -6.59672749  -9.32853004]
+ [ -6.315119    -8.2014454 ]
+ [  2.17542778  -1.92753379]
+ [ -5.47267347  -9.96144754]
+ [  4.24152443  -2.33525442]
+ [  2.67092587  -1.7255974 ]
+ [ -7.01030762  -7.56425656]
+ [ -5.47199337  -9.42970997]
+ [ -5.60062927  -6.34608493]
+ [ -4.04708909 -10.20321702]]
+Classical algorithm time elapsed: 0.0053844451904296875
+Classical algorithm centroids:
+[[ 3.3980145  -1.81516186]
+ [-5.61146984 -8.56922096]]
+Classical algorithm assignments: [1 0 0 0 0 0 1 1 0 1 0 0 1 1 1 1]
+QUBO Preprocessing time elapsed: 0.007903575897216797
+Simulated annealing time elapsed: 7.248059272766113
+Simulated postprocessing time elapsed: 0.0004696846008300781
+Simulated annealing centroids:
+[[-3.58223476 -7.14044576]
+ [ 1.36877942 -3.24393706]]
+Simulated annealing assignments: [1 1 1 1 1 1 0 0 0 0 1 0 1 0 0 0]
+Quantum embedding time elapsed: 0.3929464817047119
+Quantum annealing time elapsed: 0.034927
+Quantum postprocessing time elapsed: 0.0004909038543701172
+Quantum annealing centroids:
+[[-0.2916911  -4.55361606]
+ [-2.13222462 -6.16729084]]
+Quantum annealing assignments: [ 0  0  0  1  0  1 -1  0 -1  0  0  0  1  1  0  1]
+
+2020-07-07 14:15:55.987829
+Data: 
+[[-9.24028929 10.23246607]
+ [-6.90316828 10.78469801]
+ [-3.10209203  7.81599826]
+ [-8.38504574 10.76767588]
+ [-2.99838962  7.26538522]
+ [-4.05759014  6.86077721]
+ [-7.01532461  9.41781816]
+ [-1.31595929  5.74151983]
+ [-8.00857429 11.11802326]
+ [-7.61524939 10.12084829]
+ [-8.36028056  9.48801746]
+ [-4.36525979  6.53024334]
+ [-2.70735328  6.45067339]
+ [-3.13924133  8.10133158]
+ [-7.99802132  8.90506836]
+ [-3.50124796  7.35571927]]
+Classical algorithm time elapsed: 0.005347728729248047
+Classical algorithm centroids:
+[[-3.14839168  7.01520601]
+ [-7.94074419 10.10432694]]
+Classical algorithm assignments: [1 1 0 1 0 0 1 0 1 1 1 0 0 0 1 0]
+QUBO Preprocessing time elapsed: 0.0072021484375
+Simulated annealing time elapsed: 7.400615215301514
+Simulated postprocessing time elapsed: 0.0005412101745605469
+Simulated annealing centroids:
+[[-4.54505861  8.40626828]
+ [-6.54407726  8.71326467]]
+Simulated annealing assignments: [1 0 0 0 0 1 0 0 1 1 1 1 1 0 1 0]
+Quantum embedding time elapsed: 0.5783848762512207
+Quantum annealing time elapsed: 0.034924
+Quantum postprocessing time elapsed: 0.0004868507385253906
+Quantum annealing centroids:
+[[-7.3773284   9.63403894]
+ [-3.71180747  7.48549401]]
+Quantum annealing assignments: [0 0 1 0 1 1 0 1 1 0 0 1 1 1 0 0]
+
+2020-07-07 14:20:24.794392
+Data: 
+[[ 4.72418225  7.80950125]
+ [ 0.60629632 -1.91002828]
+ [-0.5195628  -3.05558527]
+ [ 4.71685687  8.623367  ]
+ [ 4.48965148  6.99216051]
+ [-0.86837817 -2.29982802]
+ [ 3.98304165 10.11703173]
+ [ 3.99730396  7.25339483]
+ [ 4.7662172   8.93705843]
+ [-0.32316289 -3.19319414]
+ [-1.09132811 -4.20925009]
+ [ 2.73218952  8.39734585]
+ [ 1.16634358  8.04021244]
+ [-0.25912459 -2.7202339 ]
+ [-0.31820459 -3.01028296]
+ [-0.11693099 -2.76214908]]
+Classical algorithm time elapsed: 0.008053064346313477
+Classical algorithm centroids:
+[[-0.36129948 -2.89506897]
+ [ 3.82197331  8.271259  ]]
+Classical algorithm assignments: [1 0 0 1 1 0 1 1 1 0 0 1 1 0 0 0]
+QUBO Preprocessing time elapsed: 0.007524251937866211
+Simulated annealing time elapsed: 7.275952339172363
+Simulated postprocessing time elapsed: 0.0004794597625732422
+Simulated annealing centroids:
+[[1.3911686  2.56620891]
+ [2.06950524 2.80998113]]
+Simulated annealing assignments: [1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1]
+Quantum embedding time elapsed: 0.5959033966064453
+Quantum annealing time elapsed: 0.034864
+Quantum postprocessing time elapsed: 0.0004994869232177734
+Quantum annealing centroids:
+[[ 3.33655392  7.15848541]
+ [ 0.12411991 -1.78229537]]
+Quantum annealing assignments: [0 0 1 0 1 1 0 0 0 1 1 0 0 1 1 1]
+
+2020-07-07 14:22:02.135993
+Data: 
+[[ -8.88290928  -2.89328497]
+ [ -4.63395211   0.84880623]
+ [ -8.96248216  -5.13640698]
+ [ -3.89679855   0.21856475]
+ [-10.14903664  -4.31215689]
+ [-11.65492513  -4.90561726]
+ [ -3.74700371  -1.31188933]
+ [ -9.72236344  -4.86225329]
+ [ -3.51162737  -3.9773041 ]
+ [ -9.91049716  -4.59082331]
+ [ -5.60673158  -1.6660236 ]
+ [ -4.50012985  -1.7755873 ]
+ [ -8.60212822  -3.58055896]
+ [ -4.34078526  -2.94331204]
+ [-10.11786591  -4.86526108]
+ [ -4.8113891   -1.5631742 ]]
+Classical algorithm time elapsed: 0.0055696964263916016
+Classical algorithm centroids:
+[[-9.75027599 -4.39329534]
+ [-4.38105219 -1.52123995]]
+Classical algorithm assignments: [0 1 0 1 0 0 1 0 1 0 1 1 0 1 0 1]
+QUBO Preprocessing time elapsed: 0.009300470352172852
+Simulated annealing time elapsed: 7.204941987991333
+Simulated postprocessing time elapsed: 0.0005211830139160156
+Simulated annealing centroids:
+[[-6.68913212 -2.40156848]
+ [-7.44219607 -3.51296681]]
+Simulated annealing assignments: [1 0 1 0 1 0 0 0 1 0 0 1 1 0 1 1]
+Quantum embedding time elapsed: 0.5733153820037842
+Quantum annealing time elapsed: 0.034877
+Quantum postprocessing time elapsed: 0.0005252361297607422
+Quantum annealing centroids:
+[[-4.7905744  -1.67464762]
+ [-9.34075378 -4.23988767]]
+Quantum annealing assignments: [0 0 1 0 1 1 0 1 0 1 1 0 1 0 1 0]
+
+2020-07-07 14:23:52.337935
+Data: 
+[[ 9.96008379  1.93019243]
+ [10.10432228  1.29185757]
+ [ 5.889534    6.30631879]
+ [ 6.36189307  5.93168437]
+ [ 9.25445535  3.16150142]
+ [10.60347879  2.53008568]
+ [ 9.8467431   0.84224001]
+ [ 4.32339039  7.26372126]
+ [ 5.98857394  6.79265734]
+ [ 5.98404404  8.16055702]
+ [ 9.15221296  1.29122775]
+ [ 9.65820231  1.22909365]
+ [ 6.95736134  6.64082644]
+ [ 8.43265904  7.66243929]
+ [10.0125054   2.97932381]
+ [ 6.55717556  5.97261993]]
+Classical algorithm time elapsed: 0.006110191345214844
+Classical algorithm centroids:
+[[6.31182892 6.84135305]
+ [9.8240005  1.90694029]]
+Classical algorithm assignments: [1 1 0 0 1 1 1 0 0 0 1 1 0 0 1 0]
+QUBO Preprocessing time elapsed: 0.007737398147583008
+Simulated annealing time elapsed: 7.212043285369873
+Simulated postprocessing time elapsed: 0.0005009174346923828
+Simulated annealing centroids:
+[[7.18786775 5.80748021]
+ [9.37073135 2.39054967]]
+Simulated annealing assignments: [ 1  0  0  1  0  1  1  0 -1  0  1  1  0  0  1  0]
+Quantum embedding time elapsed: 0.5774497985839844
+Quantum annealing time elapsed: 0.03477
+Quantum postprocessing time elapsed: 0.0005521774291992188
+Quantum annealing centroids:
+[[7.94767764 4.06329715]
+ [8.22250523 4.77381034]]
+Quantum annealing assignments: [1 0 0 1 0 1 0 0 0 1 0 1 0 1 0 1]
+
+2020-07-07 14:25:23.179220
+Data: 
+[[  7.67801703  -1.80702808]
+ [  8.31697498   1.49112859]
+ [  8.68318621   2.34840425]
+ [-10.22693749  -0.54958792]
+ [ -7.18777937  -0.11783893]
+ [  7.27856764  -1.57152383]
+ [  9.47342035   0.35172695]
+ [ -9.87060364  -0.43107228]
+ [  9.62076167   0.17026446]
+ [ -6.56312853   0.74252856]
+ [  8.43276033  -0.98667544]
+ [  7.92633938   1.11114074]
+ [ -7.88793508  -0.53570785]
+ [ -8.4711215    2.49305853]
+ [ -7.9865663   -1.18626375]
+ [ -9.35928739  -0.16210814]]
+Classical algorithm time elapsed: 0.008437871932983398
+Classical algorithm centroids:
+[[ 8.42625345  0.1384297 ]
+ [-8.44416991  0.03162603]]
+Classical algorithm assignments: [0 0 0 1 1 0 0 1 0 1 0 0 1 1 1 1]
+QUBO Preprocessing time elapsed: 0.007864952087402344
+Simulated annealing time elapsed: 7.277003288269043
+Simulated postprocessing time elapsed: 0.0005319118499755859
+Simulated annealing centroids:
+[[ 0.25635802 -0.14383658]
+ [-0.27427448  0.31389231]]
+Simulated annealing assignments: [1 1 0 0 0 0 1 1 0 0 0 1 1 1 0 1]
+Quantum embedding time elapsed: 0.6160073280334473
+Quantum annealing time elapsed: 0.034925
+Quantum postprocessing time elapsed: 0.0004911422729492188
+Quantum annealing centroids:
+[[-0.60513474 -0.47195286]
+ [ 0.58721827  0.6420086 ]]
+Quantum annealing assignments: [0 1 1 0 1 0 1 0 0 1 1 0 0 1 1 0]
+
+2020-07-07 14:26:31.211969
+Data: 
+[[ 9.11548947  1.18688259]
+ [-0.14962492 -3.14732563]
+ [-0.12427832 -2.24193646]
+ [ 8.67620101  4.30910224]
+ [ 2.30342311 -2.64935517]
+ [-0.23115457 -2.9130282 ]
+ [ 2.12460229 -3.01866209]
+ [ 1.93400532 -2.56642182]
+ [10.7784558   1.03676856]
+ [ 1.77333279 -4.05281458]
+ [11.05886139  3.40223679]
+ [10.24397079  3.71998336]
+ [10.76874232  1.28086204]
+ [ 7.91115049  0.46945547]
+ [10.3514904   1.38674016]
+ [ 1.80517445 -6.19542642]]
+Classical algorithm time elapsed: 0.005324125289916992
+Classical algorithm centroids:
+[[ 1.17943502 -3.3481213 ]
+ [ 9.86304521  2.0990039 ]]
+Classical algorithm assignments: [1 0 0 1 0 0 0 0 1 0 1 1 1 1 1 0]
+QUBO Preprocessing time elapsed: 0.008310079574584961
+Simulated annealing time elapsed: 7.359504222869873
+Simulated postprocessing time elapsed: 0.0005004405975341797
+Simulated annealing centroids:
+[[ 9.86304521  2.0990039 ]
+ [ 1.17943502 -3.3481213 ]]
+Simulated annealing assignments: [0 1 1 0 1 1 1 1 0 1 0 0 0 0 0 1]
+Quantum embedding time elapsed: 0.5794939994812012
+Quantum annealing time elapsed: 0.034847
+Quantum postprocessing time elapsed: 0.0005164146423339844
+Quantum annealing centroids:
+[[ 7.91051015  0.39041463]
+ [ 2.03837795 -3.35108488]]
+Quantum annealing assignments: [-1 -1 -1  0  1 -1 -1  0  0  1  0 -1  0  0  0  0]
+
+2020-07-07 14:28:03.387776
+Data: 
+[[-3.3789061  -5.76150184]
+ [ 3.38116593 -5.03962969]
+ [-5.03303378 -4.56000708]
+ [ 4.33917022 -7.81515307]
+ [ 5.21061559 -6.68474134]
+ [ 5.16300578 -6.17268178]
+ [-5.26217662 -5.6110495 ]
+ [-2.76419186 -5.91511787]
+ [ 4.40509125 -5.97080513]
+ [-5.13098328 -4.37002456]]
+Classical algorithm time elapsed: 0.002329111099243164
+Classical algorithm centroids:
+[[ 4.49980975 -6.3366022 ]
+ [-4.31385833 -5.24354017]]
+Classical algorithm assignments: [1 0 1 0 0 0 1 1 0 1]
+QUBO Preprocessing time elapsed: 0.0032830238342285156
+Simulated annealing time elapsed: 3.135592460632324
+Simulated postprocessing time elapsed: 0.0004394054412841797
+Simulated annealing centroids:
+[[ 4.49980975 -6.3366022 ]
+ [-4.31385833 -5.24354017]]
+Simulated annealing assignments: [1 0 1 0 0 0 1 1 0 1]
+Quantum embedding time elapsed: 0.5786721706390381
+Quantum annealing time elapsed: 0.034741
+Quantum postprocessing time elapsed: 0.00043320655822753906
+Quantum annealing centroids:
+[[-4.31385833 -5.24354017]
+ [ 4.53996964 -5.96696448]]
+Quantum annealing assignments: [ 0  1  0 -1  1  1  0  0  1  0]
+
+2020-07-07 14:32:03.886146
+Data: 
+[[10.37548455 -3.29423543]
+ [-4.29003545  0.94977463]
+ [ 7.55068337 -3.30040122]
+ [-4.47318708 -0.72869408]
+ [ 8.61765648  7.96638241]
+ [ 8.31058739  9.27749931]]
+Classical algorithm time elapsed: 0.0010859966278076172
+Classical algorithm centroids:
+[[ 8.96308396 -3.29731832]
+ [ 8.46412194  8.62194086]
+ [-4.38161127  0.11054028]]
+Classical algorithm assignments: [0 2 0 2 1 1]
+QUBO Preprocessing time elapsed: 0.0019922256469726562
+Simulated annealing time elapsed: 2.1751303672790527
+Simulated postprocessing time elapsed: 0.0003952980041503906
+Simulated annealing centroids:
+[[ 8.96308396 -3.29731832]
+ [ 8.46412194  8.62194086]
+ [-4.38161127  0.11054028]]
+Simulated annealing assignments: [0 2 0 2 1 1]
+Quantum embedding time elapsed: 0.3909742832183838
+Quantum annealing time elapsed: 0.034702
+Quantum postprocessing time elapsed: 0.0004184246063232422
+Quantum annealing centroids:
+[[ 8.96308396 -3.29731832]
+ [-4.38161127  0.11054028]
+ [ 8.46412194  8.62194086]]
+Quantum annealing assignments: [0 1 0 1 2 2]
+
+2020-07-07 14:34:55.989436
+Data: 
+[[ 6.73510587  3.95762173]
+ [ 1.85735458  6.84243526]
+ [ 0.67264212  6.90943532]
+ [ 1.05488944  5.63940589]
+ [ 9.78169551  3.76068455]
+ [ 9.65475501  3.78875442]
+ [ 1.84462602  6.33070317]
+ [ 8.96730504  4.77829619]
+ [10.49967476  3.47607764]
+ [ 1.882278    5.66360895]
+ [ 9.64421759  2.90786274]
+ [ 2.93820776  6.06799769]]
+Classical algorithm time elapsed: 0.00328826904296875
+Classical algorithm centroids:
+[[9.2137923  3.77821621]
+ [1.70833299 6.24226438]]
+Classical algorithm assignments: [0 1 1 1 0 0 1 0 0 1 0 1]
+QUBO Preprocessing time elapsed: 0.004508495330810547
+Simulated annealing time elapsed: 4.3066112995147705
+Simulated postprocessing time elapsed: 0.0005147457122802734
+Simulated annealing centroids:
+[[1.70833299 6.24226438]
+ [9.2137923  3.77821621]]
+Simulated annealing assignments: [1 0 0 0 1 1 0 1 1 0 1 0]
+Quantum embedding time elapsed: 0.5629363059997559
+Quantum annealing time elapsed: 0.034732
+Quantum postprocessing time elapsed: 0.0007522106170654297
+Quantum annealing centroids:
+[[5.64478345 5.19541866]
+ [3.8798982  5.06971882]]
+Quantum annealing assignments: [ 0  0  0  1  0  0  0  0 -1  1  1  1]
+
+2020-07-07 14:36:15.280132
+Data: 
+[[-7.431692   -6.77734732]
+ [-2.34632057  4.7978971 ]
+ [-2.70965651  3.87231318]
+ [ 7.59466614 -9.44273941]
+ [-9.50972477 -6.51287501]
+ [-7.3907011  -5.67795239]
+ [ 7.25868934 -9.08771465]
+ [-2.65473365  4.04912329]
+ [ 8.68526962 -7.18210643]]
+Classical algorithm time elapsed: 0.001990795135498047
+Classical algorithm centroids:
+[[-2.57023691  4.23977786]
+ [ 7.84620837 -8.57085349]
+ [-8.11070595 -6.32272491]]
+Classical algorithm assignments: [2 0 0 1 2 2 1 0 1]
+QUBO Preprocessing time elapsed: 0.003738880157470703
+Simulated annealing time elapsed: 4.235548734664917
+Simulated postprocessing time elapsed: 0.000431060791015625
+Simulated annealing centroids:
+[[-2.57023691  4.23977786]
+ [-8.11070595 -6.32272491]
+ [ 7.84620837 -8.57085349]]
+Simulated annealing assignments: [1 0 0 2 1 1 2 0 2]
+Quantum embedding time elapsed: 0.5713438987731934
+Quantum annealing time elapsed: 0.034794
+Quantum postprocessing time elapsed: 0.00044655799865722656
+Quantum annealing centroids:
+[[-2.57023691  4.23977786]
+ [-7.41119655 -6.22764985]
+ [ 7.84620837 -8.57085349]]
+Quantum annealing assignments: [ 1  0  0  2 -1  1  2  0  2]
+
+2020-07-07 14:38:17.301998
+Data: 
+[[-1.14158196 -7.0559023 ]
+ [-6.66897392  7.97904551]
+ [-7.53322644  6.4095182 ]
+ [-8.22113537  7.35984073]
+ [-3.64885432 -7.10973981]
+ [-6.89954053  7.99667073]
+ [-3.28574469 -8.37286641]
+ [-8.96897946  7.45914376]
+ [-7.76107797  8.34412516]
+ [-2.90457224 -8.01452578]
+ [-3.72373178 -5.62670603]
+ [-7.41345272  7.52818012]
+ [-3.37739493 -6.81494676]
+ [-1.78153582 -7.35243298]]
+Classical algorithm time elapsed: 0.004106760025024414
+Classical algorithm centroids:
+[[-7.6380552   7.5823606 ]
+ [-2.83763082 -7.19244572]]
+Classical algorithm assignments: [1 0 0 0 1 0 1 0 0 1 1 0 1 1]
+QUBO Preprocessing time elapsed: 0.005976438522338867
+Simulated annealing time elapsed: 5.588691711425781
+Simulated postprocessing time elapsed: 0.00047850608825683594
+Simulated annealing centroids:
+[[-7.6380552   7.5823606 ]
+ [-2.83763082 -7.19244572]]
+Simulated annealing assignments: [1 0 0 0 1 0 1 0 0 1 1 0 1 1]
+Quantum embedding time elapsed: 0.587446928024292
+Quantum annealing time elapsed: 0.034782
+Quantum postprocessing time elapsed: 0.0004699230194091797
+Quantum annealing centroids:
+[[-5.84922558  1.06850904]
+ [-5.20727352  0.38429053]]
+Quantum annealing assignments: [-1  1  0  0  0  1  1  0  1  1  1  0  0  0]
+
+2020-07-07 14:39:32.474278
+Data: 
+[[  0.51725024  -6.17765133]
+ [  6.44563709  -1.16568489]
+ [ -8.05551392  -6.21195889]
+ [  3.40422926  -0.53764759]
+ [ -0.01943325  -2.45787438]
+ [ -4.49324626  -4.00019121]
+ [-10.96846225  -7.88857194]
+ [ -4.78528572  -7.18925597]]
+Classical algorithm time elapsed: 0.0023059844970703125
+Classical algorithm centroids:
+[[-2.25633975 -3.2290328 ]
+ [-2.13401774 -6.68345365]
+ [-9.51198809 -7.05026541]
+ [ 4.92493317 -0.85166624]]
+Classical algorithm assignments: [1 3 2 3 0 0 2 1]
+QUBO Preprocessing time elapsed: 0.004581928253173828
+Simulated annealing time elapsed: 5.01399564743042
+Simulated postprocessing time elapsed: 0.00043129920959472656
+Simulated annealing centroids:
+[[ 4.92493317 -0.85166624]
+ [-9.51198809 -7.05026541]
+ [ 0.2489085  -4.31776285]
+ [-4.63926599 -5.59472359]]
+Simulated annealing assignments: [2 0 1 0 2 3 1 3]
+Quantum embedding time elapsed: 0.5510940551757812
+Quantum annealing time elapsed: 0.034807
+Quantum postprocessing time elapsed: 0.0005941390991210938
+Quantum annealing centroids:
+[[ 4.92493317 -0.85166624]
+ [-9.51198809 -7.05026541]
+ [-0.01943325 -2.45787438]
+ [-4.49324626 -4.00019121]]
+Quantum annealing assignments: [-1  0  1  0  2  3  1 -1]
+

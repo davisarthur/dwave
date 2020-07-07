@@ -107,4 +107,4 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0):
     f.close()
 
 if __name__ == "__main__":
-    test(16, 2)
+    test(8, 4)
