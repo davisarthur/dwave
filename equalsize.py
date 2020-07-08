@@ -48,8 +48,7 @@ def genQ(N, k):
 def genA(X, k, alpha, beta):
     N = np.shape(X)[0]      # number of points
     D = genD(X)             # distance matrix
-    D /= np.sum(find_middle(D, k))
-    D *= 2.0
+    D /= np.amax(D)
     F = genF(N, k)          # column penalty matrix
     G = genG(N, k)          # row penalty matrix
     Q = genQ(N, k)
@@ -59,89 +58,13 @@ def genA(X, k, alpha, beta):
 # Generate QUBO model
 # X - input data
 # k - number of clusters
-def genModel2(X, k, alpha = None, beta = None):
+def genModel(X, k, alpha = None, beta = None):
     N = np.shape(X)[0]
     if alpha == None:
-        alpha = 1.0 / k
+        alpha = 1.0 / (2.0 * N / k - 1.0)
     if beta == None:
-        beta = 1.0 / N
+        beta = 1.0
     return dimod.as_bqm(genA(X, k, alpha, beta), dimod.BINARY)
-
-# Generate qubo model
-# X - training data
-# k - number of clusters
-def genModel(X, k):
-    N = np.shape(X)[0]              # number of points
-    D = genD(X)                     # distance matrix
-    D /= np.sum(find_middle(D, k))
-    D *= 2
-    alpha = 1.0 / k
-    beta = 1.0 / N
-    F = alpha * genF(N, k)          # column penalty matrix
-    G = beta * genG(N, k)           # row penalty matrix
-
-    # create array of binary variable labels
-    W = []
-    for i in range(N):
-        row = []
-        for j in range(k):
-            row.append("w" + str(i) + "_" + str(j))
-        W.append(row)
-
-    linear = {}
-    quadratic = {}
-
-    # account for D term
-    for l in range(k):
-        for j in range(N):
-            for i in range(N):
-                if i == j and W[i][l] in linear:
-                    linear[W[i][l]] = linear[W[i][l]] + D[i][j]
-                elif (W[i][l], W[j][l]) in quadratic:
-                    quadratic[(W[i][l], W[j][l])] = quadratic[(W[i][l], W[j][l])] + D[i][j]
-                elif i == j:
-                    linear[W[i][l]] = D[i][j]
-                else:
-                    quadratic[(W[i][l], W[j][l])] = D[i][j]
-
-    # account for F term
-    for l in range(k):
-        for j in range(N):
-            for i in range(N):
-                if i == j and W[i][l] in linear:
-                    linear[W[i][l]] = linear[W[i][l]] + F[i][j]
-                elif (W[i][l], W[j][l]) in quadratic:
-                    quadratic[(W[i][l], W[j][l])] = quadratic[(W[i][l], W[j][l])] + F[i][j]
-                elif i == j:
-                    linear[W[i][l]] = F[i][j]
-                else:
-                    quadratic[(W[i][l], W[j][l])] = F[i][j]
-
-    # account for G term
-    for l in range(N):
-        for j in range(k):
-            for i in range(k):
-                if i == j and W[l][i] in linear:
-                    linear[W[l][i]] = linear[W[l][i]] + G[i][j]
-                elif (W[l][i], W[l][j]) in quadratic:
-                    quadratic[(W[l][i], W[l][j])] = quadratic[(W[l][i], W[l][j])] + G[i][j]
-                elif i == j:
-                    linear[W[l][i]] = G[i][j]
-                else:
-                    quadratic[(W[l][i], W[l][j])] = G[i][j]
-
-    return dimod.BinaryQuadraticModel(linear, quadratic, 0.0, dimod.Vartype.BINARY)
-
-# Get the middle n entries in an N x N array
-# D - N x N numpy array
-# k - number of clusters
-def find_middle(D, k):
-    N = np.shape(D)[0]
-    n = N * (N // k - 1)
-    sorted = np.sort(D.flatten())
-    start = (N ** 2 - n) // 2
-    end = start + n
-    return sorted[start:end]          
 
 # Embed QUBO model on D-Wave hardware, returns sampler
 # model - QUBO model to embed
@@ -160,12 +83,11 @@ def run_quantum(sampler, model, num_reads_in = 100):
 def run_sim(model):
     return dimod.SimulatedAnnealingSampler().sample(model)
 
-def postprocess2(X, w):
+def postprocess(X, w):
     N = np.shape(X)[0]
     d = np.shape(X)[1]
     k = len(w) // N
-
-    assignments = np.array([-1] * N)
+    assignments = np.array([0] * N)
     M = np.zeros((k, d))
     cluster_sizes = np.zeros(k)
     for i in range(N):
@@ -175,34 +97,8 @@ def postprocess2(X, w):
                 cluster_sizes[j] += 1.0
                 assignments[i] = j
                 break
-
     for i in range(k):
         M[i] /= cluster_sizes[i]
-
-    return M, assignments
-
-
-# Postprocessing of solution from annealing
-# Note: if a point is assigned to more than one cluster, it will belong to the lower cluster
-def postprocess(X, w):
-    N = np.shape(X)[0]
-    d = np.shape(X)[1]
-    k = len(w) // N
-
-    assignments = np.array([-1] * N)
-    M = np.zeros((k, d))
-    cluster_sizes = np.zeros(k)
-    for i in range(N):
-        for j in range(k):
-            if w["w" + str(i) + "_" + str(j)] == 1:
-                M[j] += X[i]
-                cluster_sizes[j] += 1.0
-                assignments[i] = j
-                break
-
-    for i in range(k):
-        M[i] /= cluster_sizes[i]
-
     return M, assignments
 
 def test_quantum():

@@ -6,7 +6,7 @@ import anysize
 import balanced
 from datetime import datetime
 from dwave.system import DWaveSampler, EmbeddingComposite
-from sklearn import datasets
+from sklearn import datasets, metrics
 
 ##
 # Davis Arthur
@@ -49,13 +49,16 @@ def genData(N, k, d, sigma = 1.0, max = 10.0):
     return datasets.make_blobs(n_samples = cluster_sizes(N, k), n_features = d, \
         centers = centersIn, cluster_std = sigma, center_box = (-max, max))
 
+def silhouette_analysis(X, assignments):
+    return metrics.silhouette_score(X, assignments)
+
 def test(N, k, d = 2, sigma = 1.0, max = 10.0):
 
     # data file
     f = open("test.txt", "a")
     f.write(str(datetime.now()))    # denote date and time that test begins
-
     X = genData(N, k, d, sigma = 1.0, max = 10.0)[0]
+    f.write("\n(N, k): " + "(" + str(N) + ", " + str(k) + ")")
     f.write("\nData: \n" + str(X)) 
 
     # get classical solution
@@ -65,6 +68,7 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0):
     f.write("\nClassical algorithm time elapsed: " + str(end - start))
     f.write("\nClassical algorithm centroids:\n" + str(centroids_classical))
     f.write("\nClassical algorithm assignments: " + str(assignments_classical))
+    f.write("\nClassical silhouette distance: " + str(silhouette_analysis(X, assignments_classical)))
 
     # generate QUBO model
     start = time.time()
@@ -85,6 +89,7 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0):
     f.write("\nSimulated postprocessing time elapsed: " + str(end - start))
     f.write("\nSimulated annealing centroids:\n" + str(centroids_sim))
     f.write("\nSimulated annealing assignments: " + str(assignments_sim))
+    f.write("\nSimulated annealing silhouette distance: " + str(silhouette_analysis(X, assignments_sim)))
 
     # embed on the D-Wave
     start = time.time()
@@ -103,7 +108,8 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0):
     end = time.time()
     f.write("\nQuantum postprocessing time elapsed: " + str(end - start))
     f.write("\nQuantum annealing centroids:\n" + str(centroids_quantum))
-    f.write("\nQuantum annealing assignments: " + str(assignments_quantum) + "\n\n")
+    f.write("\nQuantum annealing assignments: " + str(assignments_quantum))
+    f.write("\nQuantum annealing silhouette distance: " + str(silhouette_analysis(X, assignments_quantum)) + "\n\n")
     f.close()
 
 def test_time(N, k, d = 2, sigma = 1.0, max = 10.0):
@@ -125,7 +131,7 @@ def test_time(N, k, d = 2, sigma = 1.0, max = 10.0):
 
     # generate QUBO model
     start = time.time()
-    model = equalsize.genModel2(X, k)
+    model = equalsize.genModel(X, k)
     end = time.time()
     f.write("\nQUBO Preprocessing time elapsed: " + str(end - start))
 
@@ -137,4 +143,4 @@ def test_time(N, k, d = 2, sigma = 1.0, max = 10.0):
     f.close()
 
 if __name__ == "__main__":
-    test_time(400, 4)
+    test_time(800, 4)

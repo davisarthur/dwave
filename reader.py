@@ -10,33 +10,59 @@ from sklearn import metrics
 # 6-24-2020
 ##
 
+def read_range(filename = "test.txt"):
+    all_info = []
+    f = open(filename, "r")
+
+    # prompt user to get the start time of data to be extracted
+    start = input("Start time: ")
+    end = input("End time: ")
+    line = ""
+    while not start in line:
+        line = f.readline()
+    
+    # read first entry
+    all_info.append(read_entry(f))
+    while True:
+        f.readline()
+        if end in f.readline():
+            all_info.append(read_entry(f))
+            break
+        all_info.append(read_entry(f))
+    
+    # close the file and return dictionary
+    f.close()
+    return all_info
+            
+
 # Reader for test in test.py
-def read(filename):
+# file
+def read_entry(f):
 
     # dictionary for extracted information
     info = {}
 
-    f = open(filename, "r")
-    
-    # prompt user to get the start time of data to be extracted
-    begin = input("Start time: ")
-    line = ""
-    while not begin in line:
-        line = f.readline()
+    # read in (N, k)
+    N_k_str = f.readline().split(":")[-1].split("(")[-1].split(")")[0].split(",")
+    info["N"] = float(N_k_str[0])
+    info["k"] = float(N_k_str[1])
 
     # read in data matrix X
     f.readline()  # ignore label
     info["X"] = read_array(f)
 
-    # read in Classical algorithm time
+    # read in classical algorithm time
     info["time_classical"] = float(f.readline().split(":")[1])
 
-    # read in Classical algorithm centroids
+    # read in classical algorithm centroids
     f.readline()  # ignore label
     info["centroids_classical"] = read_array(f)
 
-    # read in Classical algorithm assignments
+    # read in classical algorithm assignments
     info["assignments_classical"] = read_assignments(f)
+
+    # read in classical silhouette distance
+    info["silhouette_classical"] = float(f.readline().split(":")[1])
 
     # read in QUBO preprocessing time
     info["time_preprocessing"] = float(f.readline().split(":")[1])
@@ -52,6 +78,9 @@ def read(filename):
     # read in simulated annealing assignments
     info["assignments_sim"] = read_assignments(f)
 
+    # read in simulated annealing silhouette distance
+    info["silhouette_sim"] = float(f.readline().split(":")[1])
+
     # read in quantum annealing/postprocessing time
     info["time_embedding"] = float(f.readline().split(":")[1])
     info["time_annealing_quantum"] = float(f.readline().split(":")[1])
@@ -63,9 +92,10 @@ def read(filename):
     
     # read in quantum annealing assignments
     info["assignments_quantum"] = read_assignments(f)
+
+    # read in classical silhouette distance
+    info["silhouette_quantum"] = float(f.readline().split(":")[1])
     
-    # close the file and return dictionary
-    f.close()
     return info
 
 # Reads and returns a numpy array from a file.
@@ -216,9 +246,6 @@ def compare_assignments():
     plt.ylim(-1.5, 1.5)
     plt.show()
 
-def silhouette_analysis(X, assignments):
-    return metrics.silhouette_score(X, assignments)
-
 def silhouette_plot():
     data = [[0.843, 0.807, 0.798, 0.893, 0.901, 0.247], [0.843, 0.807, 0.798, 0.893, 0.901, 0.361], \
         [0.843, 0.517, -0.318, 0.719, -0.380, 0.098]]
@@ -237,7 +264,18 @@ def silhouette_plot():
     plt.show()
 
 if __name__ == "__main__":
-    info = read("test.txt")
-    print("classical: " + str(silhouette_analysis(info["X"], info["assignments_classical"])))
-    print("simulated: " + str(silhouette_analysis(info["X"], info["assignments_sim"])))
-    print("quantum: " + str(silhouette_analysis(info["X"], info["assignments_quantum"])))
+    all_info = read_range()
+    silhouettes_c = []
+    silhouettes_s = []
+    silhouettes_q = []
+    for info in all_info:
+        silhouettes_c.append(info["silhouette_classical"])
+        silhouettes_s.append(info["silhouette_sim"])
+        silhouettes_q.append(info["silhouette_quantum"])
+    silhouettes_c = np.array(silhouettes_c)
+    silhouettes_s = np.array(silhouettes_s)
+    silhouettes_q = np.array(silhouettes_q)
+    dev = np.array([np.std(silhouettes_c), np.std(silhouettes_s), np.std(silhouettes_q)]) 
+    avg = np.array([np.average(silhouettes_c), np.average(silhouettes_s), np.average(silhouettes_q)])
+    print(avg)
+    print(dev)
