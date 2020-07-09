@@ -4,6 +4,7 @@ import dimod
 import equalsize
 import anysize
 import balanced
+import random
 from datetime import datetime
 from dwave.system import DWaveSampler, EmbeddingComposite
 from sklearn import datasets, metrics
@@ -112,22 +113,31 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0):
     f.write("\nQuantum annealing silhouette distance: " + str(silhouette_analysis(X, assignments_quantum)) + "\n\n")
     f.close()
 
+def synthetic_w(N, k):
+    w = {}
+    for i in range(N):
+        one_index = random.randint(0, k - 1) 
+        for j in range(k):
+            if j == one_index:
+                w[i + j * N] = 1
+            else:
+                w[i + j * N] = 0
+    return w
+        
+
 def test_time(N, k, d = 2, sigma = 1.0, max = 10.0):
     # data file
     f = open("test_time.txt", "a")
     f.write(str(datetime.now()))    # denote date and time that test begins
 
     X = genData(N, k, d, sigma = 1.0, max = 10.0)[0]
-    f.write("(N, k): " + "(" + str(N) + ", " + str(k) + ")")
-    # f.write("\nData: \n" + str(X)) 
+    f.write("\n(N, k): " + "(" + str(N) + ", " + str(k) + ")")
 
     # get classical solution
     start = time.time()
     centroids_classical, assignments_classical = balanced.balanced_kmeans(X, k)
     end = time.time()
     f.write("\nClassical algorithm time elapsed: " + str(end - start))
-    # f.write("\nClassical algorithm centroids:\n" + str(centroids_classical))
-    # f.write("\nClassical algorithm assignments: " + str(assignments_classical))
 
     # generate QUBO model
     start = time.time()
@@ -139,8 +149,19 @@ def test_time(N, k, d = 2, sigma = 1.0, max = 10.0):
     start = time.time()
     sampler_quantum = equalsize.embed(model)
     end = time.time()
-    f.write("\nQuantum embedding time elapsed: " + str(end - start) + "\n\n")
+    f.write("\nQuantum embedding time elapsed: " + str(end - start))
+
+    # postprocess synthetic data
+    w = synthetic_w(N, k)
+    start = time.time()
+    assignments_quantum = equalsize.postprocess(X, w)
+    end = time.time()
+    f.write("\nQuantum postprocessing time elapsed: " + str(end - start) + "\n\n")
     f.close()
 
+def test_synthetic():
+    print(synthetic_w(8, 2))
+
 if __name__ == "__main__":
-    test_time(800, 4)
+    for i in range(50):
+        test_time(2 ** 11, 4)
