@@ -350,5 +350,16 @@ def time_analysis():
     print(avg)
     print(dev)
 
+def anneal_analysis():
+    all_info = read_range()
+    times = []
+    for info in all_info:
+        times.append(info["time_annealing_quantum"])
+    times = np.array(times)
+    dev = np.std(times)
+    avg = np.average(times)
+    print(avg)
+    print(dev)
+
 if __name__ == "__main__":
-    time_analysis()
+    anneal_analysis()

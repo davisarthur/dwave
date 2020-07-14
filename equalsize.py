@@ -67,8 +67,7 @@ def genModel(X, k, alpha = None, beta = None):
     return dimod.as_bqm(genA(X, k, alpha, beta), dimod.BINARY)
 
 # Embed QUBO model on D-Wave hardware, returns sampler
-# model - QUBO model to embed
-def embed(model):
+def embed():
     return EmbeddingComposite(DWaveSampler(solver={'qpu': True}))
 
 # Run QUBO problem on D-Wave hardware, return sample set
@@ -102,16 +101,14 @@ def postprocess(X, w):
     return M, assignments
 
 def test_quantum():
-    X = np.array([[1, 2], [1, 3], [1, 4], [9, 5], [9, 6]])
+    X = np.array([[1, 2], [1, 3], [9, 5], [9, 6]])
     k = 2
     model = genModel(X, k)
-    print(model.quadratic)
-    model2 = genModel2(X, k)
-    print(model2.quadratic)
-    sampler = embed(model)
+    sampler = embed()
+    # sampler.return_embedding_default = True
     sample_set = run_quantum(sampler, model)
-    print(sample_set.first.sample)
-    M, assignments = postprocess2(X, sample_set.first.sample)
+    print(sample_set)
+    M, assignments = postprocess(X, sample_set.first.sample)
     print(M)
     print()
     print(assignments)
@@ -144,4 +141,4 @@ def test_Q():
     print(genQ(4, 2))
 
 if __name__ == "__main__":
-    test_sim()
+    test_quantum()

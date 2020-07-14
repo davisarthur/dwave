@@ -50,9 +50,16 @@ def genData(N, k, d, sigma = 1.0, max = 10.0):
     return datasets.make_blobs(n_samples = cluster_sizes(N, k), n_features = d, \
         centers = centersIn, cluster_std = sigma, center_box = (-max, max))
 
+
 def silhouette_analysis(X, assignments):
     return metrics.silhouette_score(X, assignments)
 
+# Test using synthetic data. Results are written to "test.txt"
+# N - Number of points
+# k - Number of clusters
+# d - dimension of each data point
+# sigma - standard deviation of each cluster
+# max - max of a given coordinate
 def test(N, k, d = 2, sigma = 1.0, max = 10.0):
 
     # data file
@@ -113,6 +120,10 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0):
     f.write("\nQuantum annealing silhouette distance: " + str(silhouette_analysis(X, assignments_quantum)) + "\n\n")
     f.close()
 
+# Generates a plausible synthetic binary solution to test the 
+# time performance of postprocessing function
+# N - Number of points
+# k - Number of clusters
 def synthetic_w(N, k):
     w = {}
     for i in range(N):
@@ -124,10 +135,9 @@ def synthetic_w(N, k):
                 w[i + j * N] = 0
     return w
         
-
 def test_time(N, k, d = 2, sigma = 1.0, max = 10.0):
     # data file
-    f = open("test_time.txt", "a")
+    f = open("test_time3.txt", "a")
     f.write(str(datetime.now()))    # denote date and time that test begins
 
     X = genData(N, k, d, sigma = 1.0, max = 10.0)[0]
@@ -162,6 +172,51 @@ def test_time(N, k, d = 2, sigma = 1.0, max = 10.0):
 def test_synthetic():
     print(synthetic_w(8, 2))
 
+# Tests the QUBO model on a set of points from the iris dataset
+# N - Number of data points
+# k - Number of clusters
+def test_iris(N, k):
+    iris = datasets.load_iris()
+    length = 150                    # total number of points in the dataset
+    pp_cluster = 50                 # number of data points belonging to any given iris
+    d = 4                           # iris dataset is of dimension 4
+    data = iris["data"]             # all iris datapoints in a (150 x 4) numpy array
+    full_target = iris["target"]    # all iris assignments in a list of length 150
+
+    num_full = N % k        # number of clusters with maximum amount of entries
+    available = [True] * length
+
+    # build the data matrix and target list
+    X = np.zeros((N, d))
+    target = [-1] * N
+
+    for i in range(k):
+        for j in range(N // k):
+            num = random.randint(0, pp_cluster - j - 1)
+            count = 0
+            for l in range(pp_cluster):
+                if count == num:
+                    X[i * N // k + j] = data[i * pp_cluster + l]
+                    target[i * N // k + j] = full_target[i * pp_cluster + l]
+                    print(target)
+                    break
+                if available[l]:
+                    count += 1
+
+    for i in range(num_full):
+        num = random.randint(0, pp_cluster - N // k - 1)
+        count = 0
+        for l in range(pp_cluster):
+            if count == num:
+                X[N // k * k + i] = data[i * pp_cluster + l]   
+                target[N // k * k + i] = full_target[i * pp_cluster + l]                 
+                break
+            if available[l]:
+                count += 1
+    return X, target
+
 if __name__ == "__main__":
-    for i in range(50):
-        test_time(2 ** 11, 4)
+    X, target = test_iris(5, 3)
+    # print(X)
+    # print(target)
+
