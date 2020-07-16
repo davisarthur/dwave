@@ -5,6 +5,7 @@ import equalsize
 import anysize
 import balanced
 import random
+import dwave.inspector
 from datetime import datetime
 from dwave.system import DWaveSampler, EmbeddingComposite
 from sklearn import datasets, metrics
@@ -53,6 +54,15 @@ def genData(N, k, d, sigma = 1.0, max = 10.0):
 
 def silhouette_analysis(X, assignments):
     return metrics.silhouette_score(X, assignments)
+
+# Returns the number of physical variables used by the D-Wave
+# sample_set - solution from D-Wave
+def num_physical(sample_set):
+    embedding = sample_set.info["embedding_context"]["embedding"]
+    count = 0
+    for val in embedding.values():
+        count += len(val)
+    return count
 
 # Test using synthetic data. Results are written to "test.txt"
 # N - Number of points
@@ -107,6 +117,7 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0):
 
     # get quantum annealing solution
     sampleset_quantum = equalsize.run_quantum(sampler_quantum, model)
+    f.write("\nNumber of Physical variables: " + str(num_physical(sampleset_quantum)))
     f.write("\nQuantum annealing time elapsed: " \
         + str(float(sampleset_quantum.info["timing"]["total_real_time"]) / (10 ** 6.0)))
     
@@ -175,7 +186,7 @@ def test_synthetic():
 # Tests the QUBO model on a set of points from the iris dataset
 # N - Number of data points
 # k - Number of clusters
-def test_iris(N, k):
+def gen_iris(N, k):
     iris = datasets.load_iris()
     length = 150                    # total number of points in the dataset
     pp_cluster = 50                 # number of data points belonging to any given iris
@@ -196,9 +207,8 @@ def test_iris(N, k):
             count = 0
             for l in range(pp_cluster):
                 if count == num:
-                    X[i * N // k + j] = data[i * pp_cluster + l]
-                    target[i * N // k + j] = full_target[i * pp_cluster + l]
-                    print(target)
+                    X[i * (N // k) + j] = data[i * pp_cluster + l]
+                    target[i * (N // k) + j] = full_target[i * pp_cluster + l]
                     break
                 if available[l]:
                     count += 1
@@ -215,8 +225,25 @@ def test_iris(N, k):
                 count += 1
     return X, target
 
-if __name__ == "__main__":
-    X, target = test_iris(5, 3)
-    # print(X)
-    # print(target)
+def test_iris(N, k):
+    X, target = gen_iris(N, k)
+    model = equalsize.genModel(X, k)
+    sampler = equalsize.embed()
+    sample_set = equalsize.run_quantum(sampler, model)
+    dwave.inspector.show(sample_set)
+    M, assignments = equalsize.postprocess(X, sample_set.first.sample)
+    print("Target: " + str(target))
+    print("Assignments: " + str(assignments))
+    
+def test_synth(N, k, d = 2):
+    X = genData(N, k, d)[0]
+    model = equalsize.genModel(X, k)
+    sampler = equalsize.embed()
+    sample_set = equalsize.run_quantum(sampler, model)
+    print(sample_set.info["timing"])
+    print(sample_set.info.keys())
+    # dwave.inspector.show(sample_set)
+    M, assignments = equalsize.postprocess(X, sample_set.first.sample)
 
+if __name__ == "__main__":
+    test_synth(8, 4)

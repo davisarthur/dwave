@@ -2,7 +2,11 @@ import numpy as np
 import random
 import dimod
 import dwavebinarycsp as csp
+import dwave.inspector
 from dwave.system import DWaveSampler, EmbeddingComposite
+from dwave.embedding import embed_bqm
+from minorminer import find_embedding
+from dimod.traversal import connected_components
 
 ##
 # Davis Arthur
@@ -66,15 +70,31 @@ def genModel(X, k, alpha = None, beta = None):
         beta = 1.0
     return dimod.as_bqm(genA(X, k, alpha, beta), dimod.BINARY)
 
+def set_sampler():
+    return DWaveSampler(solver={'qpu': True})
+
 # Embed QUBO model on D-Wave hardware, returns sampler
 def embed():
     return EmbeddingComposite(DWaveSampler(solver={'qpu': True}))
+
+def embed2(sampler, model):
+    graph = model.adj
+    final_graph = dict()
+    for key in graph.keys():
+        for value in graph[key].keys():
+            final_graph[key].add(value)
+    print(final_graph)
+    embedding = find_embedding(final_graph, sampler.adjacency)
+    return sampler, embed_bqm(model, embedding, sampler.adjacency)
 
 # Run QUBO problem on D-Wave hardware, return sample set
 # sampler - D-Wave sampler being used to solve the problem
 # model - QUBO model to embed
 # num_reads - number of reads during annealing
 def run_quantum(sampler, model, num_reads_in = 100):
+    return sampler.sample(model, num_reads = num_reads_in, auto_scale = True)
+
+def run_quantum2(sampler, model, num_reads_in = 100):
     return sampler.sample(model, num_reads = num_reads_in, auto_scale = True)
 
 # Run QUBO problem using D-Wave's simulated annealing, returns sample set
@@ -105,9 +125,22 @@ def test_quantum():
     k = 2
     model = genModel(X, k)
     sampler = embed()
-    # sampler.return_embedding_default = True
     sample_set = run_quantum(sampler, model)
+    dwave.inspector.show(sample_set)
+    M, assignments = postprocess(X, sample_set.first.sample)
+    print(M)
+    print()
+    print(assignments)
+
+def test_quantum2():
+    X = np.array([[1, 2], [1, 3], [9, 5], [9, 6]])
+    k = 2
+    model = genModel(X, k)
+    sampler = set_sampler()
+    embedded_model = embed2(sampler, model)
+    sample_set = run_quantum2(sampler, embedded_model)
     print(sample_set)
+    dwave.inspector.show(sample_set)
     M, assignments = postprocess(X, sample_set.first.sample)
     print(M)
     print()
@@ -129,16 +162,6 @@ def test_sim():
     print()
     print(assignments)
 
-def test_middle():
-    D = np.array([[0, 10, 10, 1, 34, 50], [10, 0, 4, 5, 20, 29], [10, 4, 0, 5, 8, 13], [1, 5, 5, 0, 25, 32], \
-        [34, 20, 8, 25, 0, 1], [50, 29, 13, 32, 1, 0]])
-    N = np.shape(D)[0]
-    k = 2
-    n = N * (N // k - 1)
-    print(find_middle(D, k))
-
-def test_Q():
-    print(genQ(4, 2))
 
 if __name__ == "__main__":
-    test_quantum()
+    test_quantum2()
