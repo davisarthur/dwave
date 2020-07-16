@@ -64,18 +64,31 @@ def num_physical(sample_set):
         count += len(val)
     return count
 
-# Test using synthetic data. Results are written to "test.txt"
+# Test using synthetic data. Results are written to "newtest.txt" by default
 # N - Number of points
 # k - Number of clusters
-# d - dimension of each data point
-# sigma - standard deviation of each cluster
-# max - max of a given coordinate
-def test(N, k, d = 2, sigma = 1.0, max = 10.0):
+# d - Dimension of each data point
+# sigma - Standard deviation of each cluster
+# max - Max of a given coordinate
+# filename - File to write to
+# data - How data is generated ("synthetic" (default) or "iris")
+# sim - Run using simulated annealing (default = true)
+def test(N, k, d = 2, sigma = 1.0, max = 10.0, filename = "newtest.txt", data = "synthetic", sim = True):
 
     # data file
-    f = open("test.txt", "a")
+    f = open(filename, "a")
     f.write(str(datetime.now()))    # denote date and time that test begins
-    X = genData(N, k, d, sigma = 1.0, max = 10.0)[0]
+
+    if data == "synthetic":
+        X = genData(N, k, d, sigma = 1.0, max = 10.0)[0]
+        f.write("\nSynthetic data")
+    elif data == "iris":
+        X, target = gen_iris(N, k)
+        f.write("\nIris")
+        f.write("\nTarget: " + str(target))
+    else:
+        print("Unsupported data generation type.")
+
     f.write("\n(N, k): " + "(" + str(N) + ", " + str(k) + ")")
     f.write("\nData: \n" + str(X)) 
 
@@ -94,36 +107,42 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0):
     end = time.time()
     f.write("\nQUBO Preprocessing time elapsed: " + str(end - start))
 
-    # get simulated annealing solution
-    start = time.time()
-    sampleset_sim = equalsize.run_sim(model)
-    end = time.time()
-    f.write("\nSimulated annealing time elapsed: " + str(end - start))
+    if sim:
+        # get simulated annealing solution
+        start = time.time()
+        sampleset_sim = equalsize.run_sim(model)
+        end = time.time()
+        f.write("\nSimulated annealing time elapsed: " + str(end - start))
 
-    # simulated annealing postprocessing
-    start = time.time()
-    centroids_sim, assignments_sim = equalsize.postprocess(X, sampleset_sim.first.sample)
-    end = time.time()
-    f.write("\nSimulated postprocessing time elapsed: " + str(end - start))
-    f.write("\nSimulated annealing centroids:\n" + str(centroids_sim))
-    f.write("\nSimulated annealing assignments: " + str(assignments_sim))
-    f.write("\nSimulated annealing silhouette distance: " + str(silhouette_analysis(X, assignments_sim)))
+        # simulated annealing postprocessing
+        start = time.time()
+        centroids_sim, assignments_sim = equalsize.postprocess(X, sampleset_sim.first.sample)
+        end = time.time()
+        f.write("\nSimulated postprocessing time elapsed: " + str(end - start))
+        f.write("\nSimulated annealing centroids:\n" + str(centroids_sim))
+        f.write("\nSimulated annealing assignments: " + str(assignments_sim))
+        f.write("\nSimulated annealing silhouette distance: " + str(silhouette_analysis(X, assignments_sim)))
 
     # embed on the D-Wave
+    sampler_quantum = equalsize.set_sampler()
     start = time.time()
-    sampler_quantum = equalsize.embed(model)
+    embedding = equalsize.get_embedding(sampler_quantum, model)
+    end = time.time()
+    f.write("\nFinding embedding time elapsed: " + str(end - start))
+    start = time.time()
+    embedded_model = equalsize.embed2(sampler_quantum, model, embedding)
     end = time.time()
     f.write("\nQuantum embedding time elapsed: " + str(end - start))
 
     # get quantum annealing solution
-    sampleset_quantum = equalsize.run_quantum(sampler_quantum, model)
-    f.write("\nNumber of Physical variables: " + str(num_physical(sampleset_quantum)))
+    embedded_sample_set = equalsize.run_quantum2(sampler_quantum, embedded_model)
+    f.write("\nNumber of Physical variables: " + str(len(embedded_model.variables)))
     f.write("\nQuantum annealing time elapsed: " \
-        + str(float(sampleset_quantum.info["timing"]["total_real_time"]) / (10 ** 6.0)))
+        + str(float(embedded_sample_set.info["timing"]["total_real_time"]) / (10 ** 6.0)))
     
     # quantum postprocessing
     start = time.time()
-    centroids_quantum, assignments_quantum = equalsize.postprocess(X, sampleset_quantum.first.sample)
+    centroids_quantum, assignments_quantum = equalsize.postprocess2(X, embedded_sample_set, embedding, model)
     end = time.time()
     f.write("\nQuantum postprocessing time elapsed: " + str(end - start))
     f.write("\nQuantum annealing centroids:\n" + str(centroids_quantum))
@@ -148,7 +167,7 @@ def synthetic_w(N, k):
         
 def test_time(N, k, d = 2, sigma = 1.0, max = 10.0):
     # data file
-    f = open("test_time3.txt", "a")
+    f = open("test_time.txt", "a")
     f.write(str(datetime.now()))    # denote date and time that test begins
 
     X = genData(N, k, d, sigma = 1.0, max = 10.0)[0]
@@ -165,12 +184,6 @@ def test_time(N, k, d = 2, sigma = 1.0, max = 10.0):
     model = equalsize.genModel(X, k)
     end = time.time()
     f.write("\nQUBO Preprocessing time elapsed: " + str(end - start))
-
-    # embed on the D-Wave
-    start = time.time()
-    sampler_quantum = equalsize.embed(model)
-    end = time.time()
-    f.write("\nQuantum embedding time elapsed: " + str(end - start))
 
     # postprocess synthetic data
     w = synthetic_w(N, k)
@@ -246,4 +259,7 @@ def test_synth(N, k, d = 2):
     M, assignments = equalsize.postprocess(X, sample_set.first.sample)
 
 if __name__ == "__main__":
-    test_synth(8, 4)
+    all_configs = [(2048, 4)]
+    for i in range(len(all_configs)):
+        for j in range(40):
+            test_time(all_configs[i][0], all_configs[i][1])

@@ -4,7 +4,7 @@ import dimod
 import dwavebinarycsp as csp
 import dwave.inspector
 from dwave.system import DWaveSampler, EmbeddingComposite
-from dwave.embedding import embed_bqm
+from dwave.embedding import embed_bqm, unembed_sampleset
 from minorminer import find_embedding
 from dimod.traversal import connected_components
 
@@ -70,6 +70,7 @@ def genModel(X, k, alpha = None, beta = None):
         beta = 1.0
     return dimod.as_bqm(genA(X, k, alpha, beta), dimod.BINARY)
 
+# Return the sampler used for annealing
 def set_sampler():
     return DWaveSampler(solver={'qpu': True})
 
@@ -77,16 +78,25 @@ def set_sampler():
 def embed():
     return EmbeddingComposite(DWaveSampler(solver={'qpu': True}))
 
-def embed2(sampler, model):
-    graph = model.adj
-    final_graph = dict()
-    for key in graph.keys():
-        for value in graph[key].keys():
-            final_graph[key].add(value)
-    print(final_graph)
-    embedding = find_embedding(final_graph, sampler.adjacency)
-    return sampler, embed_bqm(model, embedding, sampler.adjacency)
+# Find an embedding and embed on the hardware
+# sampler - D-Wave sampler
+# model - logical BQM model
+# Returns embeddeding
+def get_embedding(sampler, model):
+    edge_list_model = []
+    for key in model.adj.keys():
+        for value in model.adj[key].keys():
+            if (value, key) not in edge_list_model:
+                edge_list_model.append((key, value))
+    edge_list_sampler = []
+    for key in sampler.adjacency.keys():
+        for value in sampler.adjacency[key]:
+            if (value, key) not in edge_list_sampler:
+                edge_list_sampler.append((key, value))
+    return find_embedding(edge_list_model, edge_list_sampler)
 
+def embed2(sampler, model, embedding):
+    return embed_bqm(model, embedding, sampler.adjacency)
 # Run QUBO problem on D-Wave hardware, return sample set
 # sampler - D-Wave sampler being used to solve the problem
 # model - QUBO model to embed
@@ -94,24 +104,56 @@ def embed2(sampler, model):
 def run_quantum(sampler, model, num_reads_in = 100):
     return sampler.sample(model, num_reads = num_reads_in, auto_scale = True)
 
-def run_quantum2(sampler, model, num_reads_in = 100):
-    return sampler.sample(model, num_reads = num_reads_in, auto_scale = True)
+# Run the problem on D-Wave hardware
+# sampler - D-Wave sampler being used to solve the problem
+# embedded_model - QUBO model to embed
+# num_reads - number of reads during annealing
+def run_quantum2(sampler, embedded_model, num_reads_in = 100):
+    return sampler.sample(embedded_model, num_reads = num_reads_in, auto_scale = True)
 
 # Run QUBO problem using D-Wave's simulated annealing, returns sample set
 # model - QUBO model to embed
 def run_sim(model):
     return dimod.SimulatedAnnealingSampler().sample(model)
 
-def postprocess(X, w):
+# Return centroids and assignments
+# X - input data
+# solution - logical solution produced by annealing
+def postprocess(X, solution):
     N = np.shape(X)[0]
     d = np.shape(X)[1]
-    k = len(w) // N
+    k = len(solution) // N
     assignments = np.array([0] * N)
     M = np.zeros((k, d))
     cluster_sizes = np.zeros(k)
     for i in range(N):
         for j in range(k):
-            if w[i + j * N] == 1:
+            if solution[i + j * N] == 1:
+                M[j] += X[i]
+                cluster_sizes[j] += 1.0
+                assignments[i] = j
+                break
+    for i in range(k):
+        M[i] /= cluster_sizes[i]
+    return M, assignments
+
+# Return centroids and assignments
+# X - input data
+# embedded_solution - embedded solution set produced by annealing
+# embedding - embedding used to convert from logical to embedded model
+# model - logical BQM model
+def postprocess2(X, embedded_solution_set, embedding, model):
+    sample_set = unembed_sampleset(embedded_solution_set, embedding, model)
+    solution = sample_set.first.sample
+    N = np.shape(X)[0]
+    d = np.shape(X)[1]
+    k = len(solution) // N
+    assignments = np.array([0] * N)
+    M = np.zeros((k, d))
+    cluster_sizes = np.zeros(k)
+    for i in range(N):
+        for j in range(k):
+            if solution[i + j * N] == 1:
                 M[j] += X[i]
                 cluster_sizes[j] += 1.0
                 assignments[i] = j
@@ -137,14 +179,14 @@ def test_quantum2():
     k = 2
     model = genModel(X, k)
     sampler = set_sampler()
-    embedded_model = embed2(sampler, model)
-    sample_set = run_quantum2(sampler, embedded_model)
-    print(sample_set)
-    dwave.inspector.show(sample_set)
-    M, assignments = postprocess(X, sample_set.first.sample)
+    embedding = get_embedding(sampler, model)
+    embedded_model = embed2(sampler, model, embedding)
+    print("Number of physical variables: " + str(len(embedded_model.variables)))
+    embedded_solution_set = run_quantum2(sampler, embedded_model)
+    M, assignments = postprocess2(X, embedded_solution_set, embedding, model)
+    print("Centroids: ")
     print(M)
-    print()
-    print(assignments)
+    print("Assignments: " + str(assignments))
 
 def test_sim():
     X = np.array([[1, 2], [1, 3], [1, 4], [9, 5], [9, 6]])

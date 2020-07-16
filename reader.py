@@ -11,7 +11,7 @@ from sklearn import metrics
 ##
 
 # Read a range of entries in "test.txt"
-def read_range(filename = "test.txt"):
+def read_range(filename = "newtest.txt"):
     all_info = []
     f = open(filename, "r")
 
@@ -42,6 +42,11 @@ def read_entry(f):
     # dictionary for extracted information
     info = {}
 
+    # read data generation type
+    gen_type = f.readline()
+    if "Iris" in gen_type:
+        info["target"] = read_assignments(f)
+
     # read in (N, k)
     N_k_str = f.readline().split(":")[-1].split("(")[-1].split(")")[0].split(",")
     info["N"] = float(N_k_str[0])
@@ -66,23 +71,33 @@ def read_entry(f):
 
     # read in QUBO preprocessing time
     info["time_preprocessing"] = float(f.readline().split(":")[1])
+    
+    line = f.readline()
+    sim = True
+    if "Simulated" in line:
+        # read in simulated annealing/postprocessing time
+        info["time_annealing_sim"] = float(line.split(":")[1])
+        info["time_postprocessing_sim"] = float(f.readline().split(":")[1])
 
-    # read in simulated annealing/postprocessing time
-    info["time_annealing_sim"] = float(f.readline().split(":")[1])
-    info["time_postprocessing_sim"] = float(f.readline().split(":")[1])
+        # read in simulated annealing centroids
+        f.readline()    # ignore label
+        info["centroids_sim"] = read_array(f)
 
-    # read in simulated annealing centroids
-    f.readline()    # ignore label
-    info["centroids_sim"] = read_array(f)
+        # read in simulated annealing assignments
+        info["assignments_sim"] = read_assignments(f)
 
-    # read in simulated annealing assignments
-    info["assignments_sim"] = read_assignments(f)
+        # read in simulated annealing silhouette distance
+        info["silhouette_sim"] = float(f.readline().split(":")[1])
 
-    # read in simulated annealing silhouette distance
-    info["silhouette_sim"] = float(f.readline().split(":")[1])
-
+    else:
+        info["time_finding_embedding"] = float(line.split(":")[1])
+        sim = False
+    
     # read in quantum annealing/postprocessing time
+    if sim:
+        info["time_finding_embedding"] = float(f.readline().split(":")[1])
     info["time_embedding"] = float(f.readline().split(":")[1])
+    info["num_physical_variables"] = float(f.readline().split(":")[1])
     info["time_annealing_quantum"] = float(f.readline().split(":")[1])
     info["time_postprocessing_quantum"] = float(f.readline().split(":")[1])
 
@@ -314,17 +329,17 @@ def silhouette_plot():
 def silhouette_analysis():
     all_info = read_range()
     silhouettes_c = []
-    silhouettes_s = []
     silhouettes_q = []
+    physical_variables = []
     for info in all_info:
         silhouettes_c.append(info["silhouette_classical"])
-        silhouettes_s.append(info["silhouette_sim"])
         silhouettes_q.append(info["silhouette_quantum"])
+        physical_variables.append(info["num_physical_variables"])
     silhouettes_c = np.array(silhouettes_c)
-    silhouettes_s = np.array(silhouettes_s)
     silhouettes_q = np.array(silhouettes_q)
-    dev = np.array([np.std(silhouettes_c), np.std(silhouettes_s), np.std(silhouettes_q)]) 
-    avg = np.array([np.average(silhouettes_c), np.average(silhouettes_s), np.average(silhouettes_q)])
+    physical_variables = np.array(physical_variables)
+    dev = np.array([np.std(silhouettes_c), np.std(silhouettes_q), np.std(physical_variables)]) 
+    avg = np.array([np.average(silhouettes_c), np.average(silhouettes_q), np.average(physical_variables)])
     print(avg)
     print(dev)
 
@@ -361,5 +376,17 @@ def anneal_analysis():
     print(avg)
     print(dev)
 
+def rand_index_analysis():
+    all_info = read_range()
+    scores_c = []
+    scores_q = []
+    for info in all_info:
+        scores_c.append(metrics.adjusted_rand_score(info["target"], info["assignments_classical"]))
+        scores_q.append(metrics.adjusted_rand_score(info["target"], info["assignments_quantum"]))
+    dev = np.array(np.std(scores_q), np.std(scores_c))
+    avg = np.array(np.average(scores_q), np.average(scores_c))
+    print(avg)
+    print(dev)
+
 if __name__ == "__main__":
-    anneal_analysis()
+    rand_index_analysis(filename = "test_iris.txt")
