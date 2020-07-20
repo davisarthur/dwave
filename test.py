@@ -51,18 +51,65 @@ def genData(N, k, d, sigma = 1.0, max = 10.0):
     return datasets.make_blobs(n_samples = cluster_sizes(N, k), n_features = d, \
         centers = centersIn, cluster_std = sigma, center_box = (-max, max))
 
+# Generate data matrix and assignment array
+# N - Number of points
+# k - Number of clusters
+# d - dimension of each data point
+# d_informative - number of features that are important to classification
+# sep - factor used to increase or decrease seperation between clusters
+def gen_data(N, k, d, d_informative = None, sep = 1.0):
+    if d_informative == None:
+        d_informative = d
+    return sklearn.datasets.make_classification(n_samples=N, n_features=d, *, n_informative=d_informative, \
+        n_classes=k, n_clusters_per_class=1, flip_y=0.01, class_sep=sep)
 
+# Tests the QUBO model on a set of points from the iris dataset
+# N - Number of data points
+# k - Number of clusters
+def gen_iris(N, k):
+    iris = datasets.load_iris()
+    length = 150                    # total number of points in the dataset
+    pp_cluster = 50                 # number of data points belonging to any given iris
+    d = 4                           # iris dataset is of dimension 4
+    data = iris["data"]             # all iris datapoints in a (150 x 4) numpy array
+    full_target = iris["target"]    # all iris assignments in a list of length 150
+
+    num_full = N % k        # number of clusters with maximum amount of entries
+    available = [True] * length
+
+    # build the data matrix and target list
+    X = np.zeros((N, d))
+    target = [-1] * N
+
+    for i in range(k):
+        for j in range(N // k):
+            num = random.randint(0, pp_cluster - j - 1)
+            count = 0
+            for l in range(pp_cluster):
+                if count == num:
+                    X[i * (N // k) + j] = data[i * pp_cluster + l]
+                    target[i * (N // k) + j] = full_target[i * pp_cluster + l]
+                    break
+                if available[l]:
+                    count += 1
+
+    for i in range(num_full):
+        num = random.randint(0, pp_cluster - N // k - 1)
+        count = 0
+        for l in range(pp_cluster):
+            if count == num:
+                X[N // k * k + i] = data[i * pp_cluster + l]   
+                target[N // k * k + i] = full_target[i * pp_cluster + l]                 
+                break
+            if available[l]:
+                count += 1
+    return X, target
+
+# Calculate the sihouette score of the clustering assignments
+# X - input data
+# assignments - array of integers indicating each points cluster assignment
 def silhouette_analysis(X, assignments):
     return metrics.silhouette_score(X, assignments)
-
-# Returns the number of physical variables used by the D-Wave
-# sample_set - solution from D-Wave
-def num_physical(sample_set):
-    embedding = sample_set.info["embedding_context"]["embedding"]
-    count = 0
-    for val in embedding.values():
-        count += len(val)
-    return count
 
 # Test using synthetic data. Results are written to "newtest.txt" by default
 # N - Number of points
@@ -148,30 +195,15 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0, filename = "newtest.txt", data = 
     f.write("\nQuantum annealing centroids:\n" + str(centroids_quantum))
     f.write("\nQuantum annealing assignments: " + str(assignments_quantum))
     f.write("\nQuantum annealing silhouette distance: " + str(silhouette_analysis(X, assignments_quantum)) + "\n\n")
-    f.close()
+    f.close()        
 
-# Generates a plausible synthetic binary solution to test the 
-# time performance of postprocessing function
-# N - Number of points
-# k - Number of clusters
-def synthetic_w(N, k):
-    w = {}
-    for i in range(N):
-        one_index = random.randint(0, k - 1) 
-        for j in range(k):
-            if j == one_index:
-                w[i + j * N] = 1
-            else:
-                w[i + j * N] = 0
-    return w
-        
-def test_time(N, k, d = 2, sigma = 1.0, max = 10.0):
+def test_time(N, k, d = 2, sigma = 1.0, max = 10.0, specs = None):
     # data file
     f = open("test_time.txt", "a")
     f.write(str(datetime.now()))    # denote date and time that test begins
 
     X = genData(N, k, d, sigma = 1.0, max = 10.0)[0]
-    f.write("\n(N, k): " + "(" + str(N) + ", " + str(k) + ")")
+    f.write("\n(N, k, d): " + "(" + str(N) + ", " + str(k) + ", " + str(d) + ")")
 
     # get classical solution
     start = time.time()
@@ -179,64 +211,23 @@ def test_time(N, k, d = 2, sigma = 1.0, max = 10.0):
     end = time.time()
     f.write("\nClassical algorithm time elapsed: " + str(end - start))
 
-    # generate QUBO model
-    start = time.time()
-    model = equalsize.genModel(X, k)
-    end = time.time()
-    f.write("\nQUBO Preprocessing time elapsed: " + str(end - start))
+    if not specs == "classical only":
+        # generate QUBO model
+        start = time.time()
+        model = equalsize.genModel(X, k)
+        end = time.time()
+        f.write("\nQUBO Preprocessing time elapsed: " + str(end - start))
 
-    # postprocess synthetic data
-    w = synthetic_w(N, k)
-    start = time.time()
-    assignments_quantum = equalsize.postprocess(X, w)
-    end = time.time()
-    f.write("\nQuantum postprocessing time elapsed: " + str(end - start) + "\n\n")
-    f.close()
-
-def test_synthetic():
-    print(synthetic_w(8, 2))
-
-# Tests the QUBO model on a set of points from the iris dataset
-# N - Number of data points
-# k - Number of clusters
-def gen_iris(N, k):
-    iris = datasets.load_iris()
-    length = 150                    # total number of points in the dataset
-    pp_cluster = 50                 # number of data points belonging to any given iris
-    d = 4                           # iris dataset is of dimension 4
-    data = iris["data"]             # all iris datapoints in a (150 x 4) numpy array
-    full_target = iris["target"]    # all iris assignments in a list of length 150
-
-    num_full = N % k        # number of clusters with maximum amount of entries
-    available = [True] * length
-
-    # build the data matrix and target list
-    X = np.zeros((N, d))
-    target = [-1] * N
-
-    for i in range(k):
-        for j in range(N // k):
-            num = random.randint(0, pp_cluster - j - 1)
-            count = 0
-            for l in range(pp_cluster):
-                if count == num:
-                    X[i * (N // k) + j] = data[i * pp_cluster + l]
-                    target[i * (N // k) + j] = full_target[i * pp_cluster + l]
-                    break
-                if available[l]:
-                    count += 1
-
-    for i in range(num_full):
-        num = random.randint(0, pp_cluster - N // k - 1)
-        count = 0
-        for l in range(pp_cluster):
-            if count == num:
-                X[N // k * k + i] = data[i * pp_cluster + l]   
-                target[N // k * k + i] = full_target[i * pp_cluster + l]                 
-                break
-            if available[l]:
-                count += 1
-    return X, target
+        # postprocess synthetic data
+        w = synthetic_w(N, k)
+        start = time.time()
+        assignments_quantum = equalsize.postprocess(X, w)
+        end = time.time()
+        f.write("\nQuantum postprocessing time elapsed: " + str(end - start))
+        f.close()
+    else:
+        f.write("\n\n")
+        f.close()
 
 def test_iris(N, k):
     X, target = gen_iris(N, k)
@@ -259,7 +250,7 @@ def test_synth(N, k, d = 2):
     M, assignments = equalsize.postprocess(X, sample_set.first.sample)
 
 if __name__ == "__main__":
-    all_configs = [(2048, 4)]
+    all_configs = [(512, 4)]
     for i in range(len(all_configs)):
-        for j in range(40):
-            test_time(all_configs[i][0], all_configs[i][1])
+        for j in range(50):
+            test_time(all_configs[i][0], all_configs[i][1], specs = "classical only")

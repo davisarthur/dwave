@@ -146,8 +146,9 @@ def read_time_entry(f):
 
     # read in (N, k)
     N_k_str = f.readline().split(":")[-1].split("(")[-1].split(")")[0].split(",")
-    info["N"] = float(N_k_str[0])
-    info["k"] = float(N_k_str[1])
+    info["N"] = int(N_k_str[0])
+    info["k"] = int(N_k_str[1])
+    # info["d"] = int(N_k_str[2])
 
     # read in classical algorithm time
     info["time_classical"] = float(f.readline().split(":")[1])
@@ -156,7 +157,6 @@ def read_time_entry(f):
     info["time_preprocessing"] = float(f.readline().split(":")[1])
 
     # read in embedding/postprocessing time
-    info["time_embedding"] = float(f.readline().split(":")[1])
     info["time_postprocessing"] = float(f.readline().split(":")[1])
 
     return info
@@ -352,16 +352,13 @@ def time_analysis():
     for info in all_info:
         time_c.append(info["time_classical"])
         preprocessing_q.append(info["time_preprocessing"])
-        embedding_q.append(info["time_embedding"])
         postprocessing_q.append(info["time_postprocessing"])
     time_c = np.array(time_c)
     preprocessing_q = np.array(preprocessing_q)
     embedding_q = np.array(embedding_q)
     postprocessing_q = np.array(postprocessing_q)
-    dev = np.array([np.std(time_c), np.std(preprocessing_q), np.std(embedding_q), \
-        np.std(preprocessing_q + embedding_q), np.std(postprocessing_q)]) 
-    avg = np.array([np.average(time_c), np.average(preprocessing_q), np.average(embedding_q), \
-        np.average(preprocessing_q + embedding_q), np.average(postprocessing_q)]) 
+    dev = np.array([np.std(time_c), np.std(preprocessing_q), np.std(postprocessing_q)]) 
+    avg = np.array([np.average(time_c), np.average(preprocessing_q), np.average(postprocessing_q)]) 
     print(avg)
     print(dev)
 
@@ -377,16 +374,16 @@ def anneal_analysis():
     print(dev)
 
 def rand_index_analysis():
-    all_info = read_range()
+    all_info = read_range("test_iris.txt")
     scores_c = []
     scores_q = []
     for info in all_info:
         scores_c.append(metrics.adjusted_rand_score(info["target"], info["assignments_classical"]))
         scores_q.append(metrics.adjusted_rand_score(info["target"], info["assignments_quantum"]))
-    dev = np.array(np.std(scores_q), np.std(scores_c))
-    avg = np.array(np.average(scores_q), np.average(scores_c))
+    dev = np.array([np.std(scores_q), np.std(scores_c)])
+    avg = np.array([np.average(scores_q), np.average(scores_c)])
     print(avg)
     print(dev)
 
 if __name__ == "__main__":
-    rand_index_analysis(filename = "test_iris.txt")
+    rand_index_analysis()

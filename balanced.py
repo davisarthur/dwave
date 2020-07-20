@@ -1,6 +1,8 @@
 import numpy as np
 import random
 import math
+import time
+from sklearn.cluster import KMeans
 from scipy.optimize import linear_sum_assignment
 
 ##
@@ -10,22 +12,11 @@ from scipy.optimize import linear_sum_assignment
 # 6-29-2020
 ##
 
-# Initialize the centroids using k random points from the input data
+# Initialize the centroids using classical k-means with 
 # X - input data
 # k - number of clusters
 def init_centroids(X, k):
-    N = np.shape(X)[0]
-    d = np.shape(X)[1]
-    C = np.zeros((k, d))
-    centroid_indexes = []
-    for i in range(k):
-        while True:
-            new_index = random.randint(0, N - 1)
-            if not new_index in centroid_indexes:
-                centroid_indexes.append(new_index)
-                C[i] = X[new_index]
-                break
-    return C
+    return KMeans(n_clusters=k).fit(X).cluster_centers_
 
 # Calculate weights matrix used for Hungarian algorithm in assignment step
 # X - input data
