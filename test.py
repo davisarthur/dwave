@@ -60,8 +60,9 @@ def genData(N, k, d, sigma = 1.0, max = 10.0):
 def gen_data(N, k, d, d_informative = None, sep = 1.0):
     if d_informative == None:
         d_informative = d
-    return sklearn.datasets.make_classification(n_samples=N, n_features=d, *, n_informative=d_informative, \
-        n_classes=k, n_clusters_per_class=1, flip_y=0.01, class_sep=sep)
+    return sklearn.datasets.make_classification(n_samples=N, n_features=d, \
+        n_informative=d_informative, n_redundant=0, n_classes=k, \
+        n_clusters_per_class=1, flip_y=0.01, class_sep=sep)
 
 # Tests the QUBO model on a set of points from the iris dataset
 # N - Number of data points
