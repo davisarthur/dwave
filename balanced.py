@@ -2,6 +2,8 @@ import numpy as np
 import random
 import math
 import time
+import timeit
+import scipy.spatial
 from sklearn.cluster import KMeans
 from scipy.optimize import linear_sum_assignment
 
@@ -29,6 +31,17 @@ def calc_weights(X, C):
         for j in range(N):
             D[i][j] = np.linalg.norm(X[i] - C[j % k]) ** 2.0
     return D
+
+def calc_weights2(X, C):
+    N = np.shape(X)[0]
+    k = np.shape(C)[0]
+    D = np.square(scipy.spatial.distance_matrix(X, C))
+    weights = np.copy(D)
+    for i in range(N // k - 1):
+        weights = np.hstack((weights, D))
+    if N % k > 0:
+        weights = np.hstack((weights, D[:,range(N % k)]))
+    return weights
 
 # X - input data
 # D - weights matrix (based on distance between centroids and points)
@@ -76,5 +89,19 @@ def test():
     print()
     print(assignments)
 
+def test_calc():
+    X = np.array([[1, 2], [1, 3], [1, 4], [9, 5], [9, 6]])
+    C = np.array([[1, 3], [9, 5]])
+    print(calc_weights(X, C))
+    print(calc_weights2(X, C))
+    print(calc_weights3(X, C))
+
 if __name__ == "__main__":
-    test()
+    X = np.array([[1, 2], [1, 3], [1, 4], [9, 5], [9, 6]])
+    C = np.array([[1, 3], [9, 5]])
+    start = time.time()
+    for i in range(1000):
+        calc_weights(X, C)
+    end = time.time()
+    print(end - start)
+
