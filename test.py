@@ -6,6 +6,7 @@ import anysize
 import balanced
 import random
 import dwave.inspector
+from sklearn.cluster import KMeans
 from datetime import datetime
 from dwave.system import DWaveSampler, EmbeddingComposite
 from sklearn import datasets, metrics
@@ -60,7 +61,7 @@ def genData(N, k, d, sigma = 1.0, max = 10.0):
 def gen_data(N, k, d, d_informative = None, sep = 1.0):
     if d_informative == None:
         d_informative = d
-    return sklearn.datasets.make_classification(n_samples=N, n_features=d, \
+    return datasets.make_classification(n_samples=N, n_features=d, \
         n_informative=d_informative, n_redundant=0, n_classes=k, \
         n_clusters_per_class=1, flip_y=0.01, class_sep=sep)
 
@@ -203,12 +204,12 @@ def test_time(N, k, d = 2, sigma = 1.0, max = 10.0, specs = None):
     f = open("test_time.txt", "a")
     f.write(str(datetime.now()))    # denote date and time that test begins
 
-    X = genData(N, k, d, sigma = 1.0, max = 10.0)[0]
+    X = gen_data(N, k, d)[0]
     f.write("\n(N, k, d): " + "(" + str(N) + ", " + str(k) + ", " + str(d) + ")")
 
     # get classical solution
     start = time.time()
-    centroids_classical, assignments_classical = balanced.balanced_kmeans(X, k)
+    kmeans = KMeans(n_clusters=k).fit(X)
     end = time.time()
     f.write("\nClassical algorithm time elapsed: " + str(end - start))
 
@@ -220,11 +221,11 @@ def test_time(N, k, d = 2, sigma = 1.0, max = 10.0, specs = None):
         f.write("\nQUBO Preprocessing time elapsed: " + str(end - start))
 
         # postprocess synthetic data
-        w = synthetic_w(N, k)
         start = time.time()
-        assignments_quantum = equalsize.postprocess(X, w)
+        assignments_quantum = equalsize.postprocess2(X, kmeans.labels_)
         end = time.time()
         f.write("\nQuantum postprocessing time elapsed: " + str(end - start))
+        f.write("\n\n")
         f.close()
     else:
         f.write("\n\n")
@@ -251,7 +252,7 @@ def test_synth(N, k, d = 2):
     M, assignments = equalsize.postprocess(X, sample_set.first.sample)
 
 if __name__ == "__main__":
-    all_configs = [(512, 4)]
+    all_configs = [(2048, 4)]
     for i in range(len(all_configs)):
-        for j in range(50):
-            test_time(all_configs[i][0], all_configs[i][1], specs = "classical only")
+        for _ in range(50):
+            test_time(all_configs[i][0], all_configs[i][1])

@@ -1,6 +1,8 @@
 import numpy as np
+import scipy.spatial.distance
 import random
 import dimod
+import embedder
 import dwavebinarycsp as csp
 import dwave.inspector
 from dwave.system import DWaveSampler, EmbeddingComposite
@@ -30,12 +32,9 @@ def genG(N, k):
 # Generate D matrix
 # X - training data
 def genD(X):
-    N = np.shape(X)[0]
-    D = np.zeros((N, N))
-    for i in range(N):
-        for j in range(N):
-            D[i][j] = np.square(np.linalg.norm(X[i] - X[j]))
-    return D
+    D = scipy.spatial.distance.pdist(X, 'sqeuclidean')
+    D /= np.amax(D)
+    return scipy.spatial.distance.squareform(D)
 
 # Generate Q matrix
 # N - number of points
@@ -46,29 +45,28 @@ def genQ(N, k):
         Q[i][N * (i % k) + i // k] = 1.0
     return Q    
 
+def rowpenalty(N, k):
+    return np.kron(np.ones(k) - 2 * np.identity(k), np.identity(N))
+
 # Generate qubo model
 # X - training data
 # k - number of clusters
-def genA(X, k, alpha, beta):
+def genA(X, k, alpha = None, beta = None):
     N = np.shape(X)[0]      # number of points
+    if alpha == None:
+        alpha = 1.0 / (2.0 * N / k - 1.0)
+    if beta == None:
+        beta = 1.0
     D = genD(X)             # distance matrix
-    D /= np.amax(D)
     F = genF(N, k)          # column penalty matrix
-    G = genG(N, k)          # row penalty matrix
-    Q = genQ(N, k)
-    return np.kron(np.identity(k), D + alpha * F) \
-        + np.matmul(np.matmul(np.transpose(Q), np.kron(np.identity(N), beta * G)), Q)
+    return np.kron(np.identity(k), D + alpha * F) + rowpenalty(N, k)
 
 # Generate QUBO model
 # X - input data
 # k - number of clusters
 def genModel(X, k, alpha = None, beta = None):
     N = np.shape(X)[0]
-    if alpha == None:
-        alpha = 1.0 / (2.0 * N / k - 1.0)
-    if beta == None:
-        beta = 1.0
-    return dimod.as_bqm(genA(X, k, alpha, beta), dimod.BINARY)
+    return dimod.as_bqm(genA(X, k, alpha = None, beta = None), dimod.BINARY)
 
 # Returns D-Wave sampler being used for annealing
 def set_sampler():
@@ -161,10 +159,16 @@ def postprocess2(X, solution):
 # Note: Embedding is done without the use of D-Wave composite
 def test_quantum():
     X = np.array([[1, 2], [1, 3], [9, 5], [9, 6]])  # input data
+    N = 4
     k = 2
     model = genModel(X, k)  # returns BQM model (not yet embedded)
     sampler = set_sampler()  # sets the D-Wave sampler 
     embedding = get_embedding(sampler, model)   # finds an embedding on the smapler
+    A = genA(X, k)
+    print(A)
+    embedding2 = embedder.embedQubo(A, np.zeros(N * k))
+    print("Embedding: " + str(embedding))
+    print("Embedding 2: " + str(embedding2))
     embedded_model = embed(sampler, model, embedding)   # embed on the D-Wave hardware
     print("Number of qubits used: " + str(len(embedded_model.variables))) 
     embedded_solution_set = run_quantum(sampler, embedded_model)    # run on the D-Wave hardware
@@ -196,5 +200,16 @@ def test_sim():
     print(M)
     print("Assignments: " + str(assignments))
 
+def testD():
+    X = np.array([[1, 2], [1, 3], [3, 4], [7, 4], [9, 5], [9, 6]])
+    print(genD(X))
+    N = 6
+    k = 2
+    Q = genQ(N, k)
+    G = genG(N, k)
+    beta = 1.0
+    print(np.matmul(np.matmul(np.transpose(Q), np.kron(np.identity(N), beta * G)), Q))
+    print(rowpenalty(N, k))
+
 if __name__ == "__main__":
-    test_sim()
+    test_quantum()
