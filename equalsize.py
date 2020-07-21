@@ -164,11 +164,6 @@ def test_quantum():
     model = genModel(X, k)  # returns BQM model (not yet embedded)
     sampler = set_sampler()  # sets the D-Wave sampler 
     embedding = get_embedding(sampler, model)   # finds an embedding on the smapler
-    A = genA(X, k)
-    print(A)
-    embedding2 = embedder.embedQubo(A, np.zeros(N * k))
-    print("Embedding: " + str(embedding))
-    print("Embedding 2: " + str(embedding2))
     embedded_model = embed(sampler, model, embedding)   # embed on the D-Wave hardware
     print("Number of qubits used: " + str(len(embedded_model.variables))) 
     embedded_solution_set = run_quantum(sampler, embedded_model)    # run on the D-Wave hardware
@@ -200,6 +195,23 @@ def test_sim():
     print(M)
     print("Assignments: " + str(assignments))
 
+# Example using Pras' embedding algorithm
+def test_quantum3():
+    X = np.array([[1, 2], [1, 4], [9, 5], [9, 6]])  # input data
+    N = 4
+    k = 2
+    A = genA(X, k)
+    sampler = set_sampler()  # sets the D-Wave sampler
+    embedding_dict, embeddings, qubitfootprint = embedder.embedQubo(A, np.zeros(N * k))
+    embedded_model = dimod.as_bqm(embedding_dict, dimod.BINARY)
+    print("Number of qubits used: " + str(qubitfootprint)) 
+    embedded_solution_set = run_quantum(sampler, embedded_model)    # run on the D-Wave hardware
+    print(embedder.postProcessing(embedded_solution_set, embeddings, A)[1][0])
+    M, assignments = postprocess2(X, embedder.postProcessing(embedded_solution_set, embeddings, A)[1][0])    # postprocess the solution
+    print("Centroids: ")
+    print(M)
+    print("Assignments: " + str(assignments))
+
 def testD():
     X = np.array([[1, 2], [1, 3], [3, 4], [7, 4], [9, 5], [9, 6]])
     print(genD(X))
@@ -212,4 +224,4 @@ def testD():
     print(rowpenalty(N, k))
 
 if __name__ == "__main__":
-    test_quantum()
+    test_quantum3()

@@ -1,5 +1,82 @@
-import numpy as np
-import os
+import numpy as np 
+import os 
+import pickle
+
+
+
+# ******************************************************************************
+# API Functions ****************************************************************
+# ******************************************************************************
+
+
+def array2Dict(x):
+    """ Converts numpy 1-dimensional array into dictionary.
+
+    Args:
+        x (numpy array): Input array
+
+    Returns:
+        d (dict): Dictionary with array indices as keys and array values as values.
+
+    """
+
+    d = {}
+    for i in range(len(x)):
+        if x[i] != 0.0:
+            d[(i, i)] = x[i]
+
+    return d
+
+
+def embedIsing(Q, p, M=16, N=16, L=4, Lambda=None, normalize=True):
+    """ Generates embedding for an Ising problem characterized by Q and p for D-Wave Chimera hardware.
+
+    Args:
+        Q (numpy array):
+        p (numpy array):
+        M (int):
+        N (int):
+        L (int):
+
+    Returns:
+        J (dict):
+        h (dict):
+
+    Raises:
+        TypeError: If M, N or L are not integers
+        ValueError: If Lambda is given and not positive
+
+    """
+
+    if not isinstance(M, int):
+        raise TypeError("'M' must be an integer")
+    if not isinstance(N, int):
+        raise TypeError("'N' must be an integer")
+    if not isinstance(L, int):
+        raise TypeError("'L' must be an integer")
+
+    maximum = max(np.absolute(Q).max(), np.absolute(p).max())
+
+    if Lambda:
+        if Lambda < 0:
+            raise ValueError("'Lambda' must be a large positive integer")
+    else:
+        Lambda = max(Q.max(), p.max()) * 1000
+
+    Q = Q.copy()
+    p = p.copy()
+
+    # Normalize
+    if normalize:
+        Q = Q / maximum
+        p = p / maximum
+
+    Q = _makeUpperTriangular(_zeroDiagonal(Q))
+
+    J, h, embeddings, qubitFootprint = _computeEmbeddings(Q, p, M, N, L, Lambda)
+
+    return J, h, embeddings, qubitFootprint
+
 
 def embedQubo(Q, p, M=16, N=16, L=4, Lambda=None, normalize=True):
     """ Generates embedding for an Ising problem characterized by Q and p for D-Wave Chimera hardware.
@@ -52,10 +129,7 @@ def embedQubo(Q, p, M=16, N=16, L=4, Lambda=None, normalize=True):
     Q = _makeUpperTriangular(Q)
 
     J, h, embeddings, qubitFootprint = _computeEmbeddings(Q, p, M, N, L, Lambda)
-    print(J)
-    print(h)
-    print(embeddings)
-    print(qubitFootprint)
+
     h = array2Dict(h)
     J.update(h)
 
@@ -90,8 +164,8 @@ def postProcessing(response, embeddings, A, b=None):
     for sample, _, _ in response.data():
         solution = np.array([sample[i] for i in indices])
         solutionTuple = tuple(solution)
-
-        value = solution.T @ A @ solution + solution.T @ b
+        
+        value = solution.T @ A @ solution #+ solution.T @ b
         if value < optimalValue:
             optimalValue = value
             optimalSolution = [solution.copy()]
@@ -166,7 +240,7 @@ def _computeCouplings(M, N, L, V):
 
     else:
         raise RuntimeError("Can not embed %d variables on %d X %d X %d hardware graph" %(V, M, N, L))
-    print(couplings)
+
     return couplings
 
 
