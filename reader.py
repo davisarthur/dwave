@@ -42,10 +42,9 @@ def read_entry(f):
     # dictionary for extracted information
     info = {}
 
-    # read data generation type
+    # read data generation type and target
     gen_type = f.readline()
-    if "Iris" in gen_type:
-        info["target"] = read_assignments(f)
+    info["target"] = read_assignments(f)
 
     # read in (N, k)
     N_k_str = f.readline().split(":")[-1].split("(")[-1].split(")")[0].split(",")

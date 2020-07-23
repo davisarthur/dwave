@@ -128,14 +128,15 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0, filename = "newtest.txt", data = 
     f.write(str(datetime.now()))    # denote date and time that test begins
 
     if data == "synthetic":
-        X = genData(N, k, d, sigma = 1.0, max = 10.0)[0]
+        X, target = gen_data(N, k, d)
         f.write("\nSynthetic data")
+        f.write("\nTarget: " + str(target))
     elif data == "iris":
         X, target = gen_iris(N, k)
         f.write("\nIris")
         f.write("\nTarget: " + str(target))
     else:
-        print("Unsupported data generation type.")
+        print("Unsupported data generation technique.")
 
     f.write("\n(N, k): " + "(" + str(N) + ", " + str(k) + ")")
     f.write("\nData: \n" + str(X)) 
