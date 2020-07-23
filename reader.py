@@ -57,7 +57,7 @@ def read_entry(f):
     info["X"] = read_array(f)
 
     # read in classical algorithm time
-    info["time_classical"] = float(f.readline().split(":")[1])
+    info["time_balanced"] = float(f.readline().split(":")[1])
 
     # read in classical algorithm centroids
     f.readline()  # ignore label
@@ -113,6 +113,51 @@ def read_entry(f):
     
     return info
 
+def read_embed_entry(f):
+    # dictionary for extracted information
+    info = {}
+
+    # read in (N, k)
+    N_k_str = f.readline().split(":")[-1].split("(")[-1].split(")")[0].split(",")
+    info["N"] = int(N_k_str[0])
+    info["k"] = int(N_k_str[1])
+    info["d"] = int(N_k_str[2])
+
+    # read in number of variables
+    info["num_var"] = int(f.readline().split(":")[1])
+
+    # read in embedding time
+    info["time_embed"] = float(f.readline().split(":")[1])
+
+    # read in qubit footprint
+    info["qubit_footprint"] = int(f.readline().split(":")[1])
+
+    return info
+
+def read_embed_range(filename = "embedding_time.txt"):
+    all_info = []
+    f = open(filename, "r")
+
+    # prompt user to get the start time of data to be extracted
+    start = input("Start time: ")
+    end = input("End time: ")
+    line = ""
+    while not start in line:
+        line = f.readline()
+    
+    # read first entry
+    all_info.append(read_embed_entry(f))
+    while True:
+        f.readline()
+        if end in f.readline():
+            all_info.append(read_embed_entry(f))
+            break
+        all_info.append(read_embed_entry(f))
+    
+    # close the file and return dictionary
+    f.close()
+    return all_info
+
 # Read a range of entries in "test_time.txt"
 def read_time_range(filename = "test_time.txt"):
     all_info = []
@@ -150,8 +195,11 @@ def read_time_entry(f):
     info["k"] = int(N_k_str[1])
     info["d"] = int(N_k_str[2])
 
-    # read in classical algorithm time
-    info["time_classical"] = float(f.readline().split(":")[1])
+    # read in lloyd's algorithm time
+    info["time_sklearn"] = float(f.readline().split(":")[1])
+
+    # read in balanced clustering algorithm time
+    info["time_balanced"] = float(f.readline().split(":")[1])
 
     # read in QUBO preprocessing time
     info["time_preprocessing"] = float(f.readline().split(":")[1])
@@ -206,22 +254,32 @@ def silhouette_analysis():
 
 def time_analysis():
     all_info = read_time_range()
-    time_c = []
+    time_s = []
+    time_b = []
     preprocessing_q = []
-    embedding_q = []
     postprocessing_q = []
     for info in all_info:
-        time_c.append(info["time_classical"])
+        time_s.append(info["time_sklearn"])
+        time_b.append(info["time_balanced"])
         preprocessing_q.append(info["time_preprocessing"])
         postprocessing_q.append(info["time_postprocessing"])
-    time_c = np.array(time_c)
+    time_b = np.array(time_b)
     preprocessing_q = np.array(preprocessing_q)
-    embedding_q = np.array(embedding_q)
     postprocessing_q = np.array(postprocessing_q)
-    dev = np.array([np.std(time_c), np.std(preprocessing_q), np.std(postprocessing_q)]) 
-    avg = np.array([np.average(time_c), np.average(preprocessing_q), np.average(postprocessing_q)]) 
-    print(avg)
-    print(dev)
+    avg = np.array([np.average(time_s), np.average(time_b), np.average(preprocessing_q), np.average(postprocessing_q)]) 
+    dev = np.array([np.std(time_s), np.std(time_b), np.std(preprocessing_q), np.std(postprocessing_q)]) 
+    for entry in avg:
+        print(entry)
+    for entry in dev:
+        print(entry)
+
+def embed_time_analysis():
+    all_info = read_embed_range()
+    time_embed = []
+    for info in all_info:
+        time_embed.append(info["time_embed"])
+    time_embed = np.array(time_embed)
+    print(np.average(time_embed))
 
 def anneal_analysis():
     all_info = read_range()
@@ -247,4 +305,4 @@ def rand_index_analysis():
     print(dev)
 
 if __name__ == "__main__":
-    rand_index_analysis()
+    embed_time_analysis()

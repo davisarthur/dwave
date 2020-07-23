@@ -1,6 +1,5 @@
 import numpy as np
 import random
-import math
 import time
 import timeit
 import scipy.spatial
@@ -14,11 +13,16 @@ from scipy.optimize import linear_sum_assignment
 # 6-29-2020
 ##
 
-# Initialize the centroids using classical k-means with 
+# Initialize the centroids at random
 # X - input data
 # k - number of clusters
 def init_centroids(X, k):
-    return KMeans(n_clusters=k).fit(X).cluster_centers_
+    N = np.shape(X)[0]
+    indexes = random.sample(range(N), k)
+    centroids = np.array(X[indexes[0]])
+    for i in range(k - 1):
+        centroids = np.vstack((centroids, X[indexes[i + 1]]))
+    return centroids
 
 # Calculate weights matrix used for Hungarian algorithm in assignment step
 # X - input data
@@ -43,6 +47,15 @@ def calc_weights2(X, C):
         weights = np.hstack((weights, D[:,range(N % k)]))
     return weights
 
+def calc_weights3(X, C):
+    N = np.shape(X)[0]
+    k = np.shape(C)[0]
+    D = np.square(scipy.spatial.distance_matrix(X, C))
+    weights = np.kron(np.ones(N // k), D)
+    if N % k > 0:
+        weights = np.hstack((weights, D[:,range(N % k)]))
+    return weights
+
 # X - input data
 # D - weights matrix (based on distance between centroids and points)
 # k - number of clusters
@@ -50,7 +63,7 @@ def update_centroids(X, k, D):
     N = np.shape(X)[0]
     d = np.shape(X)[1]
     C = np.zeros((k, d))
-    assignments = linear_sum_assignment(D)[1]
+    assignments = np.array(linear_sum_assignment(D)[1])
 
     # sum of all points in a cluster
     for i in range(N):
@@ -60,9 +73,9 @@ def update_centroids(X, k, D):
     num_full = N % k
     for i in range(k):
         if i < N % k:
-            C[i] /= math.ceil(N / k)
+            C[i] /= np.ceil(N / k)
         else:
-            C[i] /= math.floor(N / k)
+            C[i] /= np.floor(N / k)
     return C, assignments
 
 # Perform balanced k-means algorithm, returns centroids and assignments
@@ -71,18 +84,17 @@ def update_centroids(X, k, D):
 def balanced_kmeans(X, k):
     N = np.shape(X)[0]
     C = init_centroids(X, k)
-    assignments = np.array([0] * N)
+    assignments = np.zeros(N, dtype = np.int8)
     while True:
-        newC, new_assignments = update_centroids(X, k, calc_weights(X, C))
-        if np.array_equal(newC, C):
-            for i in range(N):
-                assignments[i] = new_assignments[i] % k
+        newC, new_assignments = update_centroids(X, k, calc_weights3(X, C))
+        if np.array_equal(assignments, new_assignments):
             break
         C = newC
-    return C, assignments
+        assignments = new_assignments
+    return C, assignments % k
 
-def test():
-    X = np.array([[1, 2], [1, 3], [1, 4], [9, 5], [9, 6]])
+def test1():
+    X = np.array([[1, 2], [1, 4], [9, 5], [9, 6]])
     k = 2
     M, assignments = balanced_kmeans(X, k)
     print(M)
@@ -97,11 +109,4 @@ def test_calc():
     print(calc_weights3(X, C))
 
 if __name__ == "__main__":
-    X = np.array([[1, 2], [1, 3], [1, 4], [9, 5], [9, 6]])
-    C = np.array([[1, 3], [9, 5]])
-    start = time.time()
-    for i in range(1000):
-        calc_weights(X, C)
-    end = time.time()
-    print(end - start)
-
+    check_time()

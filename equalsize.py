@@ -3,8 +3,9 @@ import scipy.spatial.distance
 import random
 import dimod
 import embedder
-import dwavebinarycsp as csp
-import dwave.inspector
+import time
+import test
+from datetime import datetime
 from dwave.system import DWaveSampler, EmbeddingComposite
 from dwave.embedding import embed_bqm, unembed_sampleset
 from minorminer import find_embedding
@@ -212,16 +213,22 @@ def test_quantum3():
     print(M)
     print("Assignments: " + str(assignments))
 
-def testD():
-    X = np.array([[1, 2], [1, 3], [3, 4], [7, 4], [9, 5], [9, 6]])
-    print(genD(X))
-    N = 6
-    k = 2
-    Q = genQ(N, k)
-    G = genG(N, k)
-    beta = 1.0
-    print(np.matmul(np.matmul(np.transpose(Q), np.kron(np.identity(N), beta * G)), Q))
-    print(rowpenalty(N, k))
+def test_embed_time(maxN, k, d):
+    f = open("embedding_time.txt", "a")
+    for N in range(k, maxN + 1):
+        for _ in range(50):
+            f.write(str(datetime.now()))
+            X = test.gen_data(N, k, d)[0]
+            f.write("\n(N, k, d): (" + str(N) + ", " + str(k) + ", " + str(d) + ")")
+            f.write("\nNumber of variables: " + str(N * k))
+            A = genA(X, k)
+            b = np.zeros(N * k)
+            start = time.time()
+            embedding_dict, embeddings, qubitfootprint = embedder.embedQubo(A, b)
+            end = time.time()
+            f.write("\nTime to find embedding: " + str(end - start))
+            f.write("\nQubit footprint: " + str(qubitfootprint) + "\n\n")
+    embedding_dict, embeddings, qubitfootprint = embedder.embedQubo(A, np.zeros(N * k))
 
 if __name__ == "__main__":
-    test_quantum3()
+    test_embed_time(16, 4, 2)

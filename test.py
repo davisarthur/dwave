@@ -5,7 +5,6 @@ import equalsize
 import anysize
 import balanced
 import random
-import dwave.inspector
 from sklearn.cluster import KMeans
 from datetime import datetime
 from dwave.system import DWaveSampler, EmbeddingComposite
@@ -207,18 +206,24 @@ def test_time(N, k, d = 2, sigma = 1.0, max = 10.0, specs = None):
     X = gen_data(N, k, d)[0]
     f.write("\n(N, k, d): " + "(" + str(N) + ", " + str(k) + ", " + str(d) + ")")
 
-    # get classical solution
+    # get sklearn solution
     start = time.time()
     kmeans = KMeans(n_clusters=k).fit(X)
     end = time.time()
-    f.write("\nClassical algorithm time elapsed: " + str(end - start))
+    f.write("\nSKlearn algorithm time elapsed: " + str(end - start))
+
+    # get balanced algorithm solution
+    start = time.time()
+    classical_solution = balanced.balanced_kmeans(X, k)
+    end = time.time()
+    f.write("\nBalanced algorithm time elapsed: " + str(end - start))
 
     if not specs == "classical only":
         # generate QUBO model
         start = time.time()
-        model = equalsize.genModel(X, k)
+        model = equalsize.genA(X, k)
         end = time.time()
-        f.write("\nQUBO Preprocessing time elapsed: " + str(end - start))
+        f.write("\nQUBO matrix formulation time elapsed: " + str(end - start))
 
         # postprocess synthetic data
         start = time.time()
@@ -252,7 +257,7 @@ def test_synth(N, k, d = 2):
     M, assignments = equalsize.postprocess(X, sample_set.first.sample)
 
 if __name__ == "__main__":
-    all_configs = [(2048, 4)]
+    all_configs = [(1024, 4, 2), (1024, 4, 4), (1024, 4, 8), (1024, 4, 16), (1024, 4, 32), (1024, 4, 64), (1024, 4, 128), (1024, 4, 256)]
     for i in range(len(all_configs)):
         for _ in range(50):
-            test_time(all_configs[i][0], all_configs[i][1])
+            test_time(all_configs[i][0], all_configs[i][1], all_configs[i][2])
