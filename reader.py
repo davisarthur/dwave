@@ -65,9 +65,6 @@ def read_entry(f):
     # read in classical algorithm assignments
     info["assignments_classical"] = read_assignments(f)
 
-    # read in classical silhouette distance
-    info["silhouette_classical"] = float(f.readline().split(":")[1])
-
     # read in QUBO preprocessing time
     info["time_preprocessing"] = float(f.readline().split(":")[1])
     
@@ -85,9 +82,6 @@ def read_entry(f):
         # read in simulated annealing assignments
         info["assignments_sim"] = read_assignments(f)
 
-        # read in simulated annealing silhouette distance
-        info["silhouette_sim"] = float(f.readline().split(":")[1])
-
     else:
         info["time_finding_embedding"] = float(line.split(":")[1])
         sim = False
@@ -95,7 +89,7 @@ def read_entry(f):
     # read in quantum annealing/postprocessing time
     if sim:
         info["time_finding_embedding"] = float(f.readline().split(":")[1])
-    info["time_embedding"] = float(f.readline().split(":")[1])
+    info["time_model_creation"] = float(f.readline().split(":")[1])
     info["num_physical_variables"] = float(f.readline().split(":")[1])
     info["time_annealing_quantum"] = float(f.readline().split(":")[1])
     info["time_postprocessing_quantum"] = float(f.readline().split(":")[1])
@@ -106,9 +100,6 @@ def read_entry(f):
     
     # read in quantum annealing assignments
     info["assignments_quantum"] = read_assignments(f)
-
-    # read in classical silhouette distance
-    info["silhouette_quantum"] = float(f.readline().split(":")[1])
     
     return info
 

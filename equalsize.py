@@ -111,6 +111,7 @@ def run_sim(model):
     return dimod.SimulatedAnnealingSampler().sample(model)
 
 # Return centroids and assignments from binary solution of embedded model
+# Embedding is done using D-Wave's embedding
 # X - input data
 # embedded_solution - embedded solution set produced by annealing
 # embedding - embedding used to convert from logical to embedded model
@@ -155,6 +156,10 @@ def postprocess2(X, solution):
     for i in range(k):
         M[i] /= cluster_sizes[i]
     return M, assignments
+
+# Postprocessing for model embedded using Pras's embedding algorithm
+def postprocess3(X, embedded_solution_set):
+    return postprocess2(X, embedder.postProcessing(embedded_solution_set, embeddings, A)[1][0])
 
 # Example using D-Wave's quantum annealing
 # Note: Embedding is done without the use of D-Wave composite

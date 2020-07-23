@@ -4,6 +4,7 @@ import dimod
 import equalsize
 import anysize
 import balanced
+import embedder
 import random
 from sklearn.cluster import KMeans
 from datetime import datetime
@@ -112,16 +113,14 @@ def gen_iris(N, k):
 def silhouette_analysis(X, assignments):
     return metrics.silhouette_score(X, assignments)
 
-# Test using synthetic data. Results are written to "newtest.txt" by default
+# Test using synthetic data. Results are written to "test.txt" by default
 # N - Number of points
 # k - Number of clusters
 # d - Dimension of each data point
-# sigma - Standard deviation of each cluster
-# max - Max of a given coordinate
 # filename - File to write to
 # data - How data is generated ("synthetic" (default) or "iris")
-# sim - Run using simulated annealing (default = true)
-def test(N, k, d = 2, sigma = 1.0, max = 10.0, filename = "newtest.txt", data = "synthetic", sim = True):
+# sim - Run using simulated annealing (default = False)
+def test(N, k, d = 2, filename = "test.txt", data = "synthetic", sim = False):
 
     # data file
     f = open(filename, "a")
@@ -148,11 +147,11 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0, filename = "newtest.txt", data = 
     f.write("\nClassical algorithm time elapsed: " + str(end - start))
     f.write("\nClassical algorithm centroids:\n" + str(centroids_classical))
     f.write("\nClassical algorithm assignments: " + str(assignments_classical))
-    f.write("\nClassical silhouette distance: " + str(silhouette_analysis(X, assignments_classical)))
 
     # generate QUBO model
     start = time.time()
-    model = equalsize.genModel(X, k)
+    A = equalsize.genA(X, k)
+    b = np.zeros(N * k)
     end = time.time()
     f.write("\nQUBO Preprocessing time elapsed: " + str(end - start))
 
@@ -170,33 +169,33 @@ def test(N, k, d = 2, sigma = 1.0, max = 10.0, filename = "newtest.txt", data = 
         f.write("\nSimulated postprocessing time elapsed: " + str(end - start))
         f.write("\nSimulated annealing centroids:\n" + str(centroids_sim))
         f.write("\nSimulated annealing assignments: " + str(assignments_sim))
-        f.write("\nSimulated annealing silhouette distance: " + str(silhouette_analysis(X, assignments_sim)))
 
     # embed on the D-Wave
     sampler_quantum = equalsize.set_sampler()
     start = time.time()
-    embedding = equalsize.get_embedding(sampler_quantum, model)
+    embedding_dict, embeddings, qubitfootprint = embedder.embedQubo(A, b)
     end = time.time()
     f.write("\nFinding embedding time elapsed: " + str(end - start))
+    
+    # create BQM model from embedding
     start = time.time()
-    embedded_model = equalsize.embed2(sampler_quantum, model, embedding)
+    embedded_model = dimod.as_bqm(embedding_dict, dimod.BINARY)
     end = time.time()
-    f.write("\nQuantum embedding time elapsed: " + str(end - start))
+    f.write("\nTime to create embedded BQM model: " + str(end - start))
 
     # get quantum annealing solution
-    embedded_sample_set = equalsize.run_quantum2(sampler_quantum, embedded_model)
-    f.write("\nNumber of Physical variables: " + str(len(embedded_model.variables)))
+    embedded_solution_set = equalsize.run_quantum(sampler_quantum, embedded_model)
+    f.write("\nNumber of Physical variables: " + str(qubitfootprint))
     f.write("\nQuantum annealing time elapsed: " \
         + str(float(embedded_sample_set.info["timing"]["total_real_time"]) / (10 ** 6.0)))
     
     # quantum postprocessing
     start = time.time()
-    centroids_quantum, assignments_quantum = equalsize.postprocess2(X, embedded_sample_set, embedding, model)
+    centroids_quantum, assignments_quantum = equalsize.postprocess3(X, embedded_solution_set)
     end = time.time()
     f.write("\nQuantum postprocessing time elapsed: " + str(end - start))
     f.write("\nQuantum annealing centroids:\n" + str(centroids_quantum))
     f.write("\nQuantum annealing assignments: " + str(assignments_quantum))
-    f.write("\nQuantum annealing silhouette distance: " + str(silhouette_analysis(X, assignments_quantum)) + "\n\n")
     f.close()        
 
 def test_time(N, k, d = 2, sigma = 1.0, max = 10.0, specs = None):
@@ -258,7 +257,7 @@ def test_synth(N, k, d = 2):
     M, assignments = equalsize.postprocess(X, sample_set.first.sample)
 
 if __name__ == "__main__":
-    all_configs = [(1024, 4, 2), (1024, 4, 4), (1024, 4, 8), (1024, 4, 16), (1024, 4, 32), (1024, 4, 64), (1024, 4, 128), (1024, 4, 256)]
+    all_configs = [(16, 2), (8, 4), (12, 3), (15, 3), (24, 2), (12, 4), (21, 3), (32, 2), (16, 4)]
     for i in range(len(all_configs)):
         for _ in range(50):
-            test_time(all_configs[i][0], all_configs[i][1], all_configs[i][2])
+            test(all_configs[i][0], all_configs[i][1])
