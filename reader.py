@@ -11,7 +11,7 @@ from sklearn import metrics
 ##
 
 # Read a range of entries in "test.txt"
-def read_range(filename = "newtest.txt"):
+def read_range(filename = "test.txt"):
     all_info = []
     f = open(filename, "r")
 
@@ -37,7 +37,7 @@ def read_range(filename = "newtest.txt"):
             
 # Reader for an individual entry in "test.txt"
 # f - file
-def read_entry(f):
+def read_entry(f, specs = None):
 
     # dictionary for extracted information
     info = {}
@@ -55,51 +55,62 @@ def read_entry(f):
     f.readline()  # ignore label
     info["X"] = read_array(f)
 
-    # read in classical algorithm time
+    # read in sklearn algorithm time
+    info["time_sklearn"] = float(f.readline().split(":")[1])
+
+    # read in sklearn algorithm centroids
+    f.readline()  # ignore label
+    info["centroids_sklearn"] = read_array(f)
+
+    # read in sklearn algorithm assignments
+    info["assignments_sklearn"] = read_assignments(f)
+
+    # read in balanced algorithm time
     info["time_balanced"] = float(f.readline().split(":")[1])
 
-    # read in classical algorithm centroids
+    # read in balanced algorithm centroids
     f.readline()  # ignore label
-    info["centroids_classical"] = read_array(f)
+    info["centroids_balanced"] = read_array(f)
 
-    # read in classical algorithm assignments
-    info["assignments_classical"] = read_assignments(f)
+    # read in balanced algorithm assignments
+    info["assignments_balanced"] = read_assignments(f)
 
-    # read in QUBO preprocessing time
-    info["time_preprocessing"] = float(f.readline().split(":")[1])
-    
-    line = f.readline()
-    sim = True
-    if "Simulated" in line:
-        # read in simulated annealing/postprocessing time
-        info["time_annealing_sim"] = float(line.split(":")[1])
-        info["time_postprocessing_sim"] = float(f.readline().split(":")[1])
+    if not specs == "classical only":
+        # read in QUBO preprocessing time
+        info["time_preprocessing"] = float(f.readline().split(":")[1])
+        
+        line = f.readline()
+        sim = True
+        if "Simulated" in line:
+            # read in simulated annealing/postprocessing time
+            info["time_annealing_sim"] = float(line.split(":")[1])
+            info["time_postprocessing_sim"] = float(f.readline().split(":")[1])
 
-        # read in simulated annealing centroids
+            # read in simulated annealing centroids
+            f.readline()    # ignore label
+            info["centroids_sim"] = read_array(f)
+
+            # read in simulated annealing assignments
+            info["assignments_sim"] = read_assignments(f)
+
+        else:
+            info["time_finding_embedding"] = float(line.split(":")[1])
+            sim = False
+        
+        # read in quantum annealing/postprocessing time
+        if sim:
+            info["time_finding_embedding"] = float(f.readline().split(":")[1])
+        info["time_embed"] = float(f.readline().split(":")[1])
+        info["num_physical_variables"] = float(f.readline().split(":")[1])
+        info["time_annealing_quantum"] = float(f.readline().split(":")[1])
+        info["time_postprocessing_quantum"] = float(f.readline().split(":")[1])
+
+        # read in quantum annealing centroids
         f.readline()    # ignore label
-        info["centroids_sim"] = read_array(f)
-
-        # read in simulated annealing assignments
-        info["assignments_sim"] = read_assignments(f)
-
-    else:
-        info["time_finding_embedding"] = float(line.split(":")[1])
-        sim = False
-    
-    # read in quantum annealing/postprocessing time
-    if sim:
-        info["time_finding_embedding"] = float(f.readline().split(":")[1])
-    info["time_model_creation"] = float(f.readline().split(":")[1])
-    info["num_physical_variables"] = float(f.readline().split(":")[1])
-    info["time_annealing_quantum"] = float(f.readline().split(":")[1])
-    info["time_postprocessing_quantum"] = float(f.readline().split(":")[1])
-
-    # read in quantum annealing centroids
-    f.readline()    # ignore label
-    info["centroids_quantum"] = read_array(f)
-    
-    # read in quantum annealing assignments
-    info["assignments_quantum"] = read_assignments(f)
+        info["centroids_quantum"] = read_array(f)
+        
+        # read in quantum annealing assignments
+        info["assignments_quantum"] = read_assignments(f)
     
     return info
 
@@ -225,22 +236,34 @@ def read_assignments(f):
         assignment_array.append(a)
     return np.array(assignment_array)
 
-def silhouette_analysis():
-    all_info = read_range()
-    silhouettes_c = []
+def quality_analysis():
+    all_info = read_range("test_iris.txt")
+    silhouettes_s = []
+    silhouettes_b = []
     silhouettes_q = []
+    rand_s = []
+    rand_b = []
+    rand_q = []
     physical_variables = []
     for info in all_info:
-        silhouettes_c.append(info["silhouette_classical"])
-        silhouettes_q.append(info["silhouette_quantum"])
+        silhouettes_s.append(metrics.silhouette_score(info["X"], info["assignments_sklearn"]))
+        silhouettes_b.append(metrics.silhouette_score(info["X"], info["assignments_balanced"]))
+        silhouettes_q.append(metrics.silhouette_score(info["X"], info["assignments_quantum"]))
+        rand_s.append(metrics.adjusted_rand_score(info["target"], info["assignments_sklearn"]))
+        rand_b.append(metrics.adjusted_rand_score(info["target"], info["assignments_balanced"]))
+        rand_q.append(metrics.adjusted_rand_score(info["target"], info["assignments_quantum"]))
         physical_variables.append(info["num_physical_variables"])
-    silhouettes_c = np.array(silhouettes_c)
+    silhouettes_b = np.array(silhouettes_b)
     silhouettes_q = np.array(silhouettes_q)
+    rand_b = np.array(rand_b)
+    rand_q = np.array(rand_q)
     physical_variables = np.array(physical_variables)
-    dev = np.array([np.std(silhouettes_c), np.std(silhouettes_q), np.std(physical_variables)]) 
-    avg = np.array([np.average(silhouettes_c), np.average(silhouettes_q), np.average(physical_variables)])
-    print(avg)
-    print(dev)
+    avg = np.array([np.average(physical_variables), np.average(rand_s), np.average(rand_b), np.average(rand_q), np.average(silhouettes_s), np.average(silhouettes_b), np.average(silhouettes_q)])
+    dev = np.array([np.std(physical_variables), np.std(rand_s), np.std(rand_b), np.std(rand_q), np.std(silhouettes_s), np.std(silhouettes_b), np.std(silhouettes_q)]) 
+    for entry in avg:
+        print(entry)
+    for entry in dev:
+        print(entry)
 
 def time_analysis():
     all_info = read_time_range()
@@ -295,4 +318,4 @@ def rand_index_analysis():
     print(dev)
 
 if __name__ == "__main__":
-    embed_time_analysis()
+    quality_analysis()

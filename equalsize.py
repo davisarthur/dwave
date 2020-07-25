@@ -76,7 +76,7 @@ def set_sampler():
 # Find a possible embedding for the hardware
 # sampler - D-Wave sampler
 # model - logical BQM model
-# Returns embeddeding
+# Returns embedding
 def get_embedding(sampler, model):
     edge_list_model = []
     for key in model.adj.keys():

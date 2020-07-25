@@ -107,20 +107,14 @@ def gen_iris(N, k):
                 count += 1
     return X, target
 
-# Calculate the sihouette score of the clustering assignments
-# X - input data
-# assignments - array of integers indicating each points cluster assignment
-def silhouette_analysis(X, assignments):
-    return metrics.silhouette_score(X, assignments)
-
 # Test using synthetic data. Results are written to "test.txt" by default
 # N - Number of points
 # k - Number of clusters
-# d - Dimension of each data point
+# d - Dimension of each data point (only used if data = "synthetic")
 # filename - File to write to
 # data - How data is generated ("synthetic" (default) or "iris")
 # sim - Run using simulated annealing (default = False)
-def test(N, k, d = 2, filename = "test.txt", data = "synthetic", sim = False):
+def test(N, k, d = 2, filename = "test.txt", data = "synthetic", sim = False, specs = None):
 
     # data file
     f = open(filename, "a")
@@ -136,67 +130,81 @@ def test(N, k, d = 2, filename = "test.txt", data = "synthetic", sim = False):
         f.write("\nTarget: " + str(target))
     else:
         print("Unsupported data generation technique.")
+        return
 
     f.write("\n(N, k): " + "(" + str(N) + ", " + str(k) + ")")
     f.write("\nData: \n" + str(X)) 
 
-    # get classical solution
+    # get sklearn solution
     start = time.time()
-    centroids_classical, assignments_classical = balanced.balanced_kmeans(X, k)
+    kmeans = KMeans(n_clusters=k).fit(X)
     end = time.time()
-    f.write("\nClassical algorithm time elapsed: " + str(end - start))
-    f.write("\nClassical algorithm centroids:\n" + str(centroids_classical))
-    f.write("\nClassical algorithm assignments: " + str(assignments_classical))
+    centroids_sklearn = kmeans.cluster_centers_
+    assignments_sklearn = kmeans.labels_
+    f.write("\nSKlearn algorithm time elapsed: " + str(end - start))
+    f.write("\nSKlearn algorithm centroids:\n" + str(centroids_sklearn))
+    f.write("\nSKlearn algorithm assignments: " + str(assignments_sklearn))
 
-    # generate QUBO model
+    # get balanced solution
     start = time.time()
-    A = equalsize.genA(X, k)
-    b = np.zeros(N * k)
+    centroids_balanced, assignments_balanced = balanced.balanced_kmeans(X, k)
     end = time.time()
-    f.write("\nQUBO Preprocessing time elapsed: " + str(end - start))
+    f.write("\nBalanced algorithm time elapsed: " + str(end - start))
+    f.write("\nBalanced algorithm centroids:\n" + str(centroids_balanced))
+    f.write("\nBalanced algorithm assignments: " + str(assignments_balanced))
 
-    if sim:
-        # get simulated annealing solution
+    if not specs == "classical only":
+        # generate QUBO model
         start = time.time()
-        sampleset_sim = equalsize.run_sim(model)
+        model = equalsize.genModel(X, k)
         end = time.time()
-        f.write("\nSimulated annealing time elapsed: " + str(end - start))
+        f.write("\nQUBO Preprocessing time elapsed: " + str(end - start))
 
-        # simulated annealing postprocessing
+        if sim:
+            # get simulated annealing solution
+            start = time.time()
+            sampleset_sim = equalsize.run_sim(model)
+            end = time.time()
+            f.write("\nSimulated annealing time elapsed: " + str(end - start))
+
+            # simulated annealing postprocessing
+            start = time.time()
+            centroids_sim, assignments_sim = equalsize.postprocess(X, sampleset_sim.first.sample)
+            end = time.time()
+            f.write("\nSimulated postprocessing time elapsed: " + str(end - start))
+            f.write("\nSimulated annealing centroids:\n" + str(centroids_sim))
+            f.write("\nSimulated annealing assignments: " + str(assignments_sim))
+
+        # embed on the D-Wave
+        sampler_quantum = equalsize.set_sampler()
         start = time.time()
-        centroids_sim, assignments_sim = equalsize.postprocess(X, sampleset_sim.first.sample)
+        embedding = equalsize.get_embedding(sampler_quantum, model)
         end = time.time()
-        f.write("\nSimulated postprocessing time elapsed: " + str(end - start))
-        f.write("\nSimulated annealing centroids:\n" + str(centroids_sim))
-        f.write("\nSimulated annealing assignments: " + str(assignments_sim))
+        f.write("\nFinding embedding time elapsed: " + str(end - start))
+        
+        # create BQM model from embedding
+        start = time.time()
+        embedded_model = equalsize.embed(sampler_quantum, model, embedding)
+        end = time.time()
+        f.write("\nTime to embed: " + str(end - start))
 
-    # embed on the D-Wave
-    sampler_quantum = equalsize.set_sampler()
-    start = time.time()
-    embedding_dict, embeddings, qubitfootprint = embedder.embedQubo(A, b)
-    end = time.time()
-    f.write("\nFinding embedding time elapsed: " + str(end - start))
-    
-    # create BQM model from embedding
-    start = time.time()
-    embedded_model = dimod.as_bqm(embedding_dict, dimod.BINARY)
-    end = time.time()
-    f.write("\nTime to create embedded BQM model: " + str(end - start))
-
-    # get quantum annealing solution
-    embedded_solution_set = equalsize.run_quantum(sampler_quantum, embedded_model)
-    f.write("\nNumber of Physical variables: " + str(qubitfootprint))
-    f.write("\nQuantum annealing time elapsed: " \
-        + str(float(embedded_sample_set.info["timing"]["total_real_time"]) / (10 ** 6.0)))
-    
-    # quantum postprocessing
-    start = time.time()
-    centroids_quantum, assignments_quantum = equalsize.postprocess3(X, embedded_solution_set)
-    end = time.time()
-    f.write("\nQuantum postprocessing time elapsed: " + str(end - start))
-    f.write("\nQuantum annealing centroids:\n" + str(centroids_quantum))
-    f.write("\nQuantum annealing assignments: " + str(assignments_quantum))
-    f.close()        
+        # get quantum annealing solution
+        embedded_solution_set = equalsize.run_quantum(sampler_quantum, embedded_model)
+        f.write("\nNumber of Physical variables: " + str(len(embedded_model.variables)))
+        f.write("\nQuantum annealing time elapsed: " \
+            + str(float(embedded_solution_set.info["timing"]["total_real_time"]) / (10 ** 6.0)))
+        
+        # quantum postprocessing
+        start = time.time()
+        centroids_quantum, assignments_quantum = equalsize.postprocess(X, embedded_solution_set, embedding, model)
+        end = time.time()
+        f.write("\nQuantum postprocessing time elapsed: " + str(end - start))
+        f.write("\nQuantum annealing centroids:\n" + str(centroids_quantum))
+        f.write("\nQuantum annealing assignments: " + str(assignments_quantum) + "\n\n")
+        f.close()
+    else:
+        f.write("\n\n")
+        f.close()        
 
 def test_time(N, k, d = 2, sigma = 1.0, max = 10.0, specs = None):
     # data file
@@ -257,7 +265,7 @@ def test_synth(N, k, d = 2):
     M, assignments = equalsize.postprocess(X, sample_set.first.sample)
 
 if __name__ == "__main__":
-    all_configs = [(16, 2), (8, 4), (12, 3), (15, 3), (24, 2), (12, 4), (21, 3), (32, 2), (16, 4)]
+    all_configs = [(9, 3), (12, 3), (15, 3), (18, 3), (21, 3)]
     for i in range(len(all_configs)):
         for _ in range(50):
-            test(all_configs[i][0], all_configs[i][1])
+            test(all_configs[i][0], all_configs[i][1], filename = "test_iris.txt", data = "iris")
