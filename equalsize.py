@@ -183,8 +183,14 @@ def test_quantum2():
     X = np.array([[1, 2], [1, 3], [9, 5], [9, 6]])  # input data
     k = 2
     model = genModel(X, k)    # generate BQM model (not yet embedded)
-    sampler = EmbeddingComposite(DWaveSampler())    # sets D-Wave's sampler, embedding is done automatically
-    solution_set = sampler.sample(model, num_reads=100)    # run on the D-wave hardware
+    sampler = EmbeddingComposite(DWaveSampler(solver={'qpu': True}))    # sets D-Wave's sampler, embedding is done automatically
+    solution_set = sampler.sample(model, num_reads=100, return_embedding = True)    # run on the D-wave hardware
+    print("Embedding: ", solution_set.info["embedding_context"]["embedding"])
+    # Count the number of qubits used
+    num_qubits = 0
+    for entry in solution_set.info["embedding_context"]["embedding"].values():
+        num_qubits += len(entry)
+    print("Number of qubits: ", num_qubits)
     M, assignments = postprocess2(X, solution_set.first.sample)    # postprocess the solution
     print("Centroids: ")
     print(M)
@@ -236,4 +242,4 @@ def test_embed_time(maxN, k, d):
     embedding_dict, embeddings, qubitfootprint = embedder.embedQubo(A, np.zeros(N * k))
 
 if __name__ == "__main__":
-    test_embed_time(16, 4, 2)
+    test_quantum2()

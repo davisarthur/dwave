@@ -3898,3 +3898,3903 @@ Number of variables: 64
 Time to find embedding: 0.008020401000976562
 Qubit footprint: 1088
 
+2020-07-27 17:00:37.575782
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0010797977447509766
+Qubit footprint: 80
+
+2020-07-27 17:00:37.578046
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0010135173797607422
+Qubit footprint: 80
+
+2020-07-27 17:00:37.579656
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008718967437744141
+Qubit footprint: 80
+
+2020-07-27 17:00:37.581074
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.00086212158203125
+Qubit footprint: 80
+
+2020-07-27 17:00:37.582457
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008516311645507812
+Qubit footprint: 80
+
+2020-07-27 17:00:37.583830
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008547306060791016
+Qubit footprint: 80
+
+2020-07-27 17:00:37.585183
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008630752563476562
+Qubit footprint: 80
+
+2020-07-27 17:00:37.586554
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008542537689208984
+Qubit footprint: 80
+
+2020-07-27 17:00:37.587907
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008347034454345703
+Qubit footprint: 80
+
+2020-07-27 17:00:37.589266
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008566379547119141
+Qubit footprint: 80
+
+2020-07-27 17:00:37.590628
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008230209350585938
+Qubit footprint: 80
+
+2020-07-27 17:00:37.591942
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008366107940673828
+Qubit footprint: 80
+
+2020-07-27 17:00:37.593240
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008516311645507812
+Qubit footprint: 80
+
+2020-07-27 17:00:37.594600
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008826255798339844
+Qubit footprint: 80
+
+2020-07-27 17:00:37.595996
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008308887481689453
+Qubit footprint: 80
+
+2020-07-27 17:00:37.597339
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008432865142822266
+Qubit footprint: 80
+
+2020-07-27 17:00:37.598720
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0018153190612792969
+Qubit footprint: 80
+
+2020-07-27 17:00:37.601336
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008802413940429688
+Qubit footprint: 80
+
+2020-07-27 17:00:37.602770
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008616447448730469
+Qubit footprint: 80
+
+2020-07-27 17:00:37.604134
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008528232574462891
+Qubit footprint: 80
+
+2020-07-27 17:00:37.605505
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008423328399658203
+Qubit footprint: 80
+
+2020-07-27 17:00:37.606847
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008690357208251953
+Qubit footprint: 80
+
+2020-07-27 17:00:37.608209
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008585453033447266
+Qubit footprint: 80
+
+2020-07-27 17:00:37.609573
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008513927459716797
+Qubit footprint: 80
+
+2020-07-27 17:00:37.610915
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008335113525390625
+Qubit footprint: 80
+
+2020-07-27 17:00:37.612264
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.00102996826171875
+Qubit footprint: 80
+
+2020-07-27 17:00:37.613817
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008828639984130859
+Qubit footprint: 80
+
+2020-07-27 17:00:37.615241
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008561611175537109
+Qubit footprint: 80
+
+2020-07-27 17:00:37.616618
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008752346038818359
+Qubit footprint: 80
+
+2020-07-27 17:00:37.617993
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008950233459472656
+Qubit footprint: 80
+
+2020-07-27 17:00:37.619409
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008566379547119141
+Qubit footprint: 80
+
+2020-07-27 17:00:37.620769
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008866786956787109
+Qubit footprint: 80
+
+2020-07-27 17:00:37.622156
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008649826049804688
+Qubit footprint: 80
+
+2020-07-27 17:00:37.623565
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008580684661865234
+Qubit footprint: 80
+
+2020-07-27 17:00:37.624928
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008432865142822266
+Qubit footprint: 80
+
+2020-07-27 17:00:37.626285
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008831024169921875
+Qubit footprint: 80
+
+2020-07-27 17:00:37.627678
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008554458618164062
+Qubit footprint: 80
+
+2020-07-27 17:00:37.629061
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008542537689208984
+Qubit footprint: 80
+
+2020-07-27 17:00:37.630423
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008497238159179688
+Qubit footprint: 80
+
+2020-07-27 17:00:37.631753
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008709430694580078
+Qubit footprint: 80
+
+2020-07-27 17:00:37.633096
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008549690246582031
+Qubit footprint: 80
+
+2020-07-27 17:00:37.634462
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008449554443359375
+Qubit footprint: 80
+
+2020-07-27 17:00:37.635798
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008244514465332031
+Qubit footprint: 80
+
+2020-07-27 17:00:37.637132
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008804798126220703
+Qubit footprint: 80
+
+2020-07-27 17:00:37.638548
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008447170257568359
+Qubit footprint: 80
+
+2020-07-27 17:00:37.639932
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008356571197509766
+Qubit footprint: 80
+
+2020-07-27 17:00:37.641282
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008537769317626953
+Qubit footprint: 80
+
+2020-07-27 17:00:37.642637
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008985996246337891
+Qubit footprint: 80
+
+2020-07-27 17:00:37.644042
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0009284019470214844
+Qubit footprint: 80
+
+2020-07-27 17:00:37.645522
+(N, k, d): (4, 4, 2)
+Number of variables: 16
+Time to find embedding: 0.0008769035339355469
+Qubit footprint: 80
+
+2020-07-27 17:00:37.646945
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0013051033020019531
+Qubit footprint: 120
+
+2020-07-27 17:00:37.648962
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012688636779785156
+Qubit footprint: 120
+
+2020-07-27 17:00:37.650820
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012881755828857422
+Qubit footprint: 120
+
+2020-07-27 17:00:37.652837
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012066364288330078
+Qubit footprint: 120
+
+2020-07-27 17:00:37.654618
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.001203775405883789
+Qubit footprint: 120
+
+2020-07-27 17:00:37.656353
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012645721435546875
+Qubit footprint: 120
+
+2020-07-27 17:00:37.658153
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.001220703125
+Qubit footprint: 120
+
+2020-07-27 17:00:37.659928
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.001260995864868164
+Qubit footprint: 120
+
+2020-07-27 17:00:37.661758
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012950897216796875
+Qubit footprint: 120
+
+2020-07-27 17:00:37.663752
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.001302480697631836
+Qubit footprint: 120
+
+2020-07-27 17:00:37.665785
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012216567993164062
+Qubit footprint: 120
+
+2020-07-27 17:00:37.667554
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.001323699951171875
+Qubit footprint: 120
+
+2020-07-27 17:00:37.669421
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012967586517333984
+Qubit footprint: 120
+
+2020-07-27 17:00:37.671263
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0013494491577148438
+Qubit footprint: 120
+
+2020-07-27 17:00:37.673326
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012366771697998047
+Qubit footprint: 120
+
+2020-07-27 17:00:37.675213
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012133121490478516
+Qubit footprint: 120
+
+2020-07-27 17:00:37.676996
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012845993041992188
+Qubit footprint: 120
+
+2020-07-27 17:00:37.678912
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011780261993408203
+Qubit footprint: 120
+
+2020-07-27 17:00:37.680718
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0013692378997802734
+Qubit footprint: 120
+
+2020-07-27 17:00:37.682621
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.001218557357788086
+Qubit footprint: 120
+
+2020-07-27 17:00:37.684432
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0013725757598876953
+Qubit footprint: 120
+
+2020-07-27 17:00:37.686342
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012052059173583984
+Qubit footprint: 120
+
+2020-07-27 17:00:37.688129
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011851787567138672
+Qubit footprint: 120
+
+2020-07-27 17:00:37.689851
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011887550354003906
+Qubit footprint: 120
+
+2020-07-27 17:00:37.691577
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011970996856689453
+Qubit footprint: 120
+
+2020-07-27 17:00:37.693287
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011668205261230469
+Qubit footprint: 120
+
+2020-07-27 17:00:37.694972
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011649131774902344
+Qubit footprint: 120
+
+2020-07-27 17:00:37.696661
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012257099151611328
+Qubit footprint: 120
+
+2020-07-27 17:00:37.698393
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012552738189697266
+Qubit footprint: 120
+
+2020-07-27 17:00:37.700162
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012106895446777344
+Qubit footprint: 120
+
+2020-07-27 17:00:37.701988
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011758804321289062
+Qubit footprint: 120
+
+2020-07-27 17:00:37.703711
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011870861053466797
+Qubit footprint: 120
+
+2020-07-27 17:00:37.705413
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011935234069824219
+Qubit footprint: 120
+
+2020-07-27 17:00:37.707110
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011806488037109375
+Qubit footprint: 120
+
+2020-07-27 17:00:37.708807
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012288093566894531
+Qubit footprint: 120
+
+2020-07-27 17:00:37.710572
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.001215219497680664
+Qubit footprint: 120
+
+2020-07-27 17:00:37.712376
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011930465698242188
+Qubit footprint: 120
+
+2020-07-27 17:00:37.714097
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.001163482666015625
+Qubit footprint: 120
+
+2020-07-27 17:00:37.715796
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0012285709381103516
+Qubit footprint: 120
+
+2020-07-27 17:00:37.717542
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.001180887222290039
+Qubit footprint: 120
+
+2020-07-27 17:00:37.719244
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0013499259948730469
+Qubit footprint: 120
+
+2020-07-27 17:00:37.721115
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011792182922363281
+Qubit footprint: 120
+
+2020-07-27 17:00:37.722863
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011723041534423828
+Qubit footprint: 120
+
+2020-07-27 17:00:37.724571
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011854171752929688
+Qubit footprint: 120
+
+2020-07-27 17:00:37.726276
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0013363361358642578
+Qubit footprint: 120
+
+2020-07-27 17:00:37.728132
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011610984802246094
+Qubit footprint: 120
+
+2020-07-27 17:00:37.729838
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011789798736572266
+Qubit footprint: 120
+
+2020-07-27 17:00:37.731527
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.0011684894561767578
+Qubit footprint: 120
+
+2020-07-27 17:00:37.733202
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.001191854476928711
+Qubit footprint: 120
+
+2020-07-27 17:00:37.734916
+(N, k, d): (5, 4, 2)
+Number of variables: 20
+Time to find embedding: 0.001283884048461914
+Qubit footprint: 120
+
+2020-07-27 17:00:37.736758
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.001619577407836914
+Qubit footprint: 168
+
+2020-07-27 17:00:37.738947
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015707015991210938
+Qubit footprint: 168
+
+2020-07-27 17:00:37.741105
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015914440155029297
+Qubit footprint: 168
+
+2020-07-27 17:00:37.743227
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015332698822021484
+Qubit footprint: 168
+
+2020-07-27 17:00:37.745284
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.001592874526977539
+Qubit footprint: 168
+
+2020-07-27 17:00:37.747394
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.001600503921508789
+Qubit footprint: 168
+
+2020-07-27 17:00:37.749523
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.001728057861328125
+Qubit footprint: 168
+
+2020-07-27 17:00:37.751784
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0016362667083740234
+Qubit footprint: 168
+
+2020-07-27 17:00:37.753975
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0017774105072021484
+Qubit footprint: 168
+
+2020-07-27 17:00:37.756454
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0016117095947265625
+Qubit footprint: 168
+
+2020-07-27 17:00:37.758698
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0018093585968017578
+Qubit footprint: 168
+
+2020-07-27 17:00:37.761050
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015876293182373047
+Qubit footprint: 168
+
+2020-07-27 17:00:37.763294
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.001573324203491211
+Qubit footprint: 168
+
+2020-07-27 17:00:37.765568
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015730857849121094
+Qubit footprint: 168
+
+2020-07-27 17:00:37.767680
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0016160011291503906
+Qubit footprint: 168
+
+2020-07-27 17:00:37.769841
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015974044799804688
+Qubit footprint: 168
+
+2020-07-27 17:00:37.772008
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015513896942138672
+Qubit footprint: 168
+
+2020-07-27 17:00:37.774130
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.001569509506225586
+Qubit footprint: 168
+
+2020-07-27 17:00:37.776380
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0016176700592041016
+Qubit footprint: 168
+
+2020-07-27 17:00:37.778558
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015406608581542969
+Qubit footprint: 168
+
+2020-07-27 17:00:37.780629
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015342235565185547
+Qubit footprint: 168
+
+2020-07-27 17:00:37.782683
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015406608581542969
+Qubit footprint: 168
+
+2020-07-27 17:00:37.784748
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015773773193359375
+Qubit footprint: 168
+
+2020-07-27 17:00:37.786846
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015571117401123047
+Qubit footprint: 168
+
+2020-07-27 17:00:37.788896
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015740394592285156
+Qubit footprint: 168
+
+2020-07-27 17:00:37.791040
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015621185302734375
+Qubit footprint: 168
+
+2020-07-27 17:00:37.793144
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.001560211181640625
+Qubit footprint: 168
+
+2020-07-27 17:00:37.795233
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.001567840576171875
+Qubit footprint: 168
+
+2020-07-27 17:00:37.797324
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0016493797302246094
+Qubit footprint: 168
+
+2020-07-27 17:00:37.799573
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0016047954559326172
+Qubit footprint: 168
+
+2020-07-27 17:00:37.801719
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015978813171386719
+Qubit footprint: 168
+
+2020-07-27 17:00:37.803854
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015482902526855469
+Qubit footprint: 168
+
+2020-07-27 17:00:37.805962
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015900135040283203
+Qubit footprint: 168
+
+2020-07-27 17:00:37.808115
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015540122985839844
+Qubit footprint: 168
+
+2020-07-27 17:00:37.810209
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015869140625
+Qubit footprint: 168
+
+2020-07-27 17:00:37.812334
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.001535177230834961
+Qubit footprint: 168
+
+2020-07-27 17:00:37.814406
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015599727630615234
+Qubit footprint: 168
+
+2020-07-27 17:00:37.816477
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015735626220703125
+Qubit footprint: 168
+
+2020-07-27 17:00:37.818569
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.001554727554321289
+Qubit footprint: 168
+
+2020-07-27 17:00:37.820658
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015399456024169922
+Qubit footprint: 168
+
+2020-07-27 17:00:37.822716
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015387535095214844
+Qubit footprint: 168
+
+2020-07-27 17:00:37.824786
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015478134155273438
+Qubit footprint: 168
+
+2020-07-27 17:00:37.826843
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015594959259033203
+Qubit footprint: 168
+
+2020-07-27 17:00:37.828911
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015327930450439453
+Qubit footprint: 168
+
+2020-07-27 17:00:37.830981
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.001535177230834961
+Qubit footprint: 168
+
+2020-07-27 17:00:37.833042
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015377998352050781
+Qubit footprint: 168
+
+2020-07-27 17:00:37.835111
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015523433685302734
+Qubit footprint: 168
+
+2020-07-27 17:00:37.837190
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015349388122558594
+Qubit footprint: 168
+
+2020-07-27 17:00:37.839283
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015468597412109375
+Qubit footprint: 168
+
+2020-07-27 17:00:37.841372
+(N, k, d): (6, 4, 2)
+Number of variables: 24
+Time to find embedding: 0.0015652179718017578
+Qubit footprint: 168
+
+2020-07-27 17:00:37.843446
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020906925201416016
+Qubit footprint: 224
+
+2020-07-27 17:00:37.846076
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.002016782760620117
+Qubit footprint: 224
+
+2020-07-27 17:00:37.848672
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019605159759521484
+Qubit footprint: 224
+
+2020-07-27 17:00:37.851167
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.002484560012817383
+Qubit footprint: 224
+
+2020-07-27 17:00:37.854195
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0029561519622802734
+Qubit footprint: 224
+
+2020-07-27 17:00:37.857976
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019788742065429688
+Qubit footprint: 224
+
+2020-07-27 17:00:37.860534
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020072460174560547
+Qubit footprint: 224
+
+2020-07-27 17:00:37.863078
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.001990795135498047
+Qubit footprint: 224
+
+2020-07-27 17:00:37.865613
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020134449005126953
+Qubit footprint: 224
+
+2020-07-27 17:00:37.868208
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019686222076416016
+Qubit footprint: 224
+
+2020-07-27 17:00:37.870718
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.002027273178100586
+Qubit footprint: 224
+
+2020-07-27 17:00:37.873272
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020208358764648438
+Qubit footprint: 224
+
+2020-07-27 17:00:37.875825
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.002117156982421875
+Qubit footprint: 224
+
+2020-07-27 17:00:37.878475
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019638538360595703
+Qubit footprint: 224
+
+2020-07-27 17:00:37.880976
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0021829605102539062
+Qubit footprint: 224
+
+2020-07-27 17:00:37.883710
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019884109497070312
+Qubit footprint: 224
+
+2020-07-27 17:00:37.886256
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020439624786376953
+Qubit footprint: 224
+
+2020-07-27 17:00:37.888844
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019774436950683594
+Qubit footprint: 224
+
+2020-07-27 17:00:37.891379
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020682811737060547
+Qubit footprint: 224
+
+2020-07-27 17:00:37.893977
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020308494567871094
+Qubit footprint: 224
+
+2020-07-27 17:00:37.896589
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020678043365478516
+Qubit footprint: 224
+
+2020-07-27 17:00:37.899194
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020020008087158203
+Qubit footprint: 224
+
+2020-07-27 17:00:37.901826
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.002034902572631836
+Qubit footprint: 224
+
+2020-07-27 17:00:37.904401
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.001990079879760742
+Qubit footprint: 224
+
+2020-07-27 17:00:37.906922
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019931793212890625
+Qubit footprint: 224
+
+2020-07-27 17:00:37.909462
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019690990447998047
+Qubit footprint: 224
+
+2020-07-27 17:00:37.911955
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019965171813964844
+Qubit footprint: 224
+
+2020-07-27 17:00:37.914656
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.002029895782470703
+Qubit footprint: 224
+
+2020-07-27 17:00:37.917226
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020198822021484375
+Qubit footprint: 224
+
+2020-07-27 17:00:37.920093
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020585060119628906
+Qubit footprint: 224
+
+2020-07-27 17:00:37.922906
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020198822021484375
+Qubit footprint: 224
+
+2020-07-27 17:00:37.925538
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0021080970764160156
+Qubit footprint: 224
+
+2020-07-27 17:00:37.928184
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020329952239990234
+Qubit footprint: 224
+
+2020-07-27 17:00:37.930832
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019991397857666016
+Qubit footprint: 224
+
+2020-07-27 17:00:37.933410
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.002022266387939453
+Qubit footprint: 224
+
+2020-07-27 17:00:37.935963
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020127296447753906
+Qubit footprint: 224
+
+2020-07-27 17:00:37.938526
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.001986980438232422
+Qubit footprint: 224
+
+2020-07-27 17:00:37.941039
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019979476928710938
+Qubit footprint: 224
+
+2020-07-27 17:00:37.943567
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.002093791961669922
+Qubit footprint: 224
+
+2020-07-27 17:00:37.946195
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020797252655029297
+Qubit footprint: 224
+
+2020-07-27 17:00:37.948848
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.001976490020751953
+Qubit footprint: 224
+
+2020-07-27 17:00:37.951381
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019943714141845703
+Qubit footprint: 224
+
+2020-07-27 17:00:37.953883
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.001977682113647461
+Qubit footprint: 224
+
+2020-07-27 17:00:37.956431
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020437240600585938
+Qubit footprint: 224
+
+2020-07-27 17:00:37.958993
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019838809967041016
+Qubit footprint: 224
+
+2020-07-27 17:00:37.961515
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019643306732177734
+Qubit footprint: 224
+
+2020-07-27 17:00:37.963997
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019826889038085938
+Qubit footprint: 224
+
+2020-07-27 17:00:37.966511
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0020003318786621094
+Qubit footprint: 224
+
+2020-07-27 17:00:37.969028
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.0019757747650146484
+Qubit footprint: 224
+
+2020-07-27 17:00:37.971602
+(N, k, d): (7, 4, 2)
+Number of variables: 28
+Time to find embedding: 0.001965045928955078
+Qubit footprint: 224
+
+2020-07-27 17:00:37.974107
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002499103546142578
+Qubit footprint: 288
+
+2020-07-27 17:00:37.977181
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0025687217712402344
+Qubit footprint: 288
+
+2020-07-27 17:00:37.980328
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0027277469635009766
+Qubit footprint: 288
+
+2020-07-27 17:00:37.983597
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024962425231933594
+Qubit footprint: 288
+
+2020-07-27 17:00:37.986644
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024650096893310547
+Qubit footprint: 288
+
+2020-07-27 17:00:37.989652
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002474069595336914
+Qubit footprint: 288
+
+2020-07-27 17:00:37.992661
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002500295639038086
+Qubit footprint: 288
+
+2020-07-27 17:00:37.995699
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024766921997070312
+Qubit footprint: 288
+
+2020-07-27 17:00:37.998697
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024318695068359375
+Qubit footprint: 288
+
+2020-07-27 17:00:38.001653
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024771690368652344
+Qubit footprint: 288
+
+2020-07-27 17:00:38.004652
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002474069595336914
+Qubit footprint: 288
+
+2020-07-27 17:00:38.007651
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002435445785522461
+Qubit footprint: 288
+
+2020-07-27 17:00:38.010625
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002453327178955078
+Qubit footprint: 288
+
+2020-07-27 17:00:38.013608
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002447366714477539
+Qubit footprint: 288
+
+2020-07-27 17:00:38.016570
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002516508102416992
+Qubit footprint: 288
+
+2020-07-27 17:00:38.019620
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002589702606201172
+Qubit footprint: 288
+
+2020-07-27 17:00:38.022748
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024232864379882812
+Qubit footprint: 288
+
+2020-07-27 17:00:38.025718
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0025548934936523438
+Qubit footprint: 288
+
+2020-07-27 17:00:38.028797
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024843215942382812
+Qubit footprint: 288
+
+2020-07-27 17:00:38.031826
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.00244140625
+Qubit footprint: 288
+
+2020-07-27 17:00:38.034794
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0025033950805664062
+Qubit footprint: 288
+
+2020-07-27 17:00:38.037827
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024559497833251953
+Qubit footprint: 288
+
+2020-07-27 17:00:38.040803
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024623870849609375
+Qubit footprint: 288
+
+2020-07-27 17:00:38.043792
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024161338806152344
+Qubit footprint: 288
+
+2020-07-27 17:00:38.046729
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002457141876220703
+Qubit footprint: 288
+
+2020-07-27 17:00:38.049715
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0025205612182617188
+Qubit footprint: 288
+
+2020-07-27 17:00:38.052758
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002467632293701172
+Qubit footprint: 288
+
+2020-07-27 17:00:38.055746
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.00341033935546875
+Qubit footprint: 288
+
+2020-07-27 17:00:38.059684
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.00348663330078125
+Qubit footprint: 288
+
+2020-07-27 17:00:38.063960
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002466917037963867
+Qubit footprint: 288
+
+2020-07-27 17:00:38.067028
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002500772476196289
+Qubit footprint: 288
+
+2020-07-27 17:00:38.070121
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024721622467041016
+Qubit footprint: 288
+
+2020-07-27 17:00:38.073170
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0030341148376464844
+Qubit footprint: 288
+
+2020-07-27 17:00:38.076782
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002703428268432617
+Qubit footprint: 288
+
+2020-07-27 17:00:38.080250
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0025854110717773438
+Qubit footprint: 288
+
+2020-07-27 17:00:38.083407
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0025148391723632812
+Qubit footprint: 288
+
+2020-07-27 17:00:38.086638
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0025391578674316406
+Qubit footprint: 288
+
+2020-07-27 17:00:38.089859
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0025320053100585938
+Qubit footprint: 288
+
+2020-07-27 17:00:38.092987
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002492189407348633
+Qubit footprint: 288
+
+2020-07-27 17:00:38.096119
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002467632293701172
+Qubit footprint: 288
+
+2020-07-27 17:00:38.099172
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024251937866210938
+Qubit footprint: 288
+
+2020-07-27 17:00:38.102154
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002434253692626953
+Qubit footprint: 288
+
+2020-07-27 17:00:38.105130
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0025026798248291016
+Qubit footprint: 288
+
+2020-07-27 17:00:38.108180
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024335384368896484
+Qubit footprint: 288
+
+2020-07-27 17:00:38.111155
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024666786193847656
+Qubit footprint: 288
+
+2020-07-27 17:00:38.114158
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024428367614746094
+Qubit footprint: 288
+
+2020-07-27 17:00:38.117136
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002438068389892578
+Qubit footprint: 288
+
+2020-07-27 17:00:38.120127
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.002422332763671875
+Qubit footprint: 288
+
+2020-07-27 17:00:38.123109
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024328231811523438
+Qubit footprint: 288
+
+2020-07-27 17:00:38.126082
+(N, k, d): (8, 4, 2)
+Number of variables: 32
+Time to find embedding: 0.0024292469024658203
+Qubit footprint: 288
+
+2020-07-27 17:00:38.129032
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0032007694244384766
+Qubit footprint: 360
+
+2020-07-27 17:00:38.132821
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.004260063171386719
+Qubit footprint: 360
+
+2020-07-27 17:00:38.137704
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003024578094482422
+Qubit footprint: 360
+
+2020-07-27 17:00:38.141297
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.002994537353515625
+Qubit footprint: 360
+
+2020-07-27 17:00:38.144862
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0030128955841064453
+Qubit footprint: 360
+
+2020-07-27 17:00:38.148439
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003136157989501953
+Qubit footprint: 360
+
+2020-07-27 17:00:38.152104
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003056049346923828
+Qubit footprint: 360
+
+2020-07-27 17:00:38.155742
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0030698776245117188
+Qubit footprint: 360
+
+2020-07-27 17:00:38.159377
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0030798912048339844
+Qubit footprint: 360
+
+2020-07-27 17:00:38.163012
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003039121627807617
+Qubit footprint: 360
+
+2020-07-27 17:00:38.166632
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0030112266540527344
+Qubit footprint: 360
+
+2020-07-27 17:00:38.170150
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0030851364135742188
+Qubit footprint: 360
+
+2020-07-27 17:00:38.173794
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003002166748046875
+Qubit footprint: 360
+
+2020-07-27 17:00:38.177329
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0029294490814208984
+Qubit footprint: 360
+
+2020-07-27 17:00:38.180831
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0029718875885009766
+Qubit footprint: 360
+
+2020-07-27 17:00:38.184319
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0032567977905273438
+Qubit footprint: 360
+
+2020-07-27 17:00:38.188123
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0029916763305664062
+Qubit footprint: 360
+
+2020-07-27 17:00:38.191720
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.002969980239868164
+Qubit footprint: 360
+
+2020-07-27 17:00:38.195213
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.002950906753540039
+Qubit footprint: 360
+
+2020-07-27 17:00:38.198721
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003251791000366211
+Qubit footprint: 360
+
+2020-07-27 17:00:38.202495
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003027200698852539
+Qubit footprint: 360
+
+2020-07-27 17:00:38.206072
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0029561519622802734
+Qubit footprint: 360
+
+2020-07-27 17:00:38.209584
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003129243850708008
+Qubit footprint: 360
+
+2020-07-27 17:00:38.213302
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.00426936149597168
+Qubit footprint: 360
+
+2020-07-27 17:00:38.218132
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003743886947631836
+Qubit footprint: 360
+
+2020-07-27 17:00:38.222636
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0029573440551757812
+Qubit footprint: 360
+
+2020-07-27 17:00:38.226159
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0029630661010742188
+Qubit footprint: 360
+
+2020-07-27 17:00:38.229666
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0030333995819091797
+Qubit footprint: 360
+
+2020-07-27 17:00:38.233217
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0031316280364990234
+Qubit footprint: 360
+
+2020-07-27 17:00:38.236903
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0029382705688476562
+Qubit footprint: 360
+
+2020-07-27 17:00:38.240437
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0031211376190185547
+Qubit footprint: 360
+
+2020-07-27 17:00:38.244086
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003010988235473633
+Qubit footprint: 360
+
+2020-07-27 17:00:38.247737
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0032334327697753906
+Qubit footprint: 360
+
+2020-07-27 17:00:38.251518
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.002962350845336914
+Qubit footprint: 360
+
+2020-07-27 17:00:38.255008
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0029723644256591797
+Qubit footprint: 360
+
+2020-07-27 17:00:38.258557
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0030298233032226562
+Qubit footprint: 360
+
+2020-07-27 17:00:38.262141
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003021717071533203
+Qubit footprint: 360
+
+2020-07-27 17:00:38.265722
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0029866695404052734
+Qubit footprint: 360
+
+2020-07-27 17:00:38.269252
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0028874874114990234
+Qubit footprint: 360
+
+2020-07-27 17:00:38.272666
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0030202865600585938
+Qubit footprint: 360
+
+2020-07-27 17:00:38.276239
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0030405521392822266
+Qubit footprint: 360
+
+2020-07-27 17:00:38.279840
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0028679370880126953
+Qubit footprint: 360
+
+2020-07-27 17:00:38.283329
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0032930374145507812
+Qubit footprint: 360
+
+2020-07-27 17:00:38.287268
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.004138469696044922
+Qubit footprint: 360
+
+2020-07-27 17:00:38.292197
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0031385421752929688
+Qubit footprint: 360
+
+2020-07-27 17:00:38.296097
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.004176139831542969
+Qubit footprint: 360
+
+2020-07-27 17:00:38.301042
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003296375274658203
+Qubit footprint: 360
+
+2020-07-27 17:00:38.305108
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.0031349658966064453
+Qubit footprint: 360
+
+2020-07-27 17:00:38.308849
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.003450155258178711
+Qubit footprint: 360
+
+2020-07-27 17:00:38.312933
+(N, k, d): (9, 4, 2)
+Number of variables: 36
+Time to find embedding: 0.004468441009521484
+Qubit footprint: 360
+
+2020-07-27 17:00:38.318194
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.00632023811340332
+Qubit footprint: 440
+
+2020-07-27 17:00:38.325384
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0056879520416259766
+Qubit footprint: 440
+
+2020-07-27 17:00:38.331856
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.005387067794799805
+Qubit footprint: 440
+
+2020-07-27 17:00:38.338012
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.004463911056518555
+Qubit footprint: 440
+
+2020-07-27 17:00:38.343344
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003803253173828125
+Qubit footprint: 440
+
+2020-07-27 17:00:38.347764
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.004209280014038086
+Qubit footprint: 440
+
+2020-07-27 17:00:38.352535
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003640413284301758
+Qubit footprint: 440
+
+2020-07-27 17:00:38.356750
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003628969192504883
+Qubit footprint: 440
+
+2020-07-27 17:00:38.360920
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0035881996154785156
+Qubit footprint: 440
+
+2020-07-27 17:00:38.365098
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003651142120361328
+Qubit footprint: 440
+
+2020-07-27 17:00:38.369323
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0036454200744628906
+Qubit footprint: 440
+
+2020-07-27 17:00:38.373520
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0035698413848876953
+Qubit footprint: 440
+
+2020-07-27 17:00:38.377618
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003569364547729492
+Qubit footprint: 440
+
+2020-07-27 17:00:38.381727
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003598928451538086
+Qubit footprint: 440
+
+2020-07-27 17:00:38.385845
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003620147705078125
+Qubit footprint: 440
+
+2020-07-27 17:00:38.390011
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003535032272338867
+Qubit footprint: 440
+
+2020-07-27 17:00:38.394109
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0035529136657714844
+Qubit footprint: 440
+
+2020-07-27 17:00:38.398213
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0035610198974609375
+Qubit footprint: 440
+
+2020-07-27 17:00:38.402330
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003663778305053711
+Qubit footprint: 440
+
+2020-07-27 17:00:38.406563
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0035674571990966797
+Qubit footprint: 440
+
+2020-07-27 17:00:38.410658
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003587484359741211
+Qubit footprint: 440
+
+2020-07-27 17:00:38.414779
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0036449432373046875
+Qubit footprint: 440
+
+2020-07-27 17:00:38.418954
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0037415027618408203
+Qubit footprint: 440
+
+2020-07-27 17:00:38.423318
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003712892532348633
+Qubit footprint: 440
+
+2020-07-27 17:00:38.427606
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003567934036254883
+Qubit footprint: 440
+
+2020-07-27 17:00:38.431755
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0035626888275146484
+Qubit footprint: 440
+
+2020-07-27 17:00:38.435869
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003603219985961914
+Qubit footprint: 440
+
+2020-07-27 17:00:38.440064
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0035762786865234375
+Qubit footprint: 440
+
+2020-07-27 17:00:38.444205
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0036466121673583984
+Qubit footprint: 440
+
+2020-07-27 17:00:38.448431
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0036611557006835938
+Qubit footprint: 440
+
+2020-07-27 17:00:38.452639
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003615856170654297
+Qubit footprint: 440
+
+2020-07-27 17:00:38.456813
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003582477569580078
+Qubit footprint: 440
+
+2020-07-27 17:00:38.460918
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0035300254821777344
+Qubit footprint: 440
+
+2020-07-27 17:00:38.464990
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0036520957946777344
+Qubit footprint: 440
+
+2020-07-27 17:00:38.469211
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0035033226013183594
+Qubit footprint: 440
+
+2020-07-27 17:00:38.473292
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0035135746002197266
+Qubit footprint: 440
+
+2020-07-27 17:00:38.477352
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003510713577270508
+Qubit footprint: 440
+
+2020-07-27 17:00:38.481436
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003624439239501953
+Qubit footprint: 440
+
+2020-07-27 17:00:38.485591
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003918170928955078
+Qubit footprint: 440
+
+2020-07-27 17:00:38.490085
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0044078826904296875
+Qubit footprint: 440
+
+2020-07-27 17:00:38.495100
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0035495758056640625
+Qubit footprint: 440
+
+2020-07-27 17:00:38.499275
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0036308765411376953
+Qubit footprint: 440
+
+2020-07-27 17:00:38.503465
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003712177276611328
+Qubit footprint: 440
+
+2020-07-27 17:00:38.507714
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003610849380493164
+Qubit footprint: 440
+
+2020-07-27 17:00:38.511895
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003717184066772461
+Qubit footprint: 440
+
+2020-07-27 17:00:38.516213
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.00382232666015625
+Qubit footprint: 440
+
+2020-07-27 17:00:38.520647
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003638029098510742
+Qubit footprint: 440
+
+2020-07-27 17:00:38.524827
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.0035266876220703125
+Qubit footprint: 440
+
+2020-07-27 17:00:38.528888
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003472566604614258
+Qubit footprint: 440
+
+2020-07-27 17:00:38.532912
+(N, k, d): (10, 4, 2)
+Number of variables: 40
+Time to find embedding: 0.003777742385864258
+Qubit footprint: 440
+
+2020-07-27 17:00:38.537347
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004563808441162109
+Qubit footprint: 528
+
+2020-07-27 17:00:38.542610
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004344940185546875
+Qubit footprint: 528
+
+2020-07-27 17:00:38.547565
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0041773319244384766
+Qubit footprint: 528
+
+2020-07-27 17:00:38.552436
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004067659378051758
+Qubit footprint: 528
+
+2020-07-27 17:00:38.557093
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0041730403900146484
+Qubit footprint: 528
+
+2020-07-27 17:00:38.561873
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0042231082916259766
+Qubit footprint: 528
+
+2020-07-27 17:00:38.566655
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0042955875396728516
+Qubit footprint: 528
+
+2020-07-27 17:00:38.571538
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004202365875244141
+Qubit footprint: 528
+
+2020-07-27 17:00:38.576307
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004251718521118164
+Qubit footprint: 528
+
+2020-07-27 17:00:38.581110
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004166603088378906
+Qubit footprint: 528
+
+2020-07-27 17:00:38.585902
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004205226898193359
+Qubit footprint: 528
+
+2020-07-27 17:00:38.590669
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004384279251098633
+Qubit footprint: 528
+
+2020-07-27 17:00:38.595590
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.005681753158569336
+Qubit footprint: 528
+
+2020-07-27 17:00:38.601997
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004471302032470703
+Qubit footprint: 528
+
+2020-07-27 17:00:38.607201
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004622936248779297
+Qubit footprint: 528
+
+2020-07-27 17:00:38.612559
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.00432896614074707
+Qubit footprint: 528
+
+2020-07-27 17:00:38.617465
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0043599605560302734
+Qubit footprint: 528
+
+2020-07-27 17:00:38.622411
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004156351089477539
+Qubit footprint: 528
+
+2020-07-27 17:00:38.627139
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0042760372161865234
+Qubit footprint: 528
+
+2020-07-27 17:00:38.631974
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004148721694946289
+Qubit footprint: 528
+
+2020-07-27 17:00:38.636692
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.005316734313964844
+Qubit footprint: 528
+
+2020-07-27 17:00:38.642523
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.005760669708251953
+Qubit footprint: 528
+
+2020-07-27 17:00:38.649085
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004615306854248047
+Qubit footprint: 528
+
+2020-07-27 17:00:38.654334
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004449605941772461
+Qubit footprint: 528
+
+2020-07-27 17:00:38.659470
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0044977664947509766
+Qubit footprint: 528
+
+2020-07-27 17:00:38.664530
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004101276397705078
+Qubit footprint: 528
+
+2020-07-27 17:00:38.669178
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0046558380126953125
+Qubit footprint: 528
+
+2020-07-27 17:00:38.674469
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0042378902435302734
+Qubit footprint: 528
+
+2020-07-27 17:00:38.679254
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004291534423828125
+Qubit footprint: 528
+
+2020-07-27 17:00:38.684131
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0044591426849365234
+Qubit footprint: 528
+
+2020-07-27 17:00:38.689179
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0042171478271484375
+Qubit footprint: 528
+
+2020-07-27 17:00:38.693975
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004209041595458984
+Qubit footprint: 528
+
+2020-07-27 17:00:38.698746
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004456281661987305
+Qubit footprint: 528
+
+2020-07-27 17:00:38.703738
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004201650619506836
+Qubit footprint: 528
+
+2020-07-27 17:00:38.708481
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004448890686035156
+Qubit footprint: 528
+
+2020-07-27 17:00:38.713461
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004259347915649414
+Qubit footprint: 528
+
+2020-07-27 17:00:38.718285
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004678249359130859
+Qubit footprint: 528
+
+2020-07-27 17:00:38.723639
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004306793212890625
+Qubit footprint: 528
+
+2020-07-27 17:00:38.728501
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0042607784271240234
+Qubit footprint: 528
+
+2020-07-27 17:00:38.733308
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004334211349487305
+Qubit footprint: 528
+
+2020-07-27 17:00:38.738222
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004291057586669922
+Qubit footprint: 528
+
+2020-07-27 17:00:38.743093
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004136800765991211
+Qubit footprint: 528
+
+2020-07-27 17:00:38.747798
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004326820373535156
+Qubit footprint: 528
+
+2020-07-27 17:00:38.752698
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0042536258697509766
+Qubit footprint: 528
+
+2020-07-27 17:00:38.757528
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004098415374755859
+Qubit footprint: 528
+
+2020-07-27 17:00:38.762180
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004380702972412109
+Qubit footprint: 528
+
+2020-07-27 17:00:38.767135
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004251003265380859
+Qubit footprint: 528
+
+2020-07-27 17:00:38.771999
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004239082336425781
+Qubit footprint: 528
+
+2020-07-27 17:00:38.776809
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.0042307376861572266
+Qubit footprint: 528
+
+2020-07-27 17:00:38.781563
+(N, k, d): (11, 4, 2)
+Number of variables: 44
+Time to find embedding: 0.004148960113525391
+Qubit footprint: 528
+
+2020-07-27 17:00:38.786202
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005476951599121094
+Qubit footprint: 624
+
+2020-07-27 17:00:38.792229
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005060434341430664
+Qubit footprint: 624
+
+2020-07-27 17:00:38.798105
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.0049898624420166016
+Qubit footprint: 624
+
+2020-07-27 17:00:38.803691
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005016803741455078
+Qubit footprint: 624
+
+2020-07-27 17:00:38.809266
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005036592483520508
+Qubit footprint: 624
+
+2020-07-27 17:00:38.814902
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005117654800415039
+Qubit footprint: 624
+
+2020-07-27 17:00:38.820649
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005107402801513672
+Qubit footprint: 624
+
+2020-07-27 17:00:38.826352
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.004992485046386719
+Qubit footprint: 624
+
+2020-07-27 17:00:38.831931
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.0050203800201416016
+Qubit footprint: 624
+
+2020-07-27 17:00:38.837568
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005118370056152344
+Qubit footprint: 624
+
+2020-07-27 17:00:38.843269
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.00519871711730957
+Qubit footprint: 624
+
+2020-07-27 17:00:38.849253
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005300283432006836
+Qubit footprint: 624
+
+2020-07-27 17:00:38.855344
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005014896392822266
+Qubit footprint: 624
+
+2020-07-27 17:00:38.860968
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.0049877166748046875
+Qubit footprint: 624
+
+2020-07-27 17:00:38.866583
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005697965621948242
+Qubit footprint: 624
+
+2020-07-27 17:00:38.872886
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005323886871337891
+Qubit footprint: 624
+
+2020-07-27 17:00:38.879023
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005175590515136719
+Qubit footprint: 624
+
+2020-07-27 17:00:38.884808
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005171298980712891
+Qubit footprint: 624
+
+2020-07-27 17:00:38.890614
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005548715591430664
+Qubit footprint: 624
+
+2020-07-27 17:00:38.896740
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005087614059448242
+Qubit footprint: 624
+
+2020-07-27 17:00:38.902439
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005043983459472656
+Qubit footprint: 624
+
+2020-07-27 17:00:38.908061
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.004958152770996094
+Qubit footprint: 624
+
+2020-07-27 17:00:38.913609
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.004957914352416992
+Qubit footprint: 624
+
+2020-07-27 17:00:38.919133
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.004903316497802734
+Qubit footprint: 624
+
+2020-07-27 17:00:38.924714
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.004938602447509766
+Qubit footprint: 624
+
+2020-07-27 17:00:38.930201
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.004920482635498047
+Qubit footprint: 624
+
+2020-07-27 17:00:38.935694
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.004952430725097656
+Qubit footprint: 624
+
+2020-07-27 17:00:38.941264
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005068063735961914
+Qubit footprint: 624
+
+2020-07-27 17:00:38.946909
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.00497746467590332
+Qubit footprint: 624
+
+2020-07-27 17:00:38.952597
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005049467086791992
+Qubit footprint: 624
+
+2020-07-27 17:00:38.958210
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005015373229980469
+Qubit footprint: 624
+
+2020-07-27 17:00:38.963786
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.00486445426940918
+Qubit footprint: 624
+
+2020-07-27 17:00:38.969189
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.0048444271087646484
+Qubit footprint: 624
+
+2020-07-27 17:00:38.974597
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.0050351619720458984
+Qubit footprint: 624
+
+2020-07-27 17:00:38.980188
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005296230316162109
+Qubit footprint: 624
+
+2020-07-27 17:00:38.986118
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.0053484439849853516
+Qubit footprint: 624
+
+2020-07-27 17:00:38.992278
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005120515823364258
+Qubit footprint: 624
+
+2020-07-27 17:00:38.998094
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005213022232055664
+Qubit footprint: 624
+
+2020-07-27 17:00:39.003940
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005198478698730469
+Qubit footprint: 624
+
+2020-07-27 17:00:39.009792
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.004899740219116211
+Qubit footprint: 624
+
+2020-07-27 17:00:39.015301
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.004984855651855469
+Qubit footprint: 624
+
+2020-07-27 17:00:39.020917
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005276918411254883
+Qubit footprint: 624
+
+2020-07-27 17:00:39.026815
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.007652759552001953
+Qubit footprint: 624
+
+2020-07-27 17:00:39.035311
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.004996538162231445
+Qubit footprint: 624
+
+2020-07-27 17:00:39.041125
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.00487208366394043
+Qubit footprint: 624
+
+2020-07-27 17:00:39.046628
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.0050318241119384766
+Qubit footprint: 624
+
+2020-07-27 17:00:39.052210
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005040407180786133
+Qubit footprint: 624
+
+2020-07-27 17:00:39.057836
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.004857063293457031
+Qubit footprint: 624
+
+2020-07-27 17:00:39.063261
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.004775285720825195
+Qubit footprint: 624
+
+2020-07-27 17:00:39.068590
+(N, k, d): (12, 4, 2)
+Number of variables: 48
+Time to find embedding: 0.005012035369873047
+Qubit footprint: 624
+
+2020-07-27 17:00:39.074160
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.006379365921020508
+Qubit footprint: 728
+
+2020-07-27 17:00:39.081175
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.0362851619720459
+Qubit footprint: 728
+
+2020-07-27 17:00:39.118078
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.0057451725006103516
+Qubit footprint: 728
+
+2020-07-27 17:00:39.124544
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005738258361816406
+Qubit footprint: 728
+
+2020-07-27 17:00:39.130886
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.007293701171875
+Qubit footprint: 728
+
+2020-07-27 17:00:39.138801
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.007727861404418945
+Qubit footprint: 728
+
+2020-07-27 17:00:39.147343
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.00597071647644043
+Qubit footprint: 728
+
+2020-07-27 17:00:39.153987
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.007936716079711914
+Qubit footprint: 728
+
+2020-07-27 17:00:39.162747
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.007434368133544922
+Qubit footprint: 728
+
+2020-07-27 17:00:39.171051
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.007215738296508789
+Qubit footprint: 728
+
+2020-07-27 17:00:39.178934
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.00873422622680664
+Qubit footprint: 728
+
+2020-07-27 17:00:39.188540
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.008887290954589844
+Qubit footprint: 728
+
+2020-07-27 17:00:39.198214
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.006919384002685547
+Qubit footprint: 728
+
+2020-07-27 17:00:39.205986
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.0058441162109375
+Qubit footprint: 728
+
+2020-07-27 17:00:39.212491
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.00575709342956543
+Qubit footprint: 728
+
+2020-07-27 17:00:39.218855
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005807638168334961
+Qubit footprint: 728
+
+2020-07-27 17:00:39.225262
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005941629409790039
+Qubit footprint: 728
+
+2020-07-27 17:00:39.231798
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.0060634613037109375
+Qubit footprint: 728
+
+2020-07-27 17:00:39.238620
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005812644958496094
+Qubit footprint: 728
+
+2020-07-27 17:00:39.245008
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.0062808990478515625
+Qubit footprint: 728
+
+2020-07-27 17:00:39.252080
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005936384201049805
+Qubit footprint: 728
+
+2020-07-27 17:00:39.258750
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005783557891845703
+Qubit footprint: 728
+
+2020-07-27 17:00:39.265111
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005886077880859375
+Qubit footprint: 728
+
+2020-07-27 17:00:39.271637
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.0060253143310546875
+Qubit footprint: 728
+
+2020-07-27 17:00:39.278212
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.00594019889831543
+Qubit footprint: 728
+
+2020-07-27 17:00:39.284750
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005895853042602539
+Qubit footprint: 728
+
+2020-07-27 17:00:39.291258
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005834817886352539
+Qubit footprint: 728
+
+2020-07-27 17:00:39.297689
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005919218063354492
+Qubit footprint: 728
+
+2020-07-27 17:00:39.304178
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.0060617923736572266
+Qubit footprint: 728
+
+2020-07-27 17:00:39.310856
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.0057866573333740234
+Qubit footprint: 728
+
+2020-07-27 17:00:39.317297
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005829572677612305
+Qubit footprint: 728
+
+2020-07-27 17:00:39.323761
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005926370620727539
+Qubit footprint: 728
+
+2020-07-27 17:00:39.330268
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.006148576736450195
+Qubit footprint: 728
+
+2020-07-27 17:00:39.337019
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.0056915283203125
+Qubit footprint: 728
+
+2020-07-27 17:00:39.343316
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.00572967529296875
+Qubit footprint: 728
+
+2020-07-27 17:00:39.349621
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.006005525588989258
+Qubit footprint: 728
+
+2020-07-27 17:00:39.356144
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005704402923583984
+Qubit footprint: 728
+
+2020-07-27 17:00:39.362422
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.0057218074798583984
+Qubit footprint: 728
+
+2020-07-27 17:00:39.368703
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005994558334350586
+Qubit footprint: 728
+
+2020-07-27 17:00:39.375328
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.00576329231262207
+Qubit footprint: 728
+
+2020-07-27 17:00:39.381691
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.0058214664459228516
+Qubit footprint: 728
+
+2020-07-27 17:00:39.388057
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005696535110473633
+Qubit footprint: 728
+
+2020-07-27 17:00:39.394327
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005841970443725586
+Qubit footprint: 728
+
+2020-07-27 17:00:39.400733
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.006060600280761719
+Qubit footprint: 728
+
+2020-07-27 17:00:39.407337
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.006206512451171875
+Qubit footprint: 728
+
+2020-07-27 17:00:39.414158
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.006033658981323242
+Qubit footprint: 728
+
+2020-07-27 17:00:39.420790
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.006209850311279297
+Qubit footprint: 728
+
+2020-07-27 17:00:39.427554
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005844831466674805
+Qubit footprint: 728
+
+2020-07-27 17:00:39.433980
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.005891561508178711
+Qubit footprint: 728
+
+2020-07-27 17:00:39.440464
+(N, k, d): (13, 4, 2)
+Number of variables: 52
+Time to find embedding: 0.006222963333129883
+Qubit footprint: 728
+
+2020-07-27 17:00:39.447268
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.007997751235961914
+Qubit footprint: 840
+
+2020-07-27 17:00:39.455905
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.007275104522705078
+Qubit footprint: 840
+
+2020-07-27 17:00:39.463809
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006709098815917969
+Qubit footprint: 840
+
+2020-07-27 17:00:39.471112
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006552219390869141
+Qubit footprint: 840
+
+2020-07-27 17:00:39.478231
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.007001161575317383
+Qubit footprint: 840
+
+2020-07-27 17:00:39.485816
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006886005401611328
+Qubit footprint: 840
+
+2020-07-27 17:00:39.493296
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006808757781982422
+Qubit footprint: 840
+
+2020-07-27 17:00:39.500758
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006763458251953125
+Qubit footprint: 840
+
+2020-07-27 17:00:39.508113
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006562709808349609
+Qubit footprint: 840
+
+2020-07-27 17:00:39.515299
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006620168685913086
+Qubit footprint: 840
+
+2020-07-27 17:00:39.522518
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.007490396499633789
+Qubit footprint: 840
+
+2020-07-27 17:00:39.530594
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.007013797760009766
+Qubit footprint: 840
+
+2020-07-27 17:00:39.538189
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.0066890716552734375
+Qubit footprint: 840
+
+2020-07-27 17:00:39.545509
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006897687911987305
+Qubit footprint: 840
+
+2020-07-27 17:00:39.552964
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006672859191894531
+Qubit footprint: 840
+
+2020-07-27 17:00:39.560235
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006647348403930664
+Qubit footprint: 840
+
+2020-07-27 17:00:39.567463
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006918907165527344
+Qubit footprint: 840
+
+2020-07-27 17:00:39.574957
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.00658416748046875
+Qubit footprint: 840
+
+2020-07-27 17:00:39.582163
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006621122360229492
+Qubit footprint: 840
+
+2020-07-27 17:00:39.589392
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.0070133209228515625
+Qubit footprint: 840
+
+2020-07-27 17:00:39.596983
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.0073604583740234375
+Qubit footprint: 840
+
+2020-07-27 17:00:39.605099
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006533145904541016
+Qubit footprint: 840
+
+2020-07-27 17:00:39.612246
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.0066072940826416016
+Qubit footprint: 840
+
+2020-07-27 17:00:39.619433
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006587028503417969
+Qubit footprint: 840
+
+2020-07-27 17:00:39.626561
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006745815277099609
+Qubit footprint: 840
+
+2020-07-27 17:00:39.633863
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006728172302246094
+Qubit footprint: 840
+
+2020-07-27 17:00:39.641177
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.007307767868041992
+Qubit footprint: 840
+
+2020-07-27 17:00:39.649239
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.00706028938293457
+Qubit footprint: 840
+
+2020-07-27 17:00:39.656921
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.00695037841796875
+Qubit footprint: 840
+
+2020-07-27 17:00:39.664774
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006714344024658203
+Qubit footprint: 840
+
+2020-07-27 17:00:39.672060
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006892681121826172
+Qubit footprint: 840
+
+2020-07-27 17:00:39.679571
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006768941879272461
+Qubit footprint: 840
+
+2020-07-27 17:00:39.686896
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006635427474975586
+Qubit footprint: 840
+
+2020-07-27 17:00:39.694137
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006622791290283203
+Qubit footprint: 840
+
+2020-07-27 17:00:39.701345
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006839275360107422
+Qubit footprint: 840
+
+2020-07-27 17:00:39.708845
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006716012954711914
+Qubit footprint: 840
+
+2020-07-27 17:00:39.716174
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006506204605102539
+Qubit footprint: 840
+
+2020-07-27 17:00:39.723276
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006571531295776367
+Qubit footprint: 840
+
+2020-07-27 17:00:39.730425
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.0068721771240234375
+Qubit footprint: 840
+
+2020-07-27 17:00:39.737863
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006775379180908203
+Qubit footprint: 840
+
+2020-07-27 17:00:39.745258
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.0065920352935791016
+Qubit footprint: 840
+
+2020-07-27 17:00:39.752462
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.0071904659271240234
+Qubit footprint: 840
+
+2020-07-27 17:00:39.760228
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.0068814754486083984
+Qubit footprint: 840
+
+2020-07-27 17:00:39.767720
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006582975387573242
+Qubit footprint: 840
+
+2020-07-27 17:00:39.774880
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006597757339477539
+Qubit footprint: 840
+
+2020-07-27 17:00:39.782077
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006575107574462891
+Qubit footprint: 840
+
+2020-07-27 17:00:39.789231
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.0065801143646240234
+Qubit footprint: 840
+
+2020-07-27 17:00:39.796379
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006684780120849609
+Qubit footprint: 840
+
+2020-07-27 17:00:39.803643
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.00641322135925293
+Qubit footprint: 840
+
+2020-07-27 17:00:39.810632
+(N, k, d): (14, 4, 2)
+Number of variables: 56
+Time to find embedding: 0.006518840789794922
+Qubit footprint: 840
+
+2020-07-27 17:00:39.817709
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.008860349655151367
+Qubit footprint: 960
+
+2020-07-27 17:00:39.827138
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007426738739013672
+Qubit footprint: 960
+
+2020-07-27 17:00:39.835163
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.008236169815063477
+Qubit footprint: 960
+
+2020-07-27 17:00:39.843979
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007845640182495117
+Qubit footprint: 960
+
+2020-07-27 17:00:39.852454
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007985830307006836
+Qubit footprint: 960
+
+2020-07-27 17:00:39.861062
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007511615753173828
+Qubit footprint: 960
+
+2020-07-27 17:00:39.869221
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007380485534667969
+Qubit footprint: 960
+
+2020-07-27 17:00:39.877200
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.0074825286865234375
+Qubit footprint: 960
+
+2020-07-27 17:00:39.885298
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007483005523681641
+Qubit footprint: 960
+
+2020-07-27 17:00:39.893369
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.0072667598724365234
+Qubit footprint: 960
+
+2020-07-27 17:00:39.901196
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007526397705078125
+Qubit footprint: 960
+
+2020-07-27 17:00:39.909294
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007367134094238281
+Qubit footprint: 960
+
+2020-07-27 17:00:39.917243
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007655143737792969
+Qubit footprint: 960
+
+2020-07-27 17:00:39.925570
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.0075604915618896484
+Qubit footprint: 960
+
+2020-07-27 17:00:39.933717
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.00745701789855957
+Qubit footprint: 960
+
+2020-07-27 17:00:39.941752
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007416248321533203
+Qubit footprint: 960
+
+2020-07-27 17:00:39.949715
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007618427276611328
+Qubit footprint: 960
+
+2020-07-27 17:00:39.957899
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007376194000244141
+Qubit footprint: 960
+
+2020-07-27 17:00:39.965862
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007303476333618164
+Qubit footprint: 960
+
+2020-07-27 17:00:39.973742
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.0074841976165771484
+Qubit footprint: 960
+
+2020-07-27 17:00:39.981780
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007471799850463867
+Qubit footprint: 960
+
+2020-07-27 17:00:39.989795
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.0075299739837646484
+Qubit footprint: 960
+
+2020-07-27 17:00:39.997884
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.0076944828033447266
+Qubit footprint: 960
+
+2020-07-27 17:00:40.006279
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007408857345581055
+Qubit footprint: 960
+
+2020-07-27 17:00:40.014272
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007725715637207031
+Qubit footprint: 960
+
+2020-07-27 17:00:40.022596
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.008321046829223633
+Qubit footprint: 960
+
+2020-07-27 17:00:40.031665
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.008442401885986328
+Qubit footprint: 960
+
+2020-07-27 17:00:40.040738
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007695436477661133
+Qubit footprint: 960
+
+2020-07-27 17:00:40.049115
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007718086242675781
+Qubit footprint: 960
+
+2020-07-27 17:00:40.057489
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.009136438369750977
+Qubit footprint: 960
+
+2020-07-27 17:00:40.067280
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.008367061614990234
+Qubit footprint: 960
+
+2020-07-27 17:00:40.076391
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.0076177120208740234
+Qubit footprint: 960
+
+2020-07-27 17:00:40.084789
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007719993591308594
+Qubit footprint: 960
+
+2020-07-27 17:00:40.093224
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.0075876712799072266
+Qubit footprint: 960
+
+2020-07-27 17:00:40.101471
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.0076410770416259766
+Qubit footprint: 960
+
+2020-07-27 17:00:40.109736
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007574558258056641
+Qubit footprint: 960
+
+2020-07-27 17:00:40.117890
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007578611373901367
+Qubit footprint: 960
+
+2020-07-27 17:00:40.126202
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.008852005004882812
+Qubit footprint: 960
+
+2020-07-27 17:00:40.135677
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.0076541900634765625
+Qubit footprint: 960
+
+2020-07-27 17:00:40.143960
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.0077931880950927734
+Qubit footprint: 960
+
+2020-07-27 17:00:40.152517
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.008517980575561523
+Qubit footprint: 960
+
+2020-07-27 17:00:40.161715
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007609367370605469
+Qubit footprint: 960
+
+2020-07-27 17:00:40.169957
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007455110549926758
+Qubit footprint: 960
+
+2020-07-27 17:00:40.178065
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007447004318237305
+Qubit footprint: 960
+
+2020-07-27 17:00:40.186185
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007483243942260742
+Qubit footprint: 960
+
+2020-07-27 17:00:40.194268
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007784366607666016
+Qubit footprint: 960
+
+2020-07-27 17:00:40.202695
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.008487224578857422
+Qubit footprint: 960
+
+2020-07-27 17:00:40.211842
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.011469602584838867
+Qubit footprint: 960
+
+2020-07-27 17:00:40.224171
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.01144719123840332
+Qubit footprint: 960
+
+2020-07-27 17:00:40.236523
+(N, k, d): (15, 4, 2)
+Number of variables: 60
+Time to find embedding: 0.007899999618530273
+Qubit footprint: 960
+
+2020-07-27 17:00:40.245442
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008829116821289062
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.254929
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.009475946426391602
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.265181
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.009942054748535156
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.275939
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.00946664810180664
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.286264
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008472442626953125
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.295492
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008741617202758789
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.304837
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.010534048080444336
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.316009
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.013105392456054688
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.329989
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.010885238647460938
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.341828
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008584022521972656
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.351107
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008431434631347656
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.360181
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008337259292602539
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.369151
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008490562438964844
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.378270
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008586406707763672
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.387590
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008580684661865234
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.396856
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.0083770751953125
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.405896
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008237600326538086
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.414756
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008566856384277344
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.423912
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008473396301269531
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.433008
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008243083953857422
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.441871
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008237361907958984
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.450721
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.00846552848815918
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.459771
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008497476577758789
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.468842
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.00825190544128418
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.477748
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008237838745117188
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.486663
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008584976196289062
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.495852
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008484601974487305
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.504968
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008500814437866211
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.514104
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.00830078125
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.523070
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008480072021484375
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.532176
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008327007293701172
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.541117
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.00823974609375
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.549981
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008270502090454102
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.558882
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008449077606201172
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.567957
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008538246154785156
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.577111
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008309364318847656
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.586062
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008230924606323242
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.594906
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008594274520874023
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.604109
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008275032043457031
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.613004
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008202075958251953
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.621804
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008218765258789062
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.630620
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008508920669555664
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.639701
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008354902267456055
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.648639
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.00841212272644043
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.657642
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008348226547241211
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.666603
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.00868082046508789
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.676010
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008582830429077148
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.685227
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008608341217041016
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.694475
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.008577346801757812
+Qubit footprint: 1088
+
+2020-07-27 17:00:40.703646
+(N, k, d): (16, 4, 2)
+Number of variables: 64
+Time to find embedding: 0.00883030891418457
+Qubit footprint: 1088
+
