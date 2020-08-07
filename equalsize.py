@@ -333,4 +333,4 @@ def rowpenalty(N, k):
     return np.kron(np.ones(k) - 2 * np.identity(k), np.identity(N))
 
 if __name__ == "__main__":
-    test_embed_time()
+    test_quantum()

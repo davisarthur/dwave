@@ -2,7 +2,6 @@ import numpy as np
 import time
 import dimod
 import equalsize
-import anysize
 import balanced
 import embedder
 import random
