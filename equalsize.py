@@ -14,70 +14,43 @@ from dimod.traversal import connected_components
 ##
 # Davis Arthur
 # ORNL
-# Equal size k-means clustering problem as QUBO problem
+# Produces a QUBO model for balanced k-means clustering on D-Wave
 # 6-17-2020
 ##
 
-# Generate F matrix
-# N - number of points
-# k - number of clusters
-def genF(N, k):
-    return np.ones((N, N)) - 2 * N / k * np.identity(N)
-
-# Generate G matrix
-# N - number of points
-# k - number of clusters
-def genG(N, k):
-    return np.ones((k, k)) - 2 * np.identity(k)
-
-# Generate D matrix
-# X - training data
-def genD(X):
-    D = scipy.spatial.distance.pdist(X, 'sqeuclidean')
-    D /= np.amax(D)
-    return scipy.spatial.distance.squareform(D)
-
-# Generate Q matrix
-# N - number of points
-# k - number of clusters
-def genQ(N, k):
-    Q = np.zeros((N * k, N * k))
-    for i in range(N * k):
-        Q[i][N * (i % k) + i // k] = 1.0
-    return Q    
-
-def rowpenalty(N, k):
-    return np.kron(np.ones(k) - 2 * np.identity(k), np.identity(N))
-
-# Generate qubo model
-# X - training data
-# k - number of clusters
-def genA(X, k, alpha = None, beta = None):
-    N = np.shape(X)[0]      # number of points
-    if alpha == None:
-        alpha = 1.0 / (2.0 * N / k - 1.0)
-    if beta == None:
-        beta = 1.0
-    D = genD(X)             # distance matrix
-    F = genF(N, k)          # column penalty matrix
-    return np.kron(np.identity(k), D + alpha * F) + rowpenalty(N, k)
-
-# Generate QUBO model
-# X - input data
-# k - number of clusters
 def genModel(X, k, alpha = None, beta = None):
+    ''' Generate QUBO model
+
+    Args: 
+        X: input data as Numpy array
+        k: number of clusters
+
+    Returns:
+        Binary quadratic model of logical QUBO problem
+    '''
     N = np.shape(X)[0]
     return dimod.as_bqm(genA(X, k, alpha = None, beta = None), dimod.BINARY)
 
-# Returns D-Wave sampler being used for annealing
 def set_sampler():
+    ''' Returns D-Wave sampler being used for annealing
+    
+    Note: Currently defaults to D-Wave 2000Q_6
+
+    Returns: 
+        D-Wave sampler
+    '''
     return DWaveSampler(solver={'qpu': True})
 
-# Find a possible embedding for the hardware
-# sampler - D-Wave sampler
-# model - logical BQM model
-# Returns embedding
 def get_embedding(sampler, model):
+    ''' Find a possible embedding on the hardware
+    
+    Args:
+        sampler: D-Wave sampler
+        model: logical BQM model
+    
+    Returns:
+        embedding
+    '''
     edge_list_model = []
     for key in model.adj.keys():
         for value in model.adj[key].keys():
@@ -90,33 +63,53 @@ def get_embedding(sampler, model):
                 edge_list_sampler.append((key, value))
     return find_embedding(edge_list_model, edge_list_sampler)
 
-# Embeds QUBO on the hardware
-# sampler - D-Wave sampler being used
-# model - QUBO model as BQM
-# embedding - embedding returned from get_embedding
-# returns embedded_model used in run_quantum
 def embed(sampler, model, embedding):
+    ''' Embeds QUBO on the hardware
+    
+    Args: 
+        sampler: D-Wave sampler being used
+        model: QUBO model as BQM
+        embedding: embedding returned from get_embedding
+    
+    Returns:
+        embedded_model: BQM used in run_quantum
+    '''
     return embed_bqm(model, embedding, sampler.adjacency)
 
-# Run the problem on D-Wave hardware
-# sampler - D-Wave sampler being used to solve the problem
-# embedded_model - QUBO model to embed
-# num_reads - number of reads during annealing
 def run_quantum(sampler, embedded_model, num_reads_in = 100):
+    ''' Run the problem on D-Wave hardware
+    Args:
+        sampler: D-Wave sampler being used to solve the problem
+        embedded_model: QUBO model to embed
+        num_reads: number of reads during annealing
+
+    Returns:
+        solution set to embedded model
+    '''
     return sampler.sample(embedded_model, num_reads = num_reads_in, auto_scale = True)
 
-# Run QUBO problem using D-Wave's simulated annealing, returns sample set
-# model - BQM model to embed
 def run_sim(model):
+    ''' Run QUBO problem using D-Wave's simulated annealing
+    Args:
+        model - BQM model to solve
+    Returns:
+        solution set
+    '''
     return dimod.SimulatedAnnealingSampler().sample(model)
 
-# Return centroids and assignments from binary solution of embedded model
-# Embedding is done using D-Wave's embedding
-# X - input data
-# embedded_solution - embedded solution set produced by annealing
-# embedding - embedding used to convert from logical to embedded model
-# model - logical BQM model
 def postprocess(X, embedded_solution_set, embedding, model):
+    ''' Find centroids and assignments from binary solution of embedded model
+    
+    Args:
+        X: input data
+        embedded_solution: embedded solution set produced by annealing
+        embedding: embedding used to convert from logical to embedded model
+        model: logical BQM model
+
+    Returns:
+        centroids: Array containing each centnroid as a row vector in a k x d matrix
+        assignments: cluster assignments of each point as list
+    '''
     sample_set = unembed_sampleset(embedded_solution_set, embedding, model)
     solution = sample_set.first.sample
     N = np.shape(X)[0]
@@ -136,10 +129,17 @@ def postprocess(X, embedded_solution_set, embedding, model):
         M[i] /= cluster_sizes[i]
     return M, assignments
 
-# Return centroids and assignments from binary solution to logical model
-# X - input data
-# solution
 def postprocess2(X, solution):
+    ''' Find centroids and assignments from binary solution of logical model
+    
+    Args:
+        X: input data
+        solution: binary solution to logical model
+
+    Returns:
+        centroids: Array containing each centnroid as a row vector in a k x d matrix
+        assignments: cluster assignments of each point as list
+    '''
     N = np.shape(X)[0]
     d = np.shape(X)[1]
     k = len(solution) // N
@@ -157,13 +157,15 @@ def postprocess2(X, solution):
         M[i] /= cluster_sizes[i]
     return M, assignments
 
-# Postprocessing for model embedded using Pras's embedding algorithm
-def postprocess3(X, embedded_solution_set):
-    return postprocess2(X, embedder.postProcessing(embedded_solution_set, embeddings, A)[1][0])
+##############
+## Examples ##
+##############
 
-# Example using D-Wave's quantum annealing
-# Note: Embedding is done without the use of D-Wave composite
 def test_quantum():
+    ''' Example using D-Wave's quantum annealing
+    
+    Note: Embedding is done without the use of D-Wave composite
+    '''
     X = np.array([[1, 2], [1, 3], [9, 5], [9, 6]])  # input data
     N = 4
     k = 2
@@ -178,8 +180,11 @@ def test_quantum():
     print(M)
     print("Assignments: " + str(assignments))
 
-# Example using D-Wave's embedding composite (D-Wave does embedding for you)
 def test_quantum2():
+    ''' Example using D-Wave's quantum annealing
+    
+    Note: Embedding is done with the use of D-Wave composite
+    '''
     X = np.array([[1, 2], [1, 3], [9, 5], [9, 6]])  # input data
     k = 2
     model = genModel(X, k)    # generate BQM model (not yet embedded)
@@ -196,19 +201,8 @@ def test_quantum2():
     print(M)
     print("Assignments: " + str(assignments))
 
-# Example using D-Wave's simulated quantum annealing
-def test_sim():
-    X = np.array([[1, 2], [1, 4], [9, 5], [9, 6]])
-    k = 2
-    model = genModel(X, k)      # generate BQM model (not yet embedded)
-    sample_set = run_sim(model)     # run on simulated solver
-    M, assignments = postprocess2(X, sample_set.first.sample)    # postprocess the solution
-    print("Centroids: ")
-    print(M)
-    print("Assignments: " + str(assignments))
-
-# Example using Pras' embedding algorithm
 def test_quantum3():
+    ''' Example using D-Wave's quantum annealing and Pras' embedding '''
     X = np.array([[1, 2], [1, 4], [9, 5], [9, 6]])  # input data
     N = 4
     k = 2
@@ -224,7 +218,19 @@ def test_quantum3():
     print(M)
     print("Assignments: " + str(assignments))
 
+def test_sim():
+    ''' Example using D-Wave's simulated annealing'''
+    X = np.array([[1, 2], [1, 4], [9, 5], [9, 6]])
+    k = 2
+    model = genModel(X, k)      # generate BQM model (not yet embedded)
+    sample_set = run_sim(model)     # run on simulated solver
+    M, assignments = postprocess2(X, sample_set.first.sample)    # postprocess the solution
+    print("Centroids: ")
+    print(M)
+    print("Assignments: " + str(assignments))
+
 def test_embed_time():
+    ''' Test used to measure scalability of Pras' embedding algorithm '''
     f = open("embedding_time.txt", "a")
     for config in [(14, 2), (24, 2), (32, 2), (9, 3), (15, 3), (21, 3)]:
         f.write(str(datetime.now()))
@@ -238,6 +244,93 @@ def test_embed_time():
         end = time.time()
         f.write("\nTime to find embedding: " + str(end - start))
         f.write("\nQubit footprint: " + str(qubitfootprint) + "\n\n")
+
+######################
+## Helper functions ##
+######################
+
+def genA(X, k, alpha = None, beta = None):
+    ''' Generate QUBO matrix
+    
+    Args: 
+        X: training data
+        k: number of clusters
+
+    Returns
+        A: numpy array
+    '''
+    N = np.shape(X)[0]      # number of points
+    if alpha == None:
+        alpha = 1.0 / (2.0 * N / k - 1.0)
+    if beta == None:
+        beta = 1.0
+    D = genD(X)             # distance matrix
+    F = genF(N, k)          # column penalty matrix
+    return np.kron(np.identity(k), D + alpha * F) + rowpenalty(N, k)
+
+def genF(N, k):
+    ''' Generate F matrix
+    
+    Args: 
+        X: training data
+        k: number of clusters
+
+    Returns
+        F: numpy array
+    '''
+    return np.ones((N, N)) - 2 * N / k * np.identity(N)
+
+def genG(N, k):
+    ''' Generate G matrix
+    
+    Args: 
+        X: training data
+        k: number of clusters
+
+    Returns
+        G: numpy array
+    '''
+    return np.ones((k, k)) - 2 * np.identity(k)
+
+def genD(X):
+    ''' Generate D matrix
+    
+    Args: 
+        X: training data
+
+    Returns
+        D: numpy array
+    '''
+    D = scipy.spatial.distance.pdist(X, 'sqeuclidean')
+    D /= np.amax(D)
+    return scipy.spatial.distance.squareform(D)
+
+def genQ(N, k):
+    ''' Generate Q matrix
+    
+    Args: 
+        X: training data
+        k: number of clusters
+
+    Returns
+        Q: numpy array
+    '''
+    Q = np.zeros((N * k, N * k))
+    for i in range(N * k):
+        Q[i][N * (i % k) + i // k] = 1.0
+    return Q    
+
+def rowpenalty(N, k):
+    ''' Generate row penalty matrix
+    
+    Args: 
+        X: training data
+        k: number of clusters
+
+    Returns
+        rowpenalty: numpy array
+    '''
+    return np.kron(np.ones(k) - 2 * np.identity(k), np.identity(N))
 
 if __name__ == "__main__":
     test_embed_time()

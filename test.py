@@ -16,57 +16,41 @@ from sklearn import datasets, metrics
 ##
 # Davis Arthur
 # ORNL
-# Generate sample data for k-means clustering data
+# A number of performance tests for the classical algorithms and quantum algorithm
 # 6-19-2020
 ##
 
-# Array specifying the number of points in each cluster
-# N - Number of points
-# k - Number of clusters
-def cluster_sizes(N, k):
-    cluster_sizes = []
-    for i in range(N % k):
-        cluster_sizes.append(N // k + 1)
-    for j in range(k - N % k):
-        cluster_sizes.append(N // k)
-    return np.array(cluster_sizes)
-
-# Generate data matrix and assignment array
-# N - Number of points
-# k - Number of clusters
-# d - dimension of each data point
-# sigma - standard deviation of each cluster
-# max - max of a given coordinate
-def gen_data2(N, k, d, sigma = 1.0, sep = 1.0):
-    allbin = []
-    for x in itertools.product('01', repeat=d):
-        binstr = []
-        for entry in x:
-            binstr.append(float(entry))
-        allbin.append(binstr)
-    centers = np.array(allbin[0:k])
-    centers *= 2.0
-    centers -= 1.0
-    return datasets.make_blobs(n_samples = cluster_sizes(N, k), n_features = d, \
-        centers = centers, cluster_std = sigma)
-
-# Generate data matrix and assignment array
-# N - Number of points
-# k - Number of clusters
-# d - dimension of each data point
-# d_informative - number of features that are important to classification
-# sep - factor used to increase or decrease seperation between clusters
 def gen_data(N, k, d, d_informative = None, sep = 1.0):
+    ''' Generate synthetic classification dataset
+    
+    Args: 
+        N: Number of points
+        k: Number of clusters
+        d: dimension of each data point
+        d_informative: number of features that are important to classification
+        sep: factor used to increase or decrease seperation between clusters
+    
+    Returns: 
+        X: training data as numpy array
+        labels: class assignment of each point
+    '''
     if d_informative == None:
         d_informative = d
     return datasets.make_classification(n_samples=N, n_features=d, \
         n_informative=d_informative, n_redundant=0, n_classes=k, \
         n_clusters_per_class=1, flip_y=0.01, class_sep=sep)
 
-# Tests the QUBO model on a set of points from the iris dataset
-# N - Number of data points
-# k - Number of clusters
 def gen_iris(N, k):
+    ''' Generate data set from Iris dataset
+    
+    Args: 
+        N: Number of points
+        k: Number of clusters
+    
+    Returns: 
+        X: training data as numpy array
+        target: class assignment of each point
+    '''
     iris = datasets.load_iris()
     length = 150                    # total number of points in the dataset
     pp_cluster = 50                 # number of data points belonging to any given iris
@@ -105,15 +89,18 @@ def gen_iris(N, k):
                 count += 1
     return X, target
 
-# Test using synthetic data. Results are written to "test.txt" by default
-# N - Number of points
-# k - Number of clusters
-# d - Dimension of each data point (only used if data = "synthetic")
-# filename - File to write to
-# data - How data is generated ("synthetic" (default) or "iris")
-# sim - Run using simulated annealing (default = False)
 def test(N, k, d = 2, filename = "test.txt", data = "synthetic", sim = False, specs = None):
-
+    ''' Test our quantum algorithm and both classical approaches. 
+    Note: Results are written to "test.txt" by default
+    
+    Args:
+        N: Number of points
+        k: Number of clusters
+        d: Dimension of each data point (only used if data = "synthetic")
+        filename: File to write to
+        data: How data is generated ("synthetic" (default) or "iris")
+        sim: Run using simulated annealing (default = False)
+    '''
     # data file
     f = open(filename, "a")
     f.write(str(datetime.now()))    # denote date and time that test begins
@@ -205,11 +192,21 @@ def test(N, k, d = 2, filename = "test.txt", data = "synthetic", sim = False, sp
         f.close()        
 
 def test_time(N, k, d = 2, sigma = 1.0, specs = None):
+    ''' Only test the time required for the three clustering approaches
+    Used for examples too large for the D-Wave hardware
+
+    Args:
+        N: number of points
+        k: number of clusters
+        d: dimension of dataset
+        sigma: std dev within a cluster
+        specs: "classical only" if you don't want to run quantum approach
+    '''
     # data file
     f = open("test_time2.txt", "a")
     f.write(str(datetime.now()))    # denote date and time that test begins
 
-    X = gen_data2(N, k, d)[0]
+    X = gen_data(N, k, d)[0]
     f.write("\n(N, k, d): " + "(" + str(N) + ", " + str(k) + ", " + str(d) + ")")
 
     # get sklearn solution
@@ -242,6 +239,10 @@ def test_time(N, k, d = 2, sigma = 1.0, specs = None):
         f.write("\n\n")
         f.close()
 
+##############
+## Examples ##
+##############
+
 def test_iris(N, k):
     X, target = gen_iris(N, k)
     model = equalsize.genModel(X, k)
@@ -253,7 +254,7 @@ def test_iris(N, k):
     print("Assignments: " + str(assignments))
     
 def test_synth(N, k, d = 2):
-    X = genData(N, k, d)[0]
+    X = gen_data(N, k, d)[0]
     model = equalsize.genModel(X, k)
     sampler = equalsize.embed()
     sample_set = equalsize.run_quantum(sampler, model)

@@ -6,7 +6,7 @@ from sklearn import metrics
 ##
 # Davis Arthur
 # ORNL
-# Series of functions used to analyze results of k-means clustering algorithms
+# Series of functions used to analyze read results from data files
 # 6-24-2020
 ##
 
