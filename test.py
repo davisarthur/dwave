@@ -6,6 +6,8 @@ import anysize
 import balanced
 import embedder
 import random
+import itertools
+import scipy.spatial.distance
 from sklearn.cluster import KMeans
 from datetime import datetime
 from dwave.system import DWaveSampler, EmbeddingComposite
@@ -35,22 +37,18 @@ def cluster_sizes(N, k):
 # d - dimension of each data point
 # sigma - standard deviation of each cluster
 # max - max of a given coordinate
-def genData(N, k, d, sigma = 1.0, max = 10.0):
-    centersIn = np.zeros((k, d))
-    for i in range(k):
-        while True:
-            valid = True
-            new_center = 2.0 * max * (np.random.rand(d) - np.ones(d) / 2.0)
-            for j in range(i + 1):
-                l = np.linalg.norm(new_center - centersIn[j])
-                if l < 3.0 * sigma:
-                    valid = False
-                    break
-            if valid:
-                centersIn[i] = new_center
-                break
+def gen_data2(N, k, d, sigma = 1.0, sep = 1.0):
+    allbin = []
+    for x in itertools.product('01', repeat=d):
+        binstr = []
+        for entry in x:
+            binstr.append(float(entry))
+        allbin.append(binstr)
+    centers = np.array(allbin[0:k])
+    centers *= 2.0
+    centers -= 1.0
     return datasets.make_blobs(n_samples = cluster_sizes(N, k), n_features = d, \
-        centers = centersIn, cluster_std = sigma, center_box = (-max, max))
+        centers = centers, cluster_std = sigma)
 
 # Generate data matrix and assignment array
 # N - Number of points
@@ -206,12 +204,12 @@ def test(N, k, d = 2, filename = "test.txt", data = "synthetic", sim = False, sp
         f.write("\n\n")
         f.close()        
 
-def test_time(N, k, d = 2, sigma = 1.0, max = 10.0, specs = None):
+def test_time(N, k, d = 2, sigma = 1.0, specs = None):
     # data file
-    f = open("test_time.txt", "a")
+    f = open("test_time2.txt", "a")
     f.write(str(datetime.now()))    # denote date and time that test begins
 
-    X = gen_data(N, k, d)[0]
+    X = gen_data2(N, k, d)[0]
     f.write("\n(N, k, d): " + "(" + str(N) + ", " + str(k) + ", " + str(d) + ")")
 
     # get sklearn solution
@@ -265,7 +263,7 @@ def test_synth(N, k, d = 2):
     M, assignments = equalsize.postprocess(X, sample_set.first.sample)
 
 if __name__ == "__main__":
-    all_configs = [(9, 3), (12, 3), (15, 3), (18, 3), (21, 3)]
+    all_configs = [(1024, 4, 32), (1024, 4, 64), (1024, 4, 128), (1024, 4, 256)]
     for i in range(len(all_configs)):
         for _ in range(50):
-            test(all_configs[i][0], all_configs[i][1], filename = "test_iris.txt", data = "iris")
+            test_time(all_configs[i][0], all_configs[i][1], all_configs[i][2])

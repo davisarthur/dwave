@@ -224,22 +224,20 @@ def test_quantum3():
     print(M)
     print("Assignments: " + str(assignments))
 
-def test_embed_time(maxN, k, d):
+def test_embed_time():
     f = open("embedding_time.txt", "a")
-    for N in range(k, maxN + 1):
-        for _ in range(50):
-            f.write(str(datetime.now()))
-            X = test.gen_data(N, k, d)[0]
-            f.write("\n(N, k, d): (" + str(N) + ", " + str(k) + ", " + str(d) + ")")
-            f.write("\nNumber of variables: " + str(N * k))
-            A = genA(X, k)
-            b = np.zeros(N * k)
-            start = time.time()
-            embedding_dict, embeddings, qubitfootprint = embedder.embedQubo(A, b)
-            end = time.time()
-            f.write("\nTime to find embedding: " + str(end - start))
-            f.write("\nQubit footprint: " + str(qubitfootprint) + "\n\n")
-    embedding_dict, embeddings, qubitfootprint = embedder.embedQubo(A, np.zeros(N * k))
+    for config in [(14, 2), (24, 2), (32, 2), (9, 3), (15, 3), (21, 3)]:
+        f.write(str(datetime.now()))
+        X = test.gen_data(config[0], config[1], 2)[0]
+        f.write("\n(N, k, d): (" + str(config[0]) + ", " + str(config[1]) + ", " + str(2) + ")")
+        f.write(str("\nNumber of variables: " + str(config[0] * config[1])))
+        A = genA(X, config[1])
+        b = np.zeros(config[0] * config[1])
+        start = time.time()
+        embedding_dict, embeddings, qubitfootprint = embedder.embedQubo(A, b)
+        end = time.time()
+        f.write("\nTime to find embedding: " + str(end - start))
+        f.write("\nQubit footprint: " + str(qubitfootprint) + "\n\n")
 
 if __name__ == "__main__":
-    test_quantum2()
+    test_embed_time()

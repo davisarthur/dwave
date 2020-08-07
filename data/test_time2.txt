@@ -1,0 +1,1400 @@
+2020-07-29 20:24:00.788268
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.060474395751953125
+Balanced algorithm time elapsed: 0.964400053024292
+QUBO matrix formulation time elapsed: 0.3772289752960205
+Quantum postprocessing time elapsed: 0.004171848297119141
+
+2020-07-29 20:24:02.200148
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06638288497924805
+Balanced algorithm time elapsed: 0.7475643157958984
+QUBO matrix formulation time elapsed: 0.3836190700531006
+Quantum postprocessing time elapsed: 0.003460407257080078
+
+2020-07-29 20:24:03.406988
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06762361526489258
+Balanced algorithm time elapsed: 1.6024093627929688
+QUBO matrix formulation time elapsed: 0.3813743591308594
+Quantum postprocessing time elapsed: 0.003591299057006836
+
+2020-07-29 20:24:05.467161
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.0526118278503418
+Balanced algorithm time elapsed: 1.5167670249938965
+QUBO matrix formulation time elapsed: 0.38738036155700684
+Quantum postprocessing time elapsed: 0.0037555694580078125
+
+2020-07-29 20:24:07.433067
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.05523371696472168
+Balanced algorithm time elapsed: 0.7549643516540527
+QUBO matrix formulation time elapsed: 0.3874948024749756
+Quantum postprocessing time elapsed: 0.003531932830810547
+
+2020-07-29 20:24:08.639851
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.0694887638092041
+Balanced algorithm time elapsed: 1.0555334091186523
+QUBO matrix formulation time elapsed: 0.4117317199707031
+Quantum postprocessing time elapsed: 0.003445863723754883
+
+2020-07-29 20:24:10.186722
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.0848243236541748
+Balanced algorithm time elapsed: 1.4380888938903809
+QUBO matrix formulation time elapsed: 0.3693222999572754
+Quantum postprocessing time elapsed: 0.003591299057006836
+
+2020-07-29 20:24:12.088166
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.0735635757446289
+Balanced algorithm time elapsed: 1.681663990020752
+QUBO matrix formulation time elapsed: 0.3896024227142334
+Quantum postprocessing time elapsed: 0.0036292076110839844
+
+2020-07-29 20:24:14.241862
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.0708155632019043
+Balanced algorithm time elapsed: 0.8398072719573975
+QUBO matrix formulation time elapsed: 0.37687230110168457
+Quantum postprocessing time elapsed: 0.0035028457641601562
+
+2020-07-29 20:24:15.538048
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.059326171875
+Balanced algorithm time elapsed: 1.182621717453003
+QUBO matrix formulation time elapsed: 0.3801572322845459
+Quantum postprocessing time elapsed: 0.0034477710723876953
+
+2020-07-29 20:24:17.168978
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06412696838378906
+Balanced algorithm time elapsed: 1.5232913494110107
+QUBO matrix formulation time elapsed: 0.37568140029907227
+Quantum postprocessing time elapsed: 0.0035026073455810547
+
+2020-07-29 20:24:19.140809
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.0849757194519043
+Balanced algorithm time elapsed: 1.3443775177001953
+QUBO matrix formulation time elapsed: 0.3720865249633789
+Quantum postprocessing time elapsed: 0.0036580562591552734
+
+2020-07-29 20:24:20.952540
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.08765292167663574
+Balanced algorithm time elapsed: 0.8548619747161865
+QUBO matrix formulation time elapsed: 0.3787345886230469
+Quantum postprocessing time elapsed: 0.003656625747680664
+
+2020-07-29 20:24:22.282990
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06598591804504395
+Balanced algorithm time elapsed: 1.7232270240783691
+QUBO matrix formulation time elapsed: 0.3957517147064209
+Quantum postprocessing time elapsed: 0.003653287887573242
+
+2020-07-29 20:24:24.477149
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.07230544090270996
+Balanced algorithm time elapsed: 0.8858754634857178
+QUBO matrix formulation time elapsed: 0.39347004890441895
+Quantum postprocessing time elapsed: 0.0035941600799560547
+
+2020-07-29 20:24:25.838544
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06783437728881836
+Balanced algorithm time elapsed: 1.6811442375183105
+QUBO matrix formulation time elapsed: 0.36919426918029785
+Quantum postprocessing time elapsed: 0.0034062862396240234
+
+2020-07-29 20:24:27.965203
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.07357311248779297
+Balanced algorithm time elapsed: 0.6827390193939209
+QUBO matrix formulation time elapsed: 0.37236595153808594
+Quantum postprocessing time elapsed: 0.0035371780395507812
+
+2020-07-29 20:24:29.102624
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06197404861450195
+Balanced algorithm time elapsed: 1.7985589504241943
+QUBO matrix formulation time elapsed: 0.39489293098449707
+Quantum postprocessing time elapsed: 0.003564119338989258
+
+2020-07-29 20:24:31.367238
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.05763840675354004
+Balanced algorithm time elapsed: 1.2173678874969482
+QUBO matrix formulation time elapsed: 0.3702361583709717
+Quantum postprocessing time elapsed: 0.003579854965209961
+
+2020-07-29 20:24:33.021253
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.07488203048706055
+Balanced algorithm time elapsed: 1.15313720703125
+QUBO matrix formulation time elapsed: 0.36626768112182617
+Quantum postprocessing time elapsed: 0.0035626888275146484
+
+2020-07-29 20:24:34.624347
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06169271469116211
+Balanced algorithm time elapsed: 1.0607006549835205
+QUBO matrix formulation time elapsed: 0.37967586517333984
+Quantum postprocessing time elapsed: 0.0033402442932128906
+
+2020-07-29 20:24:36.135013
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.05774092674255371
+Balanced algorithm time elapsed: 0.8199238777160645
+QUBO matrix formulation time elapsed: 0.387737512588501
+Quantum postprocessing time elapsed: 0.0042307376861572266
+
+2020-07-29 20:24:37.412092
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.054531097412109375
+Balanced algorithm time elapsed: 0.900871753692627
+QUBO matrix formulation time elapsed: 0.3678572177886963
+Quantum postprocessing time elapsed: 0.003798246383666992
+
+2020-07-29 20:24:38.744264
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.08366703987121582
+Balanced algorithm time elapsed: 1.1444511413574219
+QUBO matrix formulation time elapsed: 0.3689534664154053
+Quantum postprocessing time elapsed: 0.0034651756286621094
+
+2020-07-29 20:24:40.349818
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06683158874511719
+Balanced algorithm time elapsed: 1.2070207595825195
+QUBO matrix formulation time elapsed: 0.3729543685913086
+Quantum postprocessing time elapsed: 0.0035676956176757812
+
+2020-07-29 20:24:42.005452
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.08212113380432129
+Balanced algorithm time elapsed: 1.0468156337738037
+QUBO matrix formulation time elapsed: 0.3784065246582031
+Quantum postprocessing time elapsed: 0.003419160842895508
+
+2020-07-29 20:24:43.521389
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06470012664794922
+Balanced algorithm time elapsed: 1.2325055599212646
+QUBO matrix formulation time elapsed: 0.37689733505249023
+Quantum postprocessing time elapsed: 0.003481149673461914
+
+2020-07-29 20:24:45.206768
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.08799576759338379
+Balanced algorithm time elapsed: 1.0287890434265137
+QUBO matrix formulation time elapsed: 0.3679544925689697
+Quantum postprocessing time elapsed: 0.0034589767456054688
+
+2020-07-29 20:24:46.700435
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.0576329231262207
+Balanced algorithm time elapsed: 1.5086278915405273
+QUBO matrix formulation time elapsed: 0.38423800468444824
+Quantum postprocessing time elapsed: 0.0035278797149658203
+
+2020-07-29 20:24:48.659721
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06913542747497559
+Balanced algorithm time elapsed: 0.5603148937225342
+QUBO matrix formulation time elapsed: 0.37690067291259766
+Quantum postprocessing time elapsed: 0.0036072731018066406
+
+2020-07-29 20:24:49.674993
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.08059024810791016
+Balanced algorithm time elapsed: 0.8657667636871338
+QUBO matrix formulation time elapsed: 0.37802720069885254
+Quantum postprocessing time elapsed: 0.003587484359741211
+
+2020-07-29 20:24:51.008281
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.0866692066192627
+Balanced algorithm time elapsed: 1.0756795406341553
+QUBO matrix formulation time elapsed: 0.38544726371765137
+Quantum postprocessing time elapsed: 0.003541707992553711
+
+2020-07-29 20:24:52.564779
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.08118915557861328
+Balanced algorithm time elapsed: 1.3938634395599365
+QUBO matrix formulation time elapsed: 0.3841407299041748
+Quantum postprocessing time elapsed: 0.0033745765686035156
+
+2020-07-29 20:24:54.432838
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.05513119697570801
+Balanced algorithm time elapsed: 0.747154951095581
+QUBO matrix formulation time elapsed: 0.3805689811706543
+Quantum postprocessing time elapsed: 0.0034639835357666016
+
+2020-07-29 20:24:55.624295
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06639313697814941
+Balanced algorithm time elapsed: 0.9253675937652588
+QUBO matrix formulation time elapsed: 0.407228946685791
+Quantum postprocessing time elapsed: 0.0034465789794921875
+
+2020-07-29 20:24:57.032115
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.07322216033935547
+Balanced algorithm time elapsed: 1.7761785984039307
+QUBO matrix formulation time elapsed: 0.376537561416626
+Quantum postprocessing time elapsed: 0.0037834644317626953
+
+2020-07-29 20:24:59.266983
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06361556053161621
+Balanced algorithm time elapsed: 0.6925508975982666
+QUBO matrix formulation time elapsed: 0.3711276054382324
+Quantum postprocessing time elapsed: 0.0035033226013183594
+
+2020-07-29 20:25:00.402978
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.05574512481689453
+Balanced algorithm time elapsed: 1.3965678215026855
+QUBO matrix formulation time elapsed: 0.37607240676879883
+Quantum postprocessing time elapsed: 0.0034537315368652344
+
+2020-07-29 20:25:02.239832
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.062137603759765625
+Balanced algorithm time elapsed: 1.9217994213104248
+QUBO matrix formulation time elapsed: 0.3814659118652344
+Quantum postprocessing time elapsed: 0.003695964813232422
+
+2020-07-29 20:25:04.614485
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.07517004013061523
+Balanced algorithm time elapsed: 2.199026584625244
+QUBO matrix formulation time elapsed: 0.37470149993896484
+Quantum postprocessing time elapsed: 0.0035486221313476562
+
+2020-07-29 20:25:07.272253
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.08893251419067383
+Balanced algorithm time elapsed: 0.7806243896484375
+QUBO matrix formulation time elapsed: 0.3705272674560547
+Quantum postprocessing time elapsed: 0.0039157867431640625
+
+2020-07-29 20:25:08.521232
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06370377540588379
+Balanced algorithm time elapsed: 1.371814489364624
+QUBO matrix formulation time elapsed: 0.3821403980255127
+Quantum postprocessing time elapsed: 0.0034513473510742188
+
+2020-07-29 20:25:10.347852
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06955099105834961
+Balanced algorithm time elapsed: 1.2928857803344727
+QUBO matrix formulation time elapsed: 0.3754134178161621
+Quantum postprocessing time elapsed: 0.0035474300384521484
+
+2020-07-29 20:25:12.094485
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06569361686706543
+Balanced algorithm time elapsed: 2.4051249027252197
+QUBO matrix formulation time elapsed: 0.3737189769744873
+Quantum postprocessing time elapsed: 0.003862142562866211
+
+2020-07-29 20:25:14.948090
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.07111477851867676
+Balanced algorithm time elapsed: 0.8912558555603027
+QUBO matrix formulation time elapsed: 0.3703494071960449
+Quantum postprocessing time elapsed: 0.003524303436279297
+
+2020-07-29 20:25:16.289409
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.09816241264343262
+Balanced algorithm time elapsed: 1.8517496585845947
+QUBO matrix formulation time elapsed: 0.36800503730773926
+Quantum postprocessing time elapsed: 0.003407001495361328
+
+2020-07-29 20:25:18.615568
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.07283854484558105
+Balanced algorithm time elapsed: 2.7417654991149902
+QUBO matrix formulation time elapsed: 0.39039158821105957
+Quantum postprocessing time elapsed: 0.003524303436279297
+
+2020-07-29 20:25:21.829712
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.07249093055725098
+Balanced algorithm time elapsed: 1.1461102962493896
+QUBO matrix formulation time elapsed: 0.39362049102783203
+Quantum postprocessing time elapsed: 0.0037415027618408203
+
+2020-07-29 20:25:23.451847
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.08163642883300781
+Balanced algorithm time elapsed: 1.3365182876586914
+QUBO matrix formulation time elapsed: 0.4073677062988281
+Quantum postprocessing time elapsed: 0.003823995590209961
+
+2020-07-29 20:25:25.286679
+(N, k, d): (1024, 4, 2)
+SKlearn algorithm time elapsed: 0.06333708763122559
+Balanced algorithm time elapsed: 0.8811953067779541
+QUBO matrix formulation time elapsed: 0.3654143810272217
+Quantum postprocessing time elapsed: 0.003434896469116211
+
+2020-07-29 20:25:26.605294
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.06753277778625488
+Balanced algorithm time elapsed: 1.014512062072754
+QUBO matrix formulation time elapsed: 0.3733220100402832
+Quantum postprocessing time elapsed: 0.003445863723754883
+
+2020-07-29 20:25:28.069888
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08839058876037598
+Balanced algorithm time elapsed: 1.0425021648406982
+QUBO matrix formulation time elapsed: 0.38310909271240234
+Quantum postprocessing time elapsed: 0.0036301612854003906
+
+2020-07-29 20:25:29.592964
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.09410452842712402
+Balanced algorithm time elapsed: 1.4803502559661865
+QUBO matrix formulation time elapsed: 0.37596583366394043
+Quantum postprocessing time elapsed: 0.0036575794219970703
+
+2020-07-29 20:25:31.552701
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.09149384498596191
+Balanced algorithm time elapsed: 1.8824598789215088
+QUBO matrix formulation time elapsed: 0.3891456127166748
+Quantum postprocessing time elapsed: 0.0035648345947265625
+
+2020-07-29 20:25:33.924988
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08948373794555664
+Balanced algorithm time elapsed: 1.7159392833709717
+QUBO matrix formulation time elapsed: 0.3775153160095215
+Quantum postprocessing time elapsed: 0.003876924514770508
+
+2020-07-29 20:25:36.117379
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.09412407875061035
+Balanced algorithm time elapsed: 1.0787169933319092
+QUBO matrix formulation time elapsed: 0.38082313537597656
+Quantum postprocessing time elapsed: 0.0037412643432617188
+
+2020-07-29 20:25:37.680151
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.07340216636657715
+Balanced algorithm time elapsed: 2.0756819248199463
+QUBO matrix formulation time elapsed: 0.368114709854126
+Quantum postprocessing time elapsed: 0.003444194793701172
+
+2020-07-29 20:25:40.206061
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.06984114646911621
+Balanced algorithm time elapsed: 0.9417438507080078
+QUBO matrix formulation time elapsed: 0.3756546974182129
+Quantum postprocessing time elapsed: 0.004032611846923828
+
+2020-07-29 20:25:41.602976
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.07773971557617188
+Balanced algorithm time elapsed: 1.8690075874328613
+QUBO matrix formulation time elapsed: 0.37311768531799316
+Quantum postprocessing time elapsed: 0.0035469532012939453
+
+2020-07-29 20:25:43.932053
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.07660675048828125
+Balanced algorithm time elapsed: 1.6563098430633545
+QUBO matrix formulation time elapsed: 0.37779998779296875
+Quantum postprocessing time elapsed: 0.0033941268920898438
+
+2020-07-29 20:25:46.051427
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08846402168273926
+Balanced algorithm time elapsed: 2.3417282104492188
+QUBO matrix formulation time elapsed: 0.36572813987731934
+Quantum postprocessing time elapsed: 0.0035033226013183594
+
+2020-07-29 20:25:48.855988
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08136439323425293
+Balanced algorithm time elapsed: 2.31223726272583
+QUBO matrix formulation time elapsed: 0.3873710632324219
+Quantum postprocessing time elapsed: 0.0035085678100585938
+
+2020-07-29 20:25:51.645606
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.108978271484375
+Balanced algorithm time elapsed: 3.647343635559082
+QUBO matrix formulation time elapsed: 0.3751366138458252
+Quantum postprocessing time elapsed: 0.003514528274536133
+
+2020-07-29 20:25:55.785730
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.06860136985778809
+Balanced algorithm time elapsed: 1.3569777011871338
+QUBO matrix formulation time elapsed: 0.3755216598510742
+Quantum postprocessing time elapsed: 0.003836393356323242
+
+2020-07-29 20:25:57.596222
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.07843971252441406
+Balanced algorithm time elapsed: 1.6568808555603027
+QUBO matrix formulation time elapsed: 0.3634955883026123
+Quantum postprocessing time elapsed: 0.003744840621948242
+
+2020-07-29 20:25:59.704301
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.09863519668579102
+Balanced algorithm time elapsed: 1.6158339977264404
+QUBO matrix formulation time elapsed: 0.3716118335723877
+Quantum postprocessing time elapsed: 0.003728151321411133
+
+2020-07-29 20:26:01.799488
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.07746624946594238
+Balanced algorithm time elapsed: 2.498249053955078
+QUBO matrix formulation time elapsed: 0.3826127052307129
+Quantum postprocessing time elapsed: 0.0038192272186279297
+
+2020-07-29 20:26:04.767378
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08355283737182617
+Balanced algorithm time elapsed: 0.9614365100860596
+QUBO matrix formulation time elapsed: 0.36905455589294434
+Quantum postprocessing time elapsed: 0.0034809112548828125
+
+2020-07-29 20:26:06.190234
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.09772419929504395
+Balanced algorithm time elapsed: 0.8385105133056641
+QUBO matrix formulation time elapsed: 0.3879122734069824
+Quantum postprocessing time elapsed: 0.0036089420318603516
+
+2020-07-29 20:26:07.524172
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08297991752624512
+Balanced algorithm time elapsed: 1.0417406558990479
+QUBO matrix formulation time elapsed: 0.38832640647888184
+Quantum postprocessing time elapsed: 0.0037937164306640625
+
+2020-07-29 20:26:09.046545
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08360624313354492
+Balanced algorithm time elapsed: 2.538949966430664
+QUBO matrix formulation time elapsed: 0.38983964920043945
+Quantum postprocessing time elapsed: 0.0036478042602539062
+
+2020-07-29 20:26:12.067924
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.0781548023223877
+Balanced algorithm time elapsed: 2.485109806060791
+QUBO matrix formulation time elapsed: 0.3868892192840576
+Quantum postprocessing time elapsed: 0.0036325454711914062
+
+2020-07-29 20:26:15.027120
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.11122632026672363
+Balanced algorithm time elapsed: 1.5731430053710938
+QUBO matrix formulation time elapsed: 0.37750720977783203
+Quantum postprocessing time elapsed: 0.0043485164642333984
+
+2020-07-29 20:26:17.098964
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08112311363220215
+Balanced algorithm time elapsed: 1.8129189014434814
+QUBO matrix formulation time elapsed: 0.3786170482635498
+Quantum postprocessing time elapsed: 0.003554105758666992
+
+2020-07-29 20:26:19.380345
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08155345916748047
+Balanced algorithm time elapsed: 1.5765354633331299
+QUBO matrix formulation time elapsed: 0.3963315486907959
+Quantum postprocessing time elapsed: 0.004725217819213867
+
+2020-07-29 20:26:21.445922
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.09777522087097168
+Balanced algorithm time elapsed: 1.4524867534637451
+QUBO matrix formulation time elapsed: 0.3703787326812744
+Quantum postprocessing time elapsed: 0.003408670425415039
+
+2020-07-29 20:26:23.375200
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.07131266593933105
+Balanced algorithm time elapsed: 1.6152327060699463
+QUBO matrix formulation time elapsed: 0.37424778938293457
+Quantum postprocessing time elapsed: 0.0037643909454345703
+
+2020-07-29 20:26:25.445044
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.09526181221008301
+Balanced algorithm time elapsed: 1.7847967147827148
+QUBO matrix formulation time elapsed: 0.3666372299194336
+Quantum postprocessing time elapsed: 0.003495454788208008
+
+2020-07-29 20:26:27.702474
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.07806086540222168
+Balanced algorithm time elapsed: 1.7160522937774658
+QUBO matrix formulation time elapsed: 0.3728973865509033
+Quantum postprocessing time elapsed: 0.0035657882690429688
+
+2020-07-29 20:26:29.878696
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08621692657470703
+Balanced algorithm time elapsed: 1.490921974182129
+QUBO matrix formulation time elapsed: 0.36884546279907227
+Quantum postprocessing time elapsed: 0.003581523895263672
+
+2020-07-29 20:26:31.833457
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.0824594497680664
+Balanced algorithm time elapsed: 0.8655819892883301
+QUBO matrix formulation time elapsed: 0.37449193000793457
+Quantum postprocessing time elapsed: 0.0036263465881347656
+
+2020-07-29 20:26:33.164972
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08761405944824219
+Balanced algorithm time elapsed: 1.7197763919830322
+QUBO matrix formulation time elapsed: 0.4203526973724365
+Quantum postprocessing time elapsed: 0.004038810729980469
+
+2020-07-29 20:26:35.402593
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08558893203735352
+Balanced algorithm time elapsed: 1.504462718963623
+QUBO matrix formulation time elapsed: 0.38488078117370605
+Quantum postprocessing time elapsed: 0.0035839080810546875
+
+2020-07-29 20:26:37.386808
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.07764577865600586
+Balanced algorithm time elapsed: 2.739652633666992
+QUBO matrix formulation time elapsed: 0.3729441165924072
+Quantum postprocessing time elapsed: 0.003555774688720703
+
+2020-07-29 20:26:40.586103
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.07311892509460449
+Balanced algorithm time elapsed: 1.7909762859344482
+QUBO matrix formulation time elapsed: 0.38999438285827637
+Quantum postprocessing time elapsed: 0.0035669803619384766
+
+2020-07-29 20:26:42.849203
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08719635009765625
+Balanced algorithm time elapsed: 1.6420505046844482
+QUBO matrix formulation time elapsed: 0.3813467025756836
+Quantum postprocessing time elapsed: 0.0037729740142822266
+
+2020-07-29 20:26:44.969405
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08385014533996582
+Balanced algorithm time elapsed: 3.3579697608947754
+QUBO matrix formulation time elapsed: 0.38715529441833496
+Quantum postprocessing time elapsed: 0.006650209426879883
+
+2020-07-29 20:26:48.813567
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.10671424865722656
+Balanced algorithm time elapsed: 1.5141713619232178
+QUBO matrix formulation time elapsed: 0.37975287437438965
+Quantum postprocessing time elapsed: 0.003358125686645508
+
+2020-07-29 20:26:50.823738
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08692383766174316
+Balanced algorithm time elapsed: 1.0524766445159912
+QUBO matrix formulation time elapsed: 0.38564324378967285
+Quantum postprocessing time elapsed: 0.0035047531127929688
+
+2020-07-29 20:26:52.357785
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.09455084800720215
+Balanced algorithm time elapsed: 1.9587914943695068
+QUBO matrix formulation time elapsed: 0.3656949996948242
+Quantum postprocessing time elapsed: 0.003618955612182617
+
+2020-07-29 20:26:54.785606
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.06997942924499512
+Balanced algorithm time elapsed: 1.2941069602966309
+QUBO matrix formulation time elapsed: 0.3688945770263672
+Quantum postprocessing time elapsed: 0.0036041736602783203
+
+2020-07-29 20:26:56.527504
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.09344291687011719
+Balanced algorithm time elapsed: 3.282264471054077
+QUBO matrix formulation time elapsed: 0.38242220878601074
+Quantum postprocessing time elapsed: 0.003942966461181641
+
+2020-07-29 20:27:00.295353
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.10831856727600098
+Balanced algorithm time elapsed: 1.2015361785888672
+QUBO matrix formulation time elapsed: 0.38797712326049805
+Quantum postprocessing time elapsed: 0.0034492015838623047
+
+2020-07-29 20:27:02.002264
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08745980262756348
+Balanced algorithm time elapsed: 1.901134729385376
+QUBO matrix formulation time elapsed: 0.36774516105651855
+Quantum postprocessing time elapsed: 0.0034453868865966797
+
+2020-07-29 20:27:04.368070
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08129096031188965
+Balanced algorithm time elapsed: 1.0181920528411865
+QUBO matrix formulation time elapsed: 0.37261128425598145
+Quantum postprocessing time elapsed: 0.005698204040527344
+
+2020-07-29 20:27:05.852716
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.08990168571472168
+Balanced algorithm time elapsed: 1.2703402042388916
+QUBO matrix formulation time elapsed: 0.3756718635559082
+Quantum postprocessing time elapsed: 0.0034093856811523438
+
+2020-07-29 20:27:07.597211
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.09038400650024414
+Balanced algorithm time elapsed: 1.4980723857879639
+QUBO matrix formulation time elapsed: 0.37596845626831055
+Quantum postprocessing time elapsed: 0.003797769546508789
+
+2020-07-29 20:27:09.570872
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.0812680721282959
+Balanced algorithm time elapsed: 0.7351586818695068
+QUBO matrix formulation time elapsed: 0.3699042797088623
+Quantum postprocessing time elapsed: 0.003992319107055664
+
+2020-07-29 20:27:10.767124
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.0851755142211914
+Balanced algorithm time elapsed: 1.9331974983215332
+QUBO matrix formulation time elapsed: 0.38916802406311035
+Quantum postprocessing time elapsed: 0.003396272659301758
+
+2020-07-29 20:27:13.183621
+(N, k, d): (1024, 4, 4)
+SKlearn algorithm time elapsed: 0.09513187408447266
+Balanced algorithm time elapsed: 1.7384400367736816
+QUBO matrix formulation time elapsed: 0.41172122955322266
+Quantum postprocessing time elapsed: 0.0034134387969970703
+
+2020-07-29 20:27:15.437666
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.11121273040771484
+Balanced algorithm time elapsed: 2.6019129753112793
+QUBO matrix formulation time elapsed: 0.36644792556762695
+Quantum postprocessing time elapsed: 0.003404855728149414
+
+2020-07-29 20:27:18.526807
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.08874726295471191
+Balanced algorithm time elapsed: 1.4972586631774902
+QUBO matrix formulation time elapsed: 0.36731743812561035
+Quantum postprocessing time elapsed: 0.0035521984100341797
+
+2020-07-29 20:27:20.490106
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09534001350402832
+Balanced algorithm time elapsed: 1.3585295677185059
+QUBO matrix formulation time elapsed: 0.38529515266418457
+Quantum postprocessing time elapsed: 0.003676176071166992
+
+2020-07-29 20:27:22.339031
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.1259763240814209
+Balanced algorithm time elapsed: 0.9451327323913574
+QUBO matrix formulation time elapsed: 0.37711000442504883
+Quantum postprocessing time elapsed: 0.004765987396240234
+
+2020-07-29 20:27:23.798802
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09995293617248535
+Balanced algorithm time elapsed: 2.6846327781677246
+QUBO matrix formulation time elapsed: 0.36162519454956055
+Quantum postprocessing time elapsed: 0.003766298294067383
+
+2020-07-29 20:27:26.955202
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.1034848690032959
+Balanced algorithm time elapsed: 1.3319308757781982
+QUBO matrix formulation time elapsed: 0.369596004486084
+Quantum postprocessing time elapsed: 0.0035789012908935547
+
+2020-07-29 20:27:28.769930
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.07536745071411133
+Balanced algorithm time elapsed: 0.8052213191986084
+QUBO matrix formulation time elapsed: 0.3727107048034668
+Quantum postprocessing time elapsed: 0.0035686492919921875
+
+2020-07-29 20:27:30.033090
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.08080410957336426
+Balanced algorithm time elapsed: 1.2970545291900635
+QUBO matrix formulation time elapsed: 0.38465237617492676
+Quantum postprocessing time elapsed: 0.0035581588745117188
+
+2020-07-29 20:27:31.805320
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09479546546936035
+Balanced algorithm time elapsed: 1.6378462314605713
+QUBO matrix formulation time elapsed: 0.39281249046325684
+Quantum postprocessing time elapsed: 0.003672361373901367
+
+2020-07-29 20:27:33.941175
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.08323097229003906
+Balanced algorithm time elapsed: 1.6595544815063477
+QUBO matrix formulation time elapsed: 0.371152400970459
+Quantum postprocessing time elapsed: 0.003509044647216797
+
+2020-07-29 20:27:36.065938
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.08218717575073242
+Balanced algorithm time elapsed: 1.1434626579284668
+QUBO matrix formulation time elapsed: 0.3784489631652832
+Quantum postprocessing time elapsed: 0.0034525394439697266
+
+2020-07-29 20:27:37.680685
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09688377380371094
+Balanced algorithm time elapsed: 1.7347276210784912
+QUBO matrix formulation time elapsed: 0.38260722160339355
+Quantum postprocessing time elapsed: 0.0035247802734375
+
+2020-07-29 20:27:39.905072
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09990644454956055
+Balanced algorithm time elapsed: 1.9272806644439697
+QUBO matrix formulation time elapsed: 0.39447760581970215
+Quantum postprocessing time elapsed: 0.003922700881958008
+
+2020-07-29 20:27:42.337164
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09759736061096191
+Balanced algorithm time elapsed: 1.8718738555908203
+QUBO matrix formulation time elapsed: 0.3749253749847412
+Quantum postprocessing time elapsed: 0.0035076141357421875
+
+2020-07-29 20:27:44.691468
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09011650085449219
+Balanced algorithm time elapsed: 1.6872687339782715
+QUBO matrix formulation time elapsed: 0.37769317626953125
+Quantum postprocessing time elapsed: 0.0033876895904541016
+
+2020-07-29 20:27:46.856306
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.10547518730163574
+Balanced algorithm time elapsed: 2.7160255908966064
+QUBO matrix formulation time elapsed: 0.3826110363006592
+Quantum postprocessing time elapsed: 0.003615140914916992
+
+2020-07-29 20:27:50.071214
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.10542726516723633
+Balanced algorithm time elapsed: 1.626798391342163
+QUBO matrix formulation time elapsed: 0.37023329734802246
+Quantum postprocessing time elapsed: 0.0035567283630371094
+
+2020-07-29 20:27:52.183684
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09755349159240723
+Balanced algorithm time elapsed: 2.219769239425659
+QUBO matrix formulation time elapsed: 0.3725776672363281
+Quantum postprocessing time elapsed: 0.0036535263061523438
+
+2020-07-29 20:27:54.883535
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.11635947227478027
+Balanced algorithm time elapsed: 1.6219253540039062
+QUBO matrix formulation time elapsed: 0.38028812408447266
+Quantum postprocessing time elapsed: 0.0036101341247558594
+
+2020-07-29 20:27:57.012390
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.0834188461303711
+Balanced algorithm time elapsed: 1.9327940940856934
+QUBO matrix formulation time elapsed: 0.377471923828125
+Quantum postprocessing time elapsed: 0.0036122798919677734
+
+2020-07-29 20:27:59.416070
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.0777428150177002
+Balanced algorithm time elapsed: 1.8324956893920898
+QUBO matrix formulation time elapsed: 0.37340354919433594
+Quantum postprocessing time elapsed: 0.003457784652709961
+
+2020-07-29 20:28:01.709488
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09670066833496094
+Balanced algorithm time elapsed: 1.6557505130767822
+QUBO matrix formulation time elapsed: 0.38880038261413574
+Quantum postprocessing time elapsed: 0.0034809112548828125
+
+2020-07-29 20:28:03.860499
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.12086653709411621
+Balanced algorithm time elapsed: 2.455916166305542
+QUBO matrix formulation time elapsed: 0.37874484062194824
+Quantum postprocessing time elapsed: 0.003851652145385742
+
+2020-07-29 20:28:06.826506
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.08401727676391602
+Balanced algorithm time elapsed: 2.2908968925476074
+QUBO matrix formulation time elapsed: 0.38303518295288086
+Quantum postprocessing time elapsed: 0.0034279823303222656
+
+2020-07-29 20:28:09.594254
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09766864776611328
+Balanced algorithm time elapsed: 1.8047800064086914
+QUBO matrix formulation time elapsed: 0.37462282180786133
+Quantum postprocessing time elapsed: 0.0034711360931396484
+
+2020-07-29 20:28:11.881495
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.0994267463684082
+Balanced algorithm time elapsed: 1.042546033859253
+QUBO matrix formulation time elapsed: 0.3674037456512451
+Quantum postprocessing time elapsed: 0.003513813018798828
+
+2020-07-29 20:28:13.400812
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.07770943641662598
+Balanced algorithm time elapsed: 1.2979462146759033
+QUBO matrix formulation time elapsed: 0.3862950801849365
+Quantum postprocessing time elapsed: 0.003413677215576172
+
+2020-07-29 20:28:15.172436
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.11649584770202637
+Balanced algorithm time elapsed: 1.7152490615844727
+QUBO matrix formulation time elapsed: 0.390413761138916
+Quantum postprocessing time elapsed: 0.0035958290100097656
+
+2020-07-29 20:28:17.404487
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.08486771583557129
+Balanced algorithm time elapsed: 2.0019900798797607
+QUBO matrix formulation time elapsed: 0.3859975337982178
+Quantum postprocessing time elapsed: 0.0046007633209228516
+
+2020-07-29 20:28:19.888718
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.10305285453796387
+Balanced algorithm time elapsed: 1.5318222045898438
+QUBO matrix formulation time elapsed: 0.3824465274810791
+Quantum postprocessing time elapsed: 0.0044057369232177734
+
+2020-07-29 20:28:21.916992
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.10778474807739258
+Balanced algorithm time elapsed: 1.7440404891967773
+QUBO matrix formulation time elapsed: 0.38141393661499023
+Quantum postprocessing time elapsed: 0.003467082977294922
+
+2020-07-29 20:28:24.160353
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09974336624145508
+Balanced algorithm time elapsed: 1.9852068424224854
+QUBO matrix formulation time elapsed: 0.3698570728302002
+Quantum postprocessing time elapsed: 0.0034165382385253906
+
+2020-07-29 20:28:26.624697
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.08997559547424316
+Balanced algorithm time elapsed: 1.2872025966644287
+QUBO matrix formulation time elapsed: 0.38506460189819336
+Quantum postprocessing time elapsed: 0.0036351680755615234
+
+2020-07-29 20:28:28.397073
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.11804723739624023
+Balanced algorithm time elapsed: 2.1505277156829834
+QUBO matrix formulation time elapsed: 0.3792126178741455
+Quantum postprocessing time elapsed: 0.003598451614379883
+
+2020-07-29 20:28:31.054979
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.12337565422058105
+Balanced algorithm time elapsed: 2.0287024974823
+QUBO matrix formulation time elapsed: 0.37613916397094727
+Quantum postprocessing time elapsed: 0.0036025047302246094
+
+2020-07-29 20:28:33.593164
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09093832969665527
+Balanced algorithm time elapsed: 2.9168901443481445
+QUBO matrix formulation time elapsed: 0.3878159523010254
+Quantum postprocessing time elapsed: 0.0038738250732421875
+
+2020-07-29 20:28:36.999261
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09217214584350586
+Balanced algorithm time elapsed: 1.0856828689575195
+QUBO matrix formulation time elapsed: 0.3843095302581787
+Quantum postprocessing time elapsed: 0.0035588741302490234
+
+2020-07-29 20:28:38.571672
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09576225280761719
+Balanced algorithm time elapsed: 1.318894386291504
+QUBO matrix formulation time elapsed: 0.3731198310852051
+Quantum postprocessing time elapsed: 0.0035271644592285156
+
+2020-07-29 20:28:40.369431
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.10555267333984375
+Balanced algorithm time elapsed: 2.608299732208252
+QUBO matrix formulation time elapsed: 0.3745429515838623
+Quantum postprocessing time elapsed: 0.0035042762756347656
+
+2020-07-29 20:28:43.467472
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.1023104190826416
+Balanced algorithm time elapsed: 1.9649527072906494
+QUBO matrix formulation time elapsed: 0.4141359329223633
+Quantum postprocessing time elapsed: 0.0034706592559814453
+
+2020-07-29 20:28:45.958886
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09815120697021484
+Balanced algorithm time elapsed: 1.6989350318908691
+QUBO matrix formulation time elapsed: 0.38338494300842285
+Quantum postprocessing time elapsed: 0.003486156463623047
+
+2020-07-29 20:28:48.149310
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.11188983917236328
+Balanced algorithm time elapsed: 2.154862880706787
+QUBO matrix formulation time elapsed: 0.3731093406677246
+Quantum postprocessing time elapsed: 0.0035245418548583984
+
+2020-07-29 20:28:50.799011
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.10247349739074707
+Balanced algorithm time elapsed: 1.2305078506469727
+QUBO matrix formulation time elapsed: 0.38469958305358887
+Quantum postprocessing time elapsed: 0.003599882125854492
+
+2020-07-29 20:28:52.526748
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09389472007751465
+Balanced algorithm time elapsed: 1.546194076538086
+QUBO matrix formulation time elapsed: 0.3787236213684082
+Quantum postprocessing time elapsed: 0.003577709197998047
+
+2020-07-29 20:28:54.555429
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.07141661643981934
+Balanced algorithm time elapsed: 2.60564923286438
+QUBO matrix formulation time elapsed: 0.38463592529296875
+Quantum postprocessing time elapsed: 0.0035822391510009766
+
+2020-07-29 20:28:57.627129
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09492683410644531
+Balanced algorithm time elapsed: 1.6965084075927734
+QUBO matrix formulation time elapsed: 0.38319921493530273
+Quantum postprocessing time elapsed: 0.003466367721557617
+
+2020-07-29 20:28:59.811623
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.09236717224121094
+Balanced algorithm time elapsed: 1.0133678913116455
+QUBO matrix formulation time elapsed: 0.37569475173950195
+Quantum postprocessing time elapsed: 0.003560781478881836
+
+2020-07-29 20:29:01.302907
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.10762667655944824
+Balanced algorithm time elapsed: 1.2082927227020264
+QUBO matrix formulation time elapsed: 0.37692856788635254
+Quantum postprocessing time elapsed: 0.0035240650177001953
+
+2020-07-29 20:29:03.005787
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.0817716121673584
+Balanced algorithm time elapsed: 1.5196168422698975
+QUBO matrix formulation time elapsed: 0.38050127029418945
+Quantum postprocessing time elapsed: 0.003850698471069336
+
+2020-07-29 20:29:04.997861
+(N, k, d): (1024, 4, 8)
+SKlearn algorithm time elapsed: 0.11853456497192383
+Balanced algorithm time elapsed: 2.0214202404022217
+QUBO matrix formulation time elapsed: 0.38193655014038086
+Quantum postprocessing time elapsed: 0.0034706592559814453
+
+2020-07-29 20:29:07.529551
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.2728593349456787
+Balanced algorithm time elapsed: 1.6143462657928467
+QUBO matrix formulation time elapsed: 0.37877464294433594
+Quantum postprocessing time elapsed: 0.0035097599029541016
+
+2020-07-29 20:29:10.252311
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.3783073425292969
+Balanced algorithm time elapsed: 1.0963654518127441
+QUBO matrix formulation time elapsed: 0.369875431060791
+Quantum postprocessing time elapsed: 0.0033121109008789062
+
+2020-07-29 20:29:12.561104
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.43383216857910156
+Balanced algorithm time elapsed: 1.9188556671142578
+QUBO matrix formulation time elapsed: 0.379178524017334
+Quantum postprocessing time elapsed: 0.0035758018493652344
+
+2020-07-29 20:29:15.762721
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.5765442848205566
+Balanced algorithm time elapsed: 1.3357038497924805
+QUBO matrix formulation time elapsed: 0.3780684471130371
+Quantum postprocessing time elapsed: 0.0033884048461914062
+
+2020-07-29 20:29:18.476831
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.42619752883911133
+Balanced algorithm time elapsed: 1.3211042881011963
+QUBO matrix formulation time elapsed: 0.38585352897644043
+Quantum postprocessing time elapsed: 0.0034761428833007812
+
+2020-07-29 20:29:21.063885
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.2599916458129883
+Balanced algorithm time elapsed: 1.3276112079620361
+QUBO matrix formulation time elapsed: 0.37912964820861816
+Quantum postprocessing time elapsed: 0.0034263134002685547
+
+2020-07-29 20:29:23.499604
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.431410551071167
+Balanced algorithm time elapsed: 1.3380026817321777
+QUBO matrix formulation time elapsed: 0.3763875961303711
+Quantum postprocessing time elapsed: 0.003513336181640625
+
+2020-07-29 20:29:26.072653
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.46160244941711426
+Balanced algorithm time elapsed: 2.8340306282043457
+QUBO matrix formulation time elapsed: 0.3796072006225586
+Quantum postprocessing time elapsed: 0.0036602020263671875
+
+2020-07-29 20:29:30.206957
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.376798152923584
+Balanced algorithm time elapsed: 2.717362642288208
+QUBO matrix formulation time elapsed: 0.3841402530670166
+Quantum postprocessing time elapsed: 0.0034379959106445312
+
+2020-07-29 20:29:34.161802
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.5875349044799805
+Balanced algorithm time elapsed: 1.3910410404205322
+QUBO matrix formulation time elapsed: 0.3733370304107666
+Quantum postprocessing time elapsed: 0.003528118133544922
+
+2020-07-29 20:29:36.935217
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.2950873374938965
+Balanced algorithm time elapsed: 2.556243658065796
+QUBO matrix formulation time elapsed: 0.38730621337890625
+Quantum postprocessing time elapsed: 0.003910064697265625
+
+2020-07-29 20:29:40.623779
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.4684016704559326
+Balanced algorithm time elapsed: 2.997720241546631
+QUBO matrix formulation time elapsed: 0.37078070640563965
+Quantum postprocessing time elapsed: 0.0036020278930664062
+
+2020-07-29 20:29:44.955132
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.6351449489593506
+Balanced algorithm time elapsed: 2.168426752090454
+QUBO matrix formulation time elapsed: 0.36746811866760254
+Quantum postprocessing time elapsed: 0.0036563873291015625
+
+2020-07-29 20:29:48.614596
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.4222688674926758
+Balanced algorithm time elapsed: 3.0998923778533936
+QUBO matrix formulation time elapsed: 0.3699679374694824
+Quantum postprocessing time elapsed: 0.003458261489868164
+
+2020-07-29 20:29:52.930203
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.4505186080932617
+Balanced algorithm time elapsed: 1.1529605388641357
+QUBO matrix formulation time elapsed: 0.3808126449584961
+Quantum postprocessing time elapsed: 0.0034689903259277344
+
+2020-07-29 20:29:55.391189
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.497516393661499
+Balanced algorithm time elapsed: 1.9539356231689453
+QUBO matrix formulation time elapsed: 0.37877345085144043
+Quantum postprocessing time elapsed: 0.0035619735717773438
+
+2020-07-29 20:29:58.690505
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.5469465255737305
+Balanced algorithm time elapsed: 2.218404769897461
+QUBO matrix formulation time elapsed: 0.3986775875091553
+Quantum postprocessing time elapsed: 0.003870248794555664
+
+2020-07-29 20:30:02.279758
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.4038410186767578
+Balanced algorithm time elapsed: 2.0250349044799805
+QUBO matrix formulation time elapsed: 0.38929271697998047
+Quantum postprocessing time elapsed: 0.003603696823120117
+
+2020-07-29 20:30:05.574325
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.3054795265197754
+Balanced algorithm time elapsed: 1.1584868431091309
+QUBO matrix formulation time elapsed: 0.38045406341552734
+Quantum postprocessing time elapsed: 0.0035076141357421875
+
+2020-07-29 20:30:07.895549
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.3522322177886963
+Balanced algorithm time elapsed: 2.2705464363098145
+QUBO matrix formulation time elapsed: 0.38769102096557617
+Quantum postprocessing time elapsed: 0.0035848617553710938
+
+2020-07-29 20:30:11.359644
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.7255008220672607
+Balanced algorithm time elapsed: 1.175121784210205
+QUBO matrix formulation time elapsed: 0.3882455825805664
+Quantum postprocessing time elapsed: 0.0038483142852783203
+
+2020-07-29 20:30:14.132197
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.2708890438079834
+Balanced algorithm time elapsed: 1.6497776508331299
+QUBO matrix formulation time elapsed: 0.38296031951904297
+Quantum postprocessing time elapsed: 0.0038127899169921875
+
+2020-07-29 20:30:16.915137
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.38233113288879395
+Balanced algorithm time elapsed: 2.69720458984375
+QUBO matrix formulation time elapsed: 0.37952589988708496
+Quantum postprocessing time elapsed: 0.0035810470581054688
+
+2020-07-29 20:30:20.856180
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.6680800914764404
+Balanced algorithm time elapsed: 3.0988333225250244
+QUBO matrix formulation time elapsed: 0.40529537200927734
+Quantum postprocessing time elapsed: 0.0035507678985595703
+
+2020-07-29 20:30:25.466197
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.4431471824645996
+Balanced algorithm time elapsed: 1.190798044204712
+QUBO matrix formulation time elapsed: 0.4084937572479248
+Quantum postprocessing time elapsed: 0.0034601688385009766
+
+2020-07-29 20:30:27.994854
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.6101992130279541
+Balanced algorithm time elapsed: 2.0155487060546875
+QUBO matrix formulation time elapsed: 0.3920886516571045
+Quantum postprocessing time elapsed: 0.003615140914916992
+
+2020-07-29 20:30:31.486905
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.8505833148956299
+Balanced algorithm time elapsed: 1.2051310539245605
+QUBO matrix formulation time elapsed: 0.388446569442749
+Quantum postprocessing time elapsed: 0.004024505615234375
+
+2020-07-29 20:30:34.369082
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.4349370002746582
+Balanced algorithm time elapsed: 1.7497811317443848
+QUBO matrix formulation time elapsed: 0.38842320442199707
+Quantum postprocessing time elapsed: 0.003605365753173828
+
+2020-07-29 20:30:37.412820
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.3749222755432129
+Balanced algorithm time elapsed: 1.3302299976348877
+QUBO matrix formulation time elapsed: 0.38433337211608887
+Quantum postprocessing time elapsed: 0.005797624588012695
+
+2020-07-29 20:30:40.004399
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.50655198097229
+Balanced algorithm time elapsed: 2.632112741470337
+QUBO matrix formulation time elapsed: 0.376849889755249
+Quantum postprocessing time elapsed: 0.0034935474395751953
+
+2020-07-29 20:30:43.970770
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.4309220314025879
+Balanced algorithm time elapsed: 1.4851064682006836
+QUBO matrix formulation time elapsed: 0.387373685836792
+Quantum postprocessing time elapsed: 0.0034766197204589844
+
+2020-07-29 20:30:46.752714
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.32445430755615234
+Balanced algorithm time elapsed: 1.809600830078125
+QUBO matrix formulation time elapsed: 0.3791489601135254
+Quantum postprocessing time elapsed: 0.003510713577270508
+
+2020-07-29 20:30:49.785093
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.3441047668457031
+Balanced algorithm time elapsed: 1.647845983505249
+QUBO matrix formulation time elapsed: 0.4019277095794678
+Quantum postprocessing time elapsed: 0.003535032272338867
+
+2020-07-29 20:30:52.644544
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.7852578163146973
+Balanced algorithm time elapsed: 1.6876676082611084
+QUBO matrix formulation time elapsed: 0.3761718273162842
+Quantum postprocessing time elapsed: 0.0035703182220458984
+
+2020-07-29 20:30:55.924994
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.28038978576660156
+Balanced algorithm time elapsed: 1.4316964149475098
+QUBO matrix formulation time elapsed: 0.4085357189178467
+Quantum postprocessing time elapsed: 0.0037534236907958984
+
+2020-07-29 20:30:58.514959
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.404163122177124
+Balanced algorithm time elapsed: 2.2613441944122314
+QUBO matrix formulation time elapsed: 0.3793022632598877
+Quantum postprocessing time elapsed: 0.0038204193115234375
+
+2020-07-29 20:31:02.035984
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.8012619018554688
+Balanced algorithm time elapsed: 1.5931897163391113
+QUBO matrix formulation time elapsed: 0.41419410705566406
+Quantum postprocessing time elapsed: 0.004669189453125
+
+2020-07-29 20:31:05.305493
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.6617400646209717
+Balanced algorithm time elapsed: 1.253284215927124
+QUBO matrix formulation time elapsed: 0.39025330543518066
+Quantum postprocessing time elapsed: 0.003545999526977539
+
+2020-07-29 20:31:08.100129
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.3950338363647461
+Balanced algorithm time elapsed: 2.147580146789551
+QUBO matrix formulation time elapsed: 0.3873021602630615
+Quantum postprocessing time elapsed: 0.0035479068756103516
+
+2020-07-29 20:31:11.506760
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.3445572853088379
+Balanced algorithm time elapsed: 0.9943304061889648
+QUBO matrix formulation time elapsed: 0.38616943359375
+Quantum postprocessing time elapsed: 0.0061490535736083984
+
+2020-07-29 20:31:13.658749
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.2600371837615967
+Balanced algorithm time elapsed: 2.2774481773376465
+QUBO matrix formulation time elapsed: 0.3752303123474121
+Quantum postprocessing time elapsed: 0.003418445587158203
+
+2020-07-29 20:31:17.045220
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.5344135761260986
+Balanced algorithm time elapsed: 1.3494043350219727
+QUBO matrix formulation time elapsed: 0.36652302742004395
+Quantum postprocessing time elapsed: 0.0033855438232421875
+
+2020-07-29 20:31:19.773930
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.45750951766967773
+Balanced algorithm time elapsed: 1.737238883972168
+QUBO matrix formulation time elapsed: 0.4059441089630127
+Quantum postprocessing time elapsed: 0.0036165714263916016
+
+2020-07-29 20:31:22.846326
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.30432796478271484
+Balanced algorithm time elapsed: 1.739365577697754
+QUBO matrix formulation time elapsed: 0.3862035274505615
+Quantum postprocessing time elapsed: 0.0034208297729492188
+
+2020-07-29 20:31:25.715848
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.5717239379882812
+Balanced algorithm time elapsed: 2.144686222076416
+QUBO matrix formulation time elapsed: 0.40718746185302734
+Quantum postprocessing time elapsed: 0.003512859344482422
+
+2020-07-29 20:31:29.347189
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.44094085693359375
+Balanced algorithm time elapsed: 1.7944846153259277
+QUBO matrix formulation time elapsed: 0.38384318351745605
+Quantum postprocessing time elapsed: 0.003465890884399414
+
+2020-07-29 20:31:32.441910
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.581113338470459
+Balanced algorithm time elapsed: 1.4292287826538086
+QUBO matrix formulation time elapsed: 0.3823411464691162
+Quantum postprocessing time elapsed: 0.0037081241607666016
+
+2020-07-29 20:31:35.302078
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.5351042747497559
+Balanced algorithm time elapsed: 2.338809013366699
+QUBO matrix formulation time elapsed: 0.3752448558807373
+Quantum postprocessing time elapsed: 0.003549337387084961
+
+2020-07-29 20:31:39.013945
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.4693295955657959
+Balanced algorithm time elapsed: 2.294246196746826
+QUBO matrix formulation time elapsed: 0.3794398307800293
+Quantum postprocessing time elapsed: 0.0035097599029541016
+
+2020-07-29 20:31:42.637522
+(N, k, d): (1024, 4, 16)
+SKlearn algorithm time elapsed: 0.3347177505493164
+Balanced algorithm time elapsed: 2.0186023712158203
+QUBO matrix formulation time elapsed: 0.4052913188934326
+Quantum postprocessing time elapsed: 0.0034401416778564453
+
